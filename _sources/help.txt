@@ -25,25 +25,20 @@ est de rester focaliser sur la France.
 Que faire lorsqu'un bug est trouvé ?
 ------------------------------------
 
-1/ faite une recherche dans le `gestionnaire de bugs <https://possum.insa-rouen.fr/redmine/projects/possum/issues>`_
+1/ faite une recherche dans le `gestionnaire de bugs <https://github.com/possum-software/possum/issues>`_
 pour savoir si le bug est déjà connu ou pas.
 
 2/ faite une recherche dans les ` archives de la liste de diffusion <http://www.mail-archive.com/devs@possum.insa-rouen.fr/>`_
 
-3/ il n'est malheureusement pas possible pour le moment de créer un rapport
-de bug directement (sans avoir de compte) sur le gestionnaire de bug. Vous devez
-donc envoyé un mail à la liste de diffusion avec dans le sujet ``BUG``.
-Dans le corps du message, vous décrirez le bug et ajouterez les éventuelles
-références trouvées dans les points 1/ et 2/. Si le bug est avèré, une
-nouvelle entrée sera créée au niveau du gestionnaire de bug.
+3/ il n'est malheureusement pas possible de créer un rapport
+de bug directement (sans avoir de compte) sur le gestionnaire de bug. 
+Si le bug est avèré, vous devez créer une
+nouvelle entrée au niveau du gestionnaire de bug.
 
 Comment contribuer au projet ?
 ------------------------------
 
-La première étape est de proposer un patch à la liste de diffusion du projet.
-
-Dans un second temps, pour les contributeurs réguliers, un compte sera créé
-au niveau du gestionnaire de source afin d'avoir un accès direct.
+à écrire ...
 
 
 Listes de diffusion
@@ -57,9 +52,6 @@ Vous pouvez vous inscrire ici:
 Si vous voulez seulement suivre la sortie des nouvelles versions, cette liste
 de diffusion est dédiée: `nouvelles versions <https://possum.insa-rouen.fr/cgi-bin/mailman/listinfo/annonce>`_.
 Vous ne pourrez pas poster de message sur cette liste.
-
-Il y a également une liste de diffusion qui publie les modifications apportées dans
-le dépôt SVN du projet: `commits <https://possum.insa-rouen.fr/cgi-bin/mailman/listinfo/commits>`_.
 
 Pour finir, il y a la liste dédiée aux rapports sur la sécurité. Vous ne pourrez pas vous abonner mais
 vous pourrez poster les bugs de sécurité que vous avez découvert: `security <https://possum.insa-rouen.fr/cgi-bin/mailman/listinfo/security>`_.
