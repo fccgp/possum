@@ -45,7 +45,7 @@ Les développeurs
 ================
 
 Le projet est ouvert à toutes contributions, le plus simple est de nous contacter sur la liste
-de diffusion et de jeter un coup d'oeil au travail qu'il reste à faire: `Redmine <https://possum.insa-rouen.fr/redmine/projects/possum>`_.
+de diffusion et de jeter un coup d'oeil au travail qu'il reste à faire: `Github <https://github.com/possum-software/possum/issues>`_.
 
 - Créateur, développeur principal et dictateur: Bonnegent Sébastien
 - Conception graphique du logo: Romon Hélène
