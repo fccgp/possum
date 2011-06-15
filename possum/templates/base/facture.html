@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block titre %}Facture {{facture.id}}{% endblock %}
+{% block content %}
+
+<h1>Facture {{facture.id}}</h1>
+
+<h2>Général</h2>
+<center><table border=1>
+    <tr><td>Créer le</td><td>{{facture.date_creation}}</td></tr>
+    <tr><td>Table</td><td>{{facture.table.nom}}</td></tr>
+    <tr><td>Couverts</td><td>{{facture.couverts}}</td></tr>
+    <tr><td>Montant normal</td><td>{{facture.montant_normal}}</td></tr>
+    <tr><td>Montant alcool</td><td>{{facture.montant_alcool}}</td></tr>
+    <tr><td>Reste à payer</td><td>{{facture.restant_a_payer}}</td></tr>
+    {% if facture.etats %}
+        <tr><td>Suivi</td><td>{{facture.etats}}</td></tr>
+    {% endif %}
+</table></center>
+
+<h2>Produits vendus</h2>
+<center>
+{% if facture.produits %}
+    <table border="1">
+    {% for vendu in facture.produits.all %}
+        <tr><td>{{ vendu.produit.nom_facture }}</td></tr>
+        {% if vendu.contient %}
+            {% for sub in vendu.contient.all %}
+                <tr><td align="right">- {{ sub.produit.nom }}</td></tr>
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    </table>
+{% else %}
+    <p>Pas de produit.</p>
+{% endif %}
+</center>
+
+<h2>Paiements</h2>
+<center>
+{% if facture.paiements %}
+    <table border="1"><tr><td>date</td><td>type</td><td>montant</td></tr>
+    {% for paiement in facture.paiements.all %}
+        <tr><td>{{ paiement.date }}</td><td>{{ paiement.type.nom }}</td><td>{{ paiement.montant }}</td></tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>Pas de paiement.</p>
+{% endif %}
+</center>
+
+
+{% endblock %}
+

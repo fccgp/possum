@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="fr">
+<head>
+  <title>{% block titre %}{% endblock %}</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/media/favicon.ico" />
+</head>
+<body>
+<center><img src="/media/bandeau.gif" alt="Bandeau"/></center>
+
+{% if user.is_authenticated %}
+        <table width=100% border=0>
+                <tr>
+                        <td><a href="/declare/accueil">Accueil</a></td>
+                        {% if user.is_staff %}
+                                <td><a href="/declare/greves">Grèves</a></td>
+                        {% endif %}
+                        {% if user.is_superuser %}
+                                <td><a href="/admin">Super-Admin</a></td>
+                        {% endif %}
+                        <td align="right">{{ user.get_full_name }} (<a href="/declare/logout">Déconnexion</a>)</td>
+                </tr>
+        </table>
+<hr>
+{% endif %}
+{% block content %}{% endblock %}
+{% if user.is_authenticated %}
+<hr>
+<center>
+<p>Dernière connexion le {{ user.last_login }}</p>
+<p>INSA de Rouen - DSI - 2009</p>
+{% if revision %}
+        <p>Revision: {{revision}}</p>
+{% endif %}
+</center>
+{% endif %}
+</body>
+</html>
+

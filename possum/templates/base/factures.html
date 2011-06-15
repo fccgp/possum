@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block titre %}Factures{% endblock %}
+{% block content %}
+
+<h1>Les factures</h1>
+<center>
+        {% if factures %}
+        <table border="1">
+            <tr><td>Id</td><td>date</td><td>couverts</td><td>montant</td></tr>
+                {% for facture in factures %}
+                <tr><td><a href="facture/{{facture.id}}">{{facture.id}}</a></td><td>{{facture.date_creation}}</td><td>{{facture.couverts}}</td><td>{{facture.total}}</td></tr>
+                {% endfor %}
+        </table>
+        {% else %}
+                <p>Il n'y a pas encore eu de facture.</p>
+        {% endif %}
+        </center>
+
+{% endblock %}
+
