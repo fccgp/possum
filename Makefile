@@ -25,7 +25,7 @@ run:
 
 doc:
 	cd doc && make html
-	cd _build/html && git commit -a && git push origin gh-pages
+	cd doc/_build/html && git commit -a && git push origin gh-pages
 
 www:
 	cp -a doc/_build/html/* /var/www/
