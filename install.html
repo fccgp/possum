@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>2. Installation &mdash; Documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.5',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="À propos de ces documents" href="about.html" />
+    <link rel="top" title="Documentation" href="index.html" />
+    <link rel="next" title="3. Utilisation" href="utilisation.html" />
+    <link rel="prev" title="1. Introduction" href="about.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="utilisation.html" title="3. Utilisation"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="1. Introduction"
+             accesskey="P">précédent</a> |</li>
+    <li><a href="http://possum.insa-rouen.fr/">Possum</a> &raquo;</li>
+    
+        <li><a href="index.html">Documentation</a> &raquo;</li>
+ 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="installation">
+<h1>2. Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="requis">
+<h2>2.1. Requis<a class="headerlink" href="#requis" title="Lien permanent vers ce titre">¶</a></h2>
+<p>postgres / django / EFL</p>
+</div>
+<div class="section" id="materiels">
+<h2>2.2. Matériels<a class="headerlink" href="#materiels" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ceci est la liste des matériels utilisés.</p>
+<p>ubuntu on:
+Mini ITX VIA M6000G
+1Go DDR 400Mhz
+Hard Disk 80Go P-ATA
+Asus EEE PC
+ELo Touch 1515L         support moyen de la part de EloTouch
+Epson MT M88 iv         imprimante à ticket</p>
+<p>écran tactile
+<a class="reference external" href="https://help.ubuntu.com/community/EloTouchScreen">https://help.ubuntu.com/community/EloTouchScreen</a></p>
+</div>
+<div class="section" id="posgresql">
+<h2>2.3. PosgreSQL<a class="headerlink" href="#posgresql" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+<div class="section" id="django">
+<h2>2.4. Django<a class="headerlink" href="#django" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+<div class="section" id="possum">
+<h2>2.5. Possum<a class="headerlink" href="#possum" title="Lien permanent vers ce titre">¶</a></h2>
+<p>dans /home/pos/possum</p>
+</div>
+<div class="section" id="apache">
+<h2>2.6. Apache<a class="headerlink" href="#apache" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour accèder à la partie d&#8217;administration, il nous faudra un serveur web.</p>
+<div class="highlight-python"><pre>&gt; sudo apt-get install libapache2-mod-wsgi
+&gt; cat /etc/apache2/ssleay.cnf
+
+RANDFILE                = /dev/urandom
+
+[ req ]
+default_bits            = 2048
+default_keyfile         = privkey.pem
+distinguished_name      = req_distinguished_name
+prompt                  = no
+policy                  = policy_anything
+
+[ req_distinguished_name ]
+commonName              = @HostName@
+
+&gt; sudo make-ssl-cert /etc/apache2/ssleay.cnf /etc/ssl/private/localhost.pem
+&gt; sudo a2enmod ssl
+&gt; sudo a2dissite default
+&gt; cat /etc/apache2/sites-available/possum
+
+A REMPLIR !!
+
+&gt; sudo a2ensite possum
+&gt; sudo /etc/init.d/apache2 restart</pre>
+</div>
+<p>Suivre la documentation: <a class="reference external" href="http://docs.djangoproject.com/en/1.2/howto/deployment/modwsgi/">http://docs.djangoproject.com/en/1.2/howto/deployment/modwsgi/</a></p>
+</div>
+<div class="section" id="configuration">
+<h2>2.7. Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
+<p>init de la base
+comment renseigner la base ?
+ne pas oublier de sauvegarder la base de données !!</p>
+</div>
+<div class="section" id="sauvegarde">
+<h2>2.8. Sauvegarde<a class="headerlink" href="#sauvegarde" title="Lien permanent vers ce titre">¶</a></h2>
+<dl class="docutils">
+<dt>sauvegarde complète de la base:</dt>
+<dd>pg_dumpall &#8211;clean &#8211;file=bd.dump</dd>
+<dt>sauvegarde seulement de certaines tables:</dt>
+<dd>pg_dump &#8211;clean &#8211;file=bd-stats.dump -t base_statsjourcategorie -t base_statsjourgeneral -t base_statsjourproduit -t base_statssemainecategorie -t base_statssemainegeneral -t base_statssemaineproduit possumdb</dd>
+</dl>
+</div>
+<div class="section" id="restauration">
+<h2>2.9. Restauration<a class="headerlink" href="#restauration" title="Lien permanent vers ce titre">¶</a></h2>
+<p>/usr/bin/psql -f possum-20100109.dump postgres</p>
+<p>/usr/bin/psql -f bd-stats.dump possumdb</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/bandeau-192.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="index.html">Table des matières</a></h3>
+            <ul>
+<li><a class="reference external" href="#">2. Installation</a><ul>
+<li><a class="reference external" href="#requis">2.1. Requis</a></li>
+<li><a class="reference external" href="#materiels">2.2. Matériels</a></li>
+<li><a class="reference external" href="#posgresql">2.3. PosgreSQL</a></li>
+<li><a class="reference external" href="#django">2.4. Django</a></li>
+<li><a class="reference external" href="#possum">2.5. Possum</a></li>
+<li><a class="reference external" href="#apache">2.6. Apache</a></li>
+<li><a class="reference external" href="#configuration">2.7. Configuration</a></li>
+<li><a class="reference external" href="#sauvegarde">2.8. Sauvegarde</a></li>
+<li><a class="reference external" href="#restauration">2.9. Restauration</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Sujet précédent</h4>
+            <p class="topless"><a href="about.html"
+                                  title="Chapitre précédent">1. Introduction</a></p>
+            <h4>Sujet suivant</h4>
+            <p class="topless"><a href="utilisation.html"
+                                  title="Chapitre suivant">3. Utilisation</a></p>
+          <div id="searchbox" style="display: none">
+            <h3>Recherche rapide</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="utilisation.html" title="3. Utilisation"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="about.html" title="1. Introduction"
+             >précédent</a> |</li>
+    <li><a href="http://possum.insa-rouen.fr/">Possum</a> &raquo;</li>
+    
+        <li><a href="index.html">Documentation</a> &raquo;</li>
+ 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2011, Bonnegent Sébastien.
+      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>
