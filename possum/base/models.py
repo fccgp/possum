@@ -911,14 +911,14 @@ class Facture(models.Model):
         texte = []
         texte.append("    -- CA mensuel %s --" % mois.strftime("%m/%Y"))
         selection = StatsJourPaiement.objects.filter( \
-                            date__gt=date_min, \
+                            date__gte=date_min, \
                             date__lt=date_max)
         for paiement in PaiementType.objects.iterator():
             total = selection.filter(paiement=paiement).aggregate(Sum('valeur'))['valeur__sum']
             if total > 0:
                 texte.append("%-20s %10.2f" % (paiement.nom, total))
         selection = StatsJourGeneral.objects.filter( \
-                            date__gt=date_min, \
+                            date__gte=date_min, \
                             date__lt=date_max)
         ca = selection.filter(type=LogType.objects.get(nom="ca")).aggregate(Sum('valeur'))['valeur__sum']
         if ca == None:
