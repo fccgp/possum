@@ -11,7 +11,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.5',
+        VERSION:     '0.4',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -59,6 +59,77 @@
             
   <div class="section" id="produitvendu">
 <h1>ProduitVendu<a class="headerlink" href="#produitvendu" title="Lien permanent vers ce titre">¶</a></h1>
+<p class="graphviz">
+<img src="../_images/inheritance-5a6cb887baf8bfb38782302fc8077ed2edce73d0.png" alt="Inheritance diagram of possum.base.models.ProduitVendu" usemap="#inheritancee2e6b12761" class="inheritance"/>
+<map id="inheritancee2e6b12761" name="inheritancee2e6b12761">
+<area shape="rect" id="node1" href="#possum.base.models.ProduitVendu" title="ProduitVendu" alt="" coords="125,5,232,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.ProduitVendu">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">ProduitVendu</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.ProduitVendu" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>le prix sert a affiche correctement les prix pour les surtaxes</p>
+<dl class="method">
+<dt id="possum.base.models.ProduitVendu.getFreeCategorie">
+<tt class="descname">getFreeCategorie</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.ProduitVendu.getFreeCategorie" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne la premiere categorie dans la liste categories_ok
+qui n&#8217;a pas de produit dans la partir &#8216;contient&#8217;. Sinon retourne
+None</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Facture</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Categorie</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s">&quot;cat1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat2</span> <span class="o">=</span> <span class="n">Categorie</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s">&quot;cat2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">produit1</span> <span class="o">=</span> <span class="n">Produit</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s">&quot;p1&quot;</span><span class="p">,</span> <span class="n">categorie</span><span class="o">=</span><span class="n">cat1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">produit2</span> <span class="o">=</span> <span class="n">Produit</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s">&quot;p2&quot;</span><span class="p">,</span> <span class="n">categorie</span><span class="o">=</span><span class="n">cat2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span> <span class="o">=</span> <span class="n">ProduitVendu</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">produit</span><span class="o">=</span><span class="n">produit1</span><span class="p">,</span> <span class="n">facture</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">getFreeCategorie</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">produit1</span><span class="o">.</span><span class="n">categories_ok</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cat1</span><span class="p">,</span> <span class="n">cat2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">getFreeCategorie</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sub</span> <span class="o">=</span> <span class="n">ProduitVendu</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">produit</span><span class="o">=</span><span class="n">produit1</span><span class="p">,</span> <span class="n">facture</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">contient</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sub</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">getFreeCategorie</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sub</span> <span class="o">=</span> <span class="n">ProduitVendu</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">produit</span><span class="o">=</span><span class="n">produit2</span><span class="p">,</span> <span class="n">facture</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sub</span><span class="o">.</span><span class="n">produit</span><span class="o">.</span><span class="n">categorie</span> <span class="o">=</span> <span class="n">cat2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">contient</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sub</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">getFreeCategorie</span><span class="p">()</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.ProduitVendu.isFull">
+<tt class="descname">isFull</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.ProduitVendu.isFull" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>True si tous les élèments sous présents (les sous produits pour les formules)
+et False sinon.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span> <span class="o">=</span> <span class="n">ProduitVendu</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">isFull</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Categorie</span><span class="p">(</span><span class="n">nom</span><span class="o">=</span><span class="s">&quot;cat1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat1</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat2</span> <span class="o">=</span> <span class="n">Categorie</span><span class="p">(</span><span class="n">nom</span><span class="o">=</span><span class="s">&quot;cat2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat2</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">categories_ok</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cat1</span><span class="p">,</span> <span class="n">cat2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">isFull</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">produits</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">isFull</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">produits</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">isFull</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">produits</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">isFull</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

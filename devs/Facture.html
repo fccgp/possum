@@ -11,7 +11,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.5',
+        VERSION:     '0.4',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -59,6 +59,227 @@
             
   <div class="section" id="facture">
 <span id="id1"></span><h1>Facture<a class="headerlink" href="#facture" title="Lien permanent vers ce titre">¶</a></h1>
+<p class="graphviz">
+<img src="../_images/inheritance-adf3916b38a9f749f971cd441fa0824e60d8725d.png" alt="Inheritance diagram of possum.base.models.Facture" usemap="#inheritanceae60faf467" class="inheritance"/>
+<map id="inheritanceae60faf467" name="inheritanceae60faf467">
+<area shape="rect" id="node1" href="#possum.base.models.Facture" title="Facture" alt="" coords="125,5,197,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Facture">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Facture</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Facture(id, date_creation, table_id, couverts, montant_normal, montant_alcool, restant_a_payer, saved_in_stats)</p>
+<dl class="method">
+<dt id="possum.base.models.Facture.add">
+<tt class="descname">add</tt><big>(</big><em>vendu</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.add" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Ajout d&#8217;un produit à la facture.
+Si c&#8217;est le premier produit alors on modifie la date de creation</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.ajout_paiement">
+<tt class="descname">ajout_paiement</tt><big>(</big><em>modepaiement</em>, <em>montant</em>, <em>valeur_unitaire=Decimal('1.0')</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.ajout_paiement" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>modepaiement est un TypePaiement
+montant est un Decimal</p>
+<p>Si le montant est superieur au restant du alors on rembourse en
+espece.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.check_path">
+<tt class="descname">check_path</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.check_path" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Verifie l&#8217;existance du chemin et cree le repertoire si besoin
+&#8216;</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.del_all_paiements">
+<tt class="descname">del_all_paiements</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_all_paiements" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>On supprime tous les paiements</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.del_all_produits">
+<tt class="descname">del_all_produits</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_all_produits" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>On supprime tous les produits</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.del_paiement">
+<tt class="descname">del_paiement</tt><big>(</big><em>paiement</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_paiement" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>On supprime un paiement</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.del_produit">
+<tt class="descname">del_produit</tt><big>(</big><em>vendu</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_produit" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>On enleve un produit à la facture</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.est_soldee">
+<tt class="descname">est_soldee</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_soldee" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>La facture a été utilisée et soldée</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.est_surtaxe">
+<tt class="descname">est_surtaxe</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_surtaxe" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Table is surtaxed et il n&#8217;y a pas de nourriture.</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.est_un_repas">
+<tt class="descname">est_un_repas</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_un_repas" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Est ce que la facture contient un element compris dans les
+categories entrees, plats, desserts ou formules</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.est_vierge">
+<tt class="descname">est_vierge</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_vierge" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>La facture est vierge</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.getTvaNormal">
+<tt class="descname">getTvaNormal</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.getTvaNormal" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>calcul la TVA
+On arrondi seulement à 1 parce que les 2 décimals sont dans la partie entière du montant
+# la TVA est sur le HT !!</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.get_factures_du_jour">
+<tt class="descname">get_factures_du_jour</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.get_factures_du_jour" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Retourne la liste des factures soldees du jour &#8216;date&#8217;</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.get_users">
+<tt class="descname">get_users</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.get_users" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Donne la liste des noms d&#8217;utilisateurs</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.get_working_date">
+<tt class="descname">get_working_date</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.get_working_date" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Retourne la journee de travail officiel
+(qui fini a 5h du matin)</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.guest_couverts">
+<tt class="descname">guest_couverts</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.guest_couverts" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Essaye de deviner le nombre de couverts</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.maj_stats">
+<tt class="descname">maj_stats</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.maj_stats" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Calcule les statistiques pour cette facture
+si elle est soldée</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.maj_stats_avec_nouvelles_factures">
+<tt class="descname">maj_stats_avec_nouvelles_factures</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.maj_stats_avec_nouvelles_factures" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Calcule les stats pour toutes les nouvelles factures
+soldées.</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.nb_soldee_jour">
+<tt class="descname">nb_soldee_jour</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.nb_soldee_jour" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Nombre de facture soldee le jour &#8216;date&#8217;</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.non_soldees">
+<tt class="descname">non_soldees</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.non_soldees" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Retourne la liste des factures non soldees</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.rapport_jour">
+<tt class="descname">rapport_jour</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.rapport_jour" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne le rapport du jour sous la forme d&#8217;une liste
+&#8216;jour&#8217; est de type datetime.today()</p>
+<p>exemple:
+&#8211; 15/12/2010 &#8211;
+Cheque               285,05
+Ticket Resto         723,67
+Espece              3876,46
+ANCV                 150,00
+CB                  3355,60
+total TTC:          8386,08
+montant TVA  5,5:    353,26
+montant TVA 19,6:    263,82</p>
+<p>Menu E/P :            16
+Menu P/D :            16
+Menu Tradition :      16</p>
+<p>Salade cesar :         6
+...</p>
+<p>plat ...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.rapport_jour_old">
+<tt class="descname">rapport_jour_old</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.rapport_jour_old" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne le rapport du jour sous la forme d&#8217;une liste
+&#8216;jour&#8217; est de type datetime.today()</p>
+<p>exemple:
+&#8211; 15/12/2010 &#8211;
+Cheque               285,05
+Ticket Resto         723,67
+Espece              3876,46
+ANCV                 150,00
+CB                  3355,60
+total TTC:          8386,08
+montant TVA  5,5:    353,26
+montant TVA 19,6:    263,82</p>
+<p>Menu E/P :            16
+Menu P/D :            16
+Menu Tradition :      16</p>
+<p>Salade cesar :         6
+...</p>
+<p>plat ...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.rapport_mois">
+<tt class="descname">rapport_mois</tt><big>(</big><em>mois</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.rapport_mois" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne dans une liste le rapport du mois &#8216;mois&#8217;
+&#8216;mois&#8217; est de type datetime.today()</p>
+<p>exemple:</p>
+<p>&#8211; CA mensuel 12/2010 &#8211;
+Cheque               285,05
+Ticket Resto         723,67
+Espece              3876,46
+ANCV                 150,00
+CB                  3355,60
+total TTC:          8386,08
+montant TVA  5,5:    353,26
+montant TVA 19,6:    263,82</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.rapport_mois_old">
+<tt class="descname">rapport_mois_old</tt><big>(</big><em>mois</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.rapport_mois_old" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne dans une liste le rapport du mois &#8216;mois&#8217;
+&#8216;mois&#8217; est de type datetime.today()</p>
+<p>exemple:</p>
+<p>&#8211; CA mensuel 12/2010 &#8211;
+Cheque               285,05
+Ticket Resto         723,67
+Espece              3876,46
+ANCV                 150,00
+CB                  3355,60
+total TTC:          8386,08
+montant TVA  5,5:    353,26
+montant TVA 19,6:    263,82</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.set_couverts">
+<tt class="descname">set_couverts</tt><big>(</big><em>nb</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.set_couverts" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Change le nombre de couvert</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.set_table">
+<tt class="descname">set_table</tt><big>(</big><em>table</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.set_table" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Change la table de la facture
+On prend en compte le changement de tarification si changement
+de zone.</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.ticket">
+<tt class="descname">ticket</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.ticket" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Retourne le ticket sous la forme d&#8217;une liste de ligne.</dd></dl>
+
+</dd></dl>
+
 </div>
 
 

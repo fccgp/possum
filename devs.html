@@ -11,7 +11,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.5',
+        VERSION:     '0.4',
         COLLAPSE_MODINDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -75,54 +75,521 @@ On peut aussi fermer un ticket en indiquant &#8216;&#8217;fixes #234&#8217;&#821
 <p>Voici le schèma général des différentes classes utilisées.</p>
 <a class="reference external image-reference" href="_images/models-base.png"><img alt="Schéma des classes d'objets" src="_images/models-base.png" style="width: 100.0px; height: 50.0px;" /></a>
 <p>À nouveau les différentes classes avec leurs héritages.</p>
+<p class="graphviz">
+<img src="_images/inheritance-a4a1b776b83fbec25c0cba52f6e875d57e303771.png" alt="Inheritance diagram of possum.base.models" usemap="#inheritance785a29abdc" class="inheritance"/>
+<map id="inheritance785a29abdc" name="inheritance785a29abdc">
+<area shape="rect" id="node7" href="devs/Couleur.html#possum.base.models.Couleur" title="Couleur" alt="" coords="316,157,388,185"/>
+<area shape="rect" id="node9" href="devs/Zone.html#possum.base.models.Zone" title="Zone" alt="" coords="316,207,388,235"/>
+<area shape="rect" id="node15" href="devs/Sauce.html#possum.base.models.Sauce" title="Sauce" alt="" coords="316,258,388,286"/>
+<area shape="rect" id="node17" href="devs/Table.html#possum.base.models.Table" title="Table" alt="" coords="316,309,388,337"/>
+<area shape="rect" id="node19" href="devs/Etat.html#possum.base.models.Etat" title="Etat" alt="" coords="316,359,388,387"/>
+<area shape="rect" id="node22" href="devs/Categorie.html#possum.base.models.Categorie" title="Categorie" alt="" coords="311,410,393,438"/>
+<area shape="rect" id="node36" href="devs/LogType.html#possum.base.models.LogType" title="LogType" alt="" coords="316,55,388,83"/>
+<area shape="rect" id="node40" href="devs/Accompagnement.html#possum.base.models.Accompagnement" title="Accompagnement" alt="" coords="283,106,421,134"/>
+<area shape="rect" id="node48" href="devs/Cuisson.html#possum.base.models.Cuisson" title="Cuisson" alt="" coords="316,461,388,489"/>
+<area shape="rect" id="node25" href="devs/Log.html#possum.base.models.Log" title="Log" alt="" coords="143,638,215,666"/>
+<area shape="rect" id="node32" href="devs/Paiement.html#possum.base.models.Paiement" title="Paiement" alt="" coords="137,689,220,717"/>
+<area shape="rect" id="node34" href="devs/ProduitVendu.html#possum.base.models.ProduitVendu" title="ProduitVendu" alt="" coords="125,739,232,767"/>
+<area shape="rect" id="node42" href="devs/Facture.html#possum.base.models.Facture" title="Facture" alt="" coords="143,790,215,818"/>
+<area shape="rect" id="node51" href="devs/Suivi.html#possum.base.models.Suivi" title="Suivi" alt="" coords="143,841,215,869"/>
+<area shape="rect" id="node45" href="devs/PaiementType.html#possum.base.models.PaiementType" title="PaiementType" alt="" coords="473,283,583,311"/>
+<area shape="rect" id="node29" href="devs/Produit.html#possum.base.models.Produit" title="Produit" alt="" coords="492,5,564,33"/>
+</map>
+</p>
 <p>La classe centrale, et donc la plus importante, est la classe <a class="reference internal" href="#facture">Facture</a>.</p>
 <div class="section" id="accompagnement">
 <h3>4.1.1. Accompagnement<a class="headerlink" href="#accompagnement" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-ca6a5bf4e4874d53f54fbadc98632adba368515c.png" alt="Inheritance diagram of possum.base.models.Accompagnement" usemap="#inheritance43dd7a8bdd" class="inheritance"/>
+<map id="inheritance43dd7a8bdd" name="inheritance43dd7a8bdd">
+<area shape="rect" id="node1" href="devs/Accompagnement.html#possum.base.models.Accompagnement" title="Accompagnement" alt="" coords="247,5,385,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Accompagnement">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Accompagnement</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Accompagnement" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Accompagnement d&#8217;un produit</dd></dl>
+
 </div>
 <div class="section" id="categorie">
 <span id="id1"></span><h3>4.1.2. Categorie<a class="headerlink" href="#categorie" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-bcdf0d7a1ec230724de2348b724f4c58aa5b2867.png" alt="Inheritance diagram of possum.base.models.Categorie" usemap="#inheritance9ce7763502" class="inheritance"/>
+<map id="inheritance9ce7763502" name="inheritance9ce7763502">
+<area shape="rect" id="node1" href="devs/Categorie.html#possum.base.models.Categorie" title="Categorie" alt="" coords="247,30,329,58"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Categorie">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Categorie</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Categorie" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Categorie(id, nom, priorite, surtaxable, couleur_id, alcool, disable_surtaxe)</dd></dl>
+
 </div>
 <div class="section" id="couleur">
 <h3>4.1.3. Couleur<a class="headerlink" href="#couleur" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-524311e7a0689460de6ede8b24ab209598634803.png" alt="Inheritance diagram of possum.base.models.Couleur" usemap="#inheritance4390dde6b9" class="inheritance"/>
+<map id="inheritance4390dde6b9" name="inheritance4390dde6b9">
+<area shape="rect" id="node1" href="devs/Couleur.html#possum.base.models.Couleur" title="Couleur" alt="" coords="245,5,317,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Couleur">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Couleur</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Couleur" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Couleur(id, nom, red, green, blue)</p>
+<dl class="method">
+<dt id="possum.base.models.Couleur.web">
+<tt class="descname">web</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Couleur.web" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Retourne la couleur sous la forme #ffe013</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="cuisson">
 <h3>4.1.4. Cuisson<a class="headerlink" href="#cuisson" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-d46b3e6b07f59a204a5006e8e1bdfbe2be3f13d3.png" alt="Inheritance diagram of possum.base.models.Cuisson" usemap="#inheritance75480d9d2e" class="inheritance"/>
+<map id="inheritance75480d9d2e" name="inheritance75480d9d2e">
+<area shape="rect" id="node1" href="devs/Cuisson.html#possum.base.models.Cuisson" title="Cuisson" alt="" coords="245,30,317,58"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Cuisson">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Cuisson</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Cuisson" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Cuisson d&#8217;un produit</dd></dl>
+
 </div>
 <div class="section" id="etat">
 <h3>4.1.5. Etat<a class="headerlink" href="#etat" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-7452b3220e267dc3b8d896889028c254e965f1e9.png" alt="Inheritance diagram of possum.base.models.Etat" usemap="#inheritancec55e45be36" class="inheritance"/>
+<map id="inheritancec55e45be36" name="inheritancec55e45be36">
+<area shape="rect" id="node1" href="devs/Etat.html#possum.base.models.Etat" title="Etat" alt="" coords="245,30,317,58"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Etat">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Etat</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Etat" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Etat d&#8217;une facture</dd></dl>
+
 </div>
 <div class="section" id="facture">
 <span id="id2"></span><h3>4.1.6. Facture<a class="headerlink" href="#facture" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-a68dee81fd81a4fbde6804c10409c2d188c17f84.png" alt="Inheritance diagram of possum.base.models.Facture" usemap="#inheritanceae60faf467" class="inheritance"/>
+<map id="inheritanceae60faf467" name="inheritanceae60faf467">
+<area shape="rect" id="node1" href="devs/Facture.html#possum.base.models.Facture" title="Facture" alt="" coords="125,5,197,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Facture">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Facture</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Facture(id, date_creation, table_id, couverts, montant_normal, montant_alcool, restant_a_payer, saved_in_stats)</p>
+<dl class="method">
+<dt id="possum.base.models.Facture.add">
+<tt class="descname">add</tt><big>(</big><em>vendu</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.add" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Ajout d&#8217;un produit à la facture.
+Si c&#8217;est le premier produit alors on modifie la date de creation</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.ajout_paiement">
+<tt class="descname">ajout_paiement</tt><big>(</big><em>modepaiement</em>, <em>montant</em>, <em>valeur_unitaire=Decimal('1.0')</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.ajout_paiement" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>modepaiement est un TypePaiement
+montant est un Decimal</p>
+<p>Si le montant est superieur au restant du alors on rembourse en
+espece.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.check_path">
+<tt class="descname">check_path</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.check_path" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Verifie l&#8217;existance du chemin et cree le repertoire si besoin
+&#8216;</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.del_all_paiements">
+<tt class="descname">del_all_paiements</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_all_paiements" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>On supprime tous les paiements</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.del_all_produits">
+<tt class="descname">del_all_produits</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_all_produits" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>On supprime tous les produits</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.del_paiement">
+<tt class="descname">del_paiement</tt><big>(</big><em>paiement</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_paiement" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>On supprime un paiement</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.del_produit">
+<tt class="descname">del_produit</tt><big>(</big><em>vendu</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_produit" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>On enleve un produit à la facture</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.est_soldee">
+<tt class="descname">est_soldee</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_soldee" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>La facture a été utilisée et soldée</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.est_surtaxe">
+<tt class="descname">est_surtaxe</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_surtaxe" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Table is surtaxed et il n&#8217;y a pas de nourriture.</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.est_un_repas">
+<tt class="descname">est_un_repas</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_un_repas" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Est ce que la facture contient un element compris dans les
+categories entrees, plats, desserts ou formules</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.est_vierge">
+<tt class="descname">est_vierge</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_vierge" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>La facture est vierge</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.getTvaNormal">
+<tt class="descname">getTvaNormal</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.getTvaNormal" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>calcul la TVA
+On arrondi seulement à 1 parce que les 2 décimals sont dans la partie entière du montant
+# la TVA est sur le HT !!</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.get_factures_du_jour">
+<tt class="descname">get_factures_du_jour</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.get_factures_du_jour" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Retourne la liste des factures soldees du jour &#8216;date&#8217;</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.get_users">
+<tt class="descname">get_users</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.get_users" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Donne la liste des noms d&#8217;utilisateurs</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.get_working_date">
+<tt class="descname">get_working_date</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.get_working_date" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Retourne la journee de travail officiel
+(qui fini a 5h du matin)</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.guest_couverts">
+<tt class="descname">guest_couverts</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.guest_couverts" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Essaye de deviner le nombre de couverts</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.maj_stats">
+<tt class="descname">maj_stats</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.maj_stats" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Calcule les statistiques pour cette facture
+si elle est soldée</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.maj_stats_avec_nouvelles_factures">
+<tt class="descname">maj_stats_avec_nouvelles_factures</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.maj_stats_avec_nouvelles_factures" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Calcule les stats pour toutes les nouvelles factures
+soldées.</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.nb_soldee_jour">
+<tt class="descname">nb_soldee_jour</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.nb_soldee_jour" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Nombre de facture soldee le jour &#8216;date&#8217;</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.non_soldees">
+<tt class="descname">non_soldees</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.non_soldees" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Retourne la liste des factures non soldees</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.rapport_jour">
+<tt class="descname">rapport_jour</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.rapport_jour" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne le rapport du jour sous la forme d&#8217;une liste
+&#8216;jour&#8217; est de type datetime.today()</p>
+<p>exemple:
+&#8211; 15/12/2010 &#8211;
+Cheque               285,05
+Ticket Resto         723,67
+Espece              3876,46
+ANCV                 150,00
+CB                  3355,60
+total TTC:          8386,08
+montant TVA  5,5:    353,26
+montant TVA 19,6:    263,82</p>
+<p>Menu E/P :            16
+Menu P/D :            16
+Menu Tradition :      16</p>
+<p>Salade cesar :         6
+...</p>
+<p>plat ...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.rapport_jour_old">
+<tt class="descname">rapport_jour_old</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.rapport_jour_old" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne le rapport du jour sous la forme d&#8217;une liste
+&#8216;jour&#8217; est de type datetime.today()</p>
+<p>exemple:
+&#8211; 15/12/2010 &#8211;
+Cheque               285,05
+Ticket Resto         723,67
+Espece              3876,46
+ANCV                 150,00
+CB                  3355,60
+total TTC:          8386,08
+montant TVA  5,5:    353,26
+montant TVA 19,6:    263,82</p>
+<p>Menu E/P :            16
+Menu P/D :            16
+Menu Tradition :      16</p>
+<p>Salade cesar :         6
+...</p>
+<p>plat ...</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.rapport_mois">
+<tt class="descname">rapport_mois</tt><big>(</big><em>mois</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.rapport_mois" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne dans une liste le rapport du mois &#8216;mois&#8217;
+&#8216;mois&#8217; est de type datetime.today()</p>
+<p>exemple:</p>
+<p>&#8211; CA mensuel 12/2010 &#8211;
+Cheque               285,05
+Ticket Resto         723,67
+Espece              3876,46
+ANCV                 150,00
+CB                  3355,60
+total TTC:          8386,08
+montant TVA  5,5:    353,26
+montant TVA 19,6:    263,82</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.rapport_mois_old">
+<tt class="descname">rapport_mois_old</tt><big>(</big><em>mois</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.rapport_mois_old" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne dans une liste le rapport du mois &#8216;mois&#8217;
+&#8216;mois&#8217; est de type datetime.today()</p>
+<p>exemple:</p>
+<p>&#8211; CA mensuel 12/2010 &#8211;
+Cheque               285,05
+Ticket Resto         723,67
+Espece              3876,46
+ANCV                 150,00
+CB                  3355,60
+total TTC:          8386,08
+montant TVA  5,5:    353,26
+montant TVA 19,6:    263,82</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.set_couverts">
+<tt class="descname">set_couverts</tt><big>(</big><em>nb</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.set_couverts" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Change le nombre de couvert</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.set_table">
+<tt class="descname">set_table</tt><big>(</big><em>table</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.set_table" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Change la table de la facture
+On prend en compte le changement de tarification si changement
+de zone.</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.Facture.ticket">
+<tt class="descname">ticket</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.ticket" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Retourne le ticket sous la forme d&#8217;une liste de ligne.</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="log">
 <h3>4.1.7. Log<a class="headerlink" href="#log" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-96fc8c24cae6553a19ca8d84bcc1b4c3d5152036.png" alt="Inheritance diagram of possum.base.models.Log" usemap="#inheritance1962c7af42" class="inheritance"/>
+<map id="inheritance1962c7af42" name="inheritance1962c7af42">
+<area shape="rect" id="node1" href="devs/Log.html#possum.base.models.Log" title="Log" alt="" coords="125,5,197,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Log">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Log</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Log" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Log(id, date, type_id)</dd></dl>
+
 </div>
 <div class="section" id="logtype">
 <h3>4.1.8. LogType<a class="headerlink" href="#logtype" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-6d611ea203973486d720e9f9e9bb16ba2417122b.png" alt="Inheritance diagram of possum.base.models.LogType" usemap="#inheritance4d765ab671" class="inheritance"/>
+<map id="inheritance4d765ab671" name="inheritance4d765ab671">
+<area shape="rect" id="node1" href="devs/LogType.html#possum.base.models.LogType" title="LogType" alt="" coords="247,5,319,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.LogType">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">LogType</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.LogType" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Correspond au type de Log ainsi qu&#8217;au type de stats</dd></dl>
+
 </div>
 <div class="section" id="paiement">
 <h3>4.1.9. Paiement<a class="headerlink" href="#paiement" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-015387426be75b64327add5d7fc1c82b9cf21d59.png" alt="Inheritance diagram of possum.base.models.Paiement" usemap="#inheritancee8f6f08ee7" class="inheritance"/>
+<map id="inheritancee8f6f08ee7" name="inheritancee8f6f08ee7">
+<area shape="rect" id="node1" href="devs/Paiement.html#possum.base.models.Paiement" title="Paiement" alt="" coords="125,5,208,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Paiement">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Paiement</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Paiement" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>valeur_unitaire: pour gerer les montants des tickets restos</dd></dl>
+
 </div>
 <div class="section" id="paiementtype">
 <h3>4.1.10. PaiementType<a class="headerlink" href="#paiementtype" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-e550f1e82d8733296392b544c909fee4adff23fd.png" alt="Inheritance diagram of possum.base.models.PaiementType" usemap="#inheritance090bea6f52" class="inheritance"/>
+<map id="inheritance090bea6f52" name="inheritance090bea6f52">
+<area shape="rect" id="node6" href="devs/PaiementType.html#possum.base.models.PaiementType" title="PaiementType" alt="" coords="393,30,503,58"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.PaiementType">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">PaiementType</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.PaiementType" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Type de paiment</dd></dl>
+
 </div>
 <div class="section" id="produit">
 <h3>4.1.11. Produit<a class="headerlink" href="#produit" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-d1f65b20e355d8bf902fee4bdf6dc936868d2804.png" alt="Inheritance diagram of possum.base.models.Produit" usemap="#inheritance71efa81021" class="inheritance"/>
+<map id="inheritance71efa81021" name="inheritance71efa81021">
+<area shape="rect" id="node1" href="devs/Produit.html#possum.base.models.Produit" title="Produit" alt="" coords="392,5,464,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Produit">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Produit</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Produit" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Produit(id, nom, nom_facture, categorie_id, choix_cuisson, choix_accompagnement, choix_sauce, actif, prix)</dd></dl>
+
 </div>
 <div class="section" id="produitvendu">
 <h3>4.1.12. ProduitVendu<a class="headerlink" href="#produitvendu" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-40bca2d2bc6ac27bac0284f4ff242d73c87f2ed3.png" alt="Inheritance diagram of possum.base.models.ProduitVendu" usemap="#inheritancee2e6b12761" class="inheritance"/>
+<map id="inheritancee2e6b12761" name="inheritancee2e6b12761">
+<area shape="rect" id="node1" href="devs/ProduitVendu.html#possum.base.models.ProduitVendu" title="ProduitVendu" alt="" coords="125,5,232,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.ProduitVendu">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">ProduitVendu</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.ProduitVendu" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>le prix sert a affiche correctement les prix pour les surtaxes</p>
+<dl class="method">
+<dt id="possum.base.models.ProduitVendu.getFreeCategorie">
+<tt class="descname">getFreeCategorie</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.ProduitVendu.getFreeCategorie" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Retourne la premiere categorie dans la liste categories_ok
+qui n&#8217;a pas de produit dans la partir &#8216;contient&#8217;. Sinon retourne
+None</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">Facture</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Categorie</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s">&quot;cat1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat2</span> <span class="o">=</span> <span class="n">Categorie</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s">&quot;cat2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">produit1</span> <span class="o">=</span> <span class="n">Produit</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s">&quot;p1&quot;</span><span class="p">,</span> <span class="n">categorie</span><span class="o">=</span><span class="n">cat1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">produit2</span> <span class="o">=</span> <span class="n">Produit</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s">&quot;p2&quot;</span><span class="p">,</span> <span class="n">categorie</span><span class="o">=</span><span class="n">cat2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span> <span class="o">=</span> <span class="n">ProduitVendu</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">produit</span><span class="o">=</span><span class="n">produit1</span><span class="p">,</span> <span class="n">facture</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">getFreeCategorie</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">produit1</span><span class="o">.</span><span class="n">categories_ok</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cat1</span><span class="p">,</span> <span class="n">cat2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">getFreeCategorie</span><span class="p">()</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sub</span> <span class="o">=</span> <span class="n">ProduitVendu</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">produit</span><span class="o">=</span><span class="n">produit1</span><span class="p">,</span> <span class="n">facture</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">contient</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sub</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">getFreeCategorie</span><span class="p">()</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sub</span> <span class="o">=</span> <span class="n">ProduitVendu</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">produit</span><span class="o">=</span><span class="n">produit2</span><span class="p">,</span> <span class="n">facture</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sub</span><span class="o">.</span><span class="n">produit</span><span class="o">.</span><span class="n">categorie</span> <span class="o">=</span> <span class="n">cat2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">contient</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sub</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">getFreeCategorie</span><span class="p">()</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="possum.base.models.ProduitVendu.isFull">
+<tt class="descname">isFull</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.ProduitVendu.isFull" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>True si tous les élèments sous présents (les sous produits pour les formules)
+et False sinon.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span> <span class="o">=</span> <span class="n">ProduitVendu</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">isFull</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Categorie</span><span class="p">(</span><span class="n">nom</span><span class="o">=</span><span class="s">&quot;cat1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat1</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat2</span> <span class="o">=</span> <span class="n">Categorie</span><span class="p">(</span><span class="n">nom</span><span class="o">=</span><span class="s">&quot;cat2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cat2</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">categories_ok</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cat1</span><span class="p">,</span> <span class="n">cat2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">isFull</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">produits</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">isFull</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">produits</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">isFull</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">produits</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vendu</span><span class="o">.</span><span class="n">isFull</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="sauce">
 <span id="id3"></span><h3>4.1.13. Sauce<a class="headerlink" href="#sauce" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-de78604a99975bdfc94f44de8041e0318a9d3009.png" alt="Inheritance diagram of possum.base.models.Sauce" usemap="#inheritance15fcffc51a" class="inheritance"/>
+<map id="inheritance15fcffc51a" name="inheritance15fcffc51a">
+<area shape="rect" id="node1" href="devs/Sauce.html#possum.base.models.Sauce" title="Sauce" alt="" coords="245,5,317,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Sauce">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Sauce</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Sauce" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Sauce d&#8217;un produit</dd></dl>
+
 </div>
 <div class="section" id="suivi">
 <span id="id4"></span><h3>4.1.14. Suivi<a class="headerlink" href="#suivi" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-904da000ac6b8fc39d019f7c291db6b83e5fb787.png" alt="Inheritance diagram of possum.base.models.Suivi" usemap="#inheritance848b84f3b8" class="inheritance"/>
+<map id="inheritance848b84f3b8" name="inheritance848b84f3b8">
+<area shape="rect" id="node1" href="devs/Suivi.html#possum.base.models.Suivi" title="Suivi" alt="" coords="125,5,197,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Suivi">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Suivi</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Suivi" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Suivi des etats</dd></dl>
+
 </div>
 <div class="section" id="table">
 <span id="id5"></span><h3>4.1.15. Table<a class="headerlink" href="#table" title="Lien permanent vers ce titre">¶</a></h3>
+<p class="graphviz">
+<img src="_images/inheritance-a82e741f421f57820e5dbf353a4301cd1ec3e6a3.png" alt="Inheritance diagram of possum.base.models.Table" usemap="#inheritance4781591a4e" class="inheritance"/>
+<map id="inheritance4781591a4e" name="inheritance4781591a4e">
+<area shape="rect" id="node1" href="devs/Table.html#possum.base.models.Table" title="Table" alt="" coords="245,5,317,33"/>
+</map>
+</p>
+<dl class="class">
+<dt id="possum.base.models.Table">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Table</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Table" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Table(id, nom, zone_id)</dd></dl>
+
 </div>
 <div class="section" id="zone">
 <span id="id6"></span><h3>4.1.16. Zone<a class="headerlink" href="#zone" title="Lien permanent vers ce titre">¶</a></h3>
+<dl class="class">
+<dt id="possum.base.models.Zone">
+<em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Zone</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Zone" title="Lien permanent vers cette définition">¶</a></dt>
+<dd>Zone(id, nom, surtaxe, prix_surtaxe)</dd></dl>
+
 </div>
 </div>
 <div class="section" id="qualite">
