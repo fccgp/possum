@@ -2,10 +2,11 @@
 Développement
 =============
 
-Lors d'un commit, on peut indiquer la référence à un ticket en indiquant dans les commentaires ''refs #234''.
-On peut aussi fermer un ticket en indiquant ''fixes #234''.
+Voici le cycle de développement adopté pour la sortie des versions:
 
-Voici un exemple de commentaire: ''Ce commit concerne les refs #1, #2 et fixes #3''
+.. image:: images/cycle_de_developpement.png
+   :alt: Cycle de développement du projet
+
 
 Modèles
 =======
@@ -182,4 +183,35 @@ La définition de tous les codes est `ici <http://pylint-messages.wikidot.com/al
 
 .. raw:: html
    :file: qualite.html
+
+Les bugs
+========
+
+Nouveau bug
+-----------
+
+Lorsque vous avez trouvé un bug, vous pouvez vérifier en tout premier si ce bug est déjà connu. 
+Pour cela, il suffit de consulter la page suivante: `GitHub <https://github.com/possum-software/possum/issues>`_.
+
+Si votre bug est inconnu, alors nous vous serons reconnaissant de décrire ce bug et si possible les conditions
+pour le recréer à la même adresse que ci-dessus.
+
+Note importante: 
+
+Si le bug est un bug de sécurité, il est préférable d'envoyer un mail à `la liste de 
+de diffusion dédiée <https://possum.insa-rouen.fr/cgi-bin/mailman/listinfo/security>`_ et de ne pas
+créer un bug dans le gestionnaire de bug. En effet, on essayera de corriger le bug de sécurité avant
+de le rendre public.
+
+Correction d'un bug
+-------------------
+
+Cette section concerne surtout les développeurs.
+
+Si vous avez corriger un bug qui est référencé dans le gestionnaire de bug, alors vous pouvez le fermer
+automatiquement avec l'opération de commit en utilisant son numéro d'identifiant. Par exemple pour fermer
+le bug numéro 42, il vous suffira d'ajouter dans le commentaire du commit: ''Closes #42''.
+
+Si votre commit est en relation avec un bug mais ne le ferme pas, alors il suffit d'indiquer le numéro
+du bug dans le commentaire du commit. Par exemple: ''Prépare la correction de #42.''.
 

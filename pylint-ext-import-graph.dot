@@ -1,0 +1,68 @@
+digraph "pylint-ext-import-graph" {
+rankdir=LR
+charset="utf-8"
+URL="." node[shape="box"]
+"possum.base.models.StatsJourGeneral" [];
+"efl" [];
+"django.contrib.auth.models.User" [];
+"possum.base.models" [];
+"possum.base.models.Table" [];
+"django.db.models.Avg" [];
+"elementary" [];
+"possum.base.models.Produit" [];
+"elementary.cursors" [];
+"possum.base.models.Couleur" [];
+"possum.base.models.Etat" [];
+"possum.base.models.Paiement" [];
+"django.conf.settings" [];
+"possum.base.models.Log" [];
+"django.db.models.Max" [];
+"possum.base.models.Facture" [];
+"django.contrib.auth.authenticate" [];
+"mpd" [];
+"django.db.models.Min" [];
+"evas" [];
+"possum.base.models.Cuisson" [];
+"possum.base.models.PaiementType" [];
+"django.db.models" [];
+"ecore" [];
+"possum.base.models.Categorie" [];
+"possum.base.models.LogType" [];
+"possum.base.models.Zone" [];
+"possum.base.models.Accompagnement" [];
+"possum.base.models.ProduitVendu" [];
+"django.db.models.Sum" [];
+"possum.base.models.Sauce" [];
+"possum.base.models.Suivi" [];
+"efl" -> "possum.base.models.StatsJourGeneral" [];
+"possum.base.models" -> "django.contrib.auth.models.User" [];
+"efl" -> "possum.base.models.Table" [];
+"possum.base.models" -> "django.db.models.Avg" [];
+"efl" -> "elementary" [];
+"efl" -> "possum.base.models.Produit" [];
+"efl" -> "elementary.cursors" [];
+"efl" -> "possum.base.models.Couleur" [];
+"efl" -> "possum.base.models.Etat" [];
+"efl" -> "possum.base.models.Paiement" [];
+"possum.base.models" -> "django.conf.settings" [];
+"efl" -> "django.conf.settings" [];
+"efl" -> "possum.base.models.Log" [];
+"possum.base.models" -> "django.db.models.Max" [];
+"efl" -> "possum.base.models.Facture" [];
+"possum.base.models" -> "django.contrib.auth.authenticate" [];
+"efl" -> "mpd" [];
+"possum.base.models" -> "django.db.models.Min" [];
+"efl" -> "evas" [];
+"efl" -> "possum.base.models.Cuisson" [];
+"efl" -> "possum.base.models.PaiementType" [];
+"possum.base.models" -> "django.db.models" [];
+"efl" -> "ecore" [];
+"efl" -> "possum.base.models.Categorie" [];
+"efl" -> "possum.base.models.LogType" [];
+"efl" -> "possum.base.models.Zone" [];
+"efl" -> "possum.base.models.Accompagnement" [];
+"efl" -> "possum.base.models.ProduitVendu" [];
+"possum.base.models" -> "django.db.models.Sum" [];
+"efl" -> "possum.base.models.Sauce" [];
+"efl" -> "possum.base.models.Suivi" [];
+}
