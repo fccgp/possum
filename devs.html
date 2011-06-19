@@ -69,35 +69,40 @@
 <h1>4. Développement<a class="headerlink" href="#developpement" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Voici le cycle de développement adopté pour la sortie des versions:</p>
 <img alt="Cycle de développement du projet" src="_images/cycle_de_developpement.png" />
+<div class="section" id="convention-de-codage">
+<h2>4.1. Convention de codage<a class="headerlink" href="#convention-de-codage" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La convention de codage utilisée pour le projet suit le
+<a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">Style Guide for Python Code (PEP 8)</a>.</p>
+</div>
 <div class="section" id="modeles">
-<h2>4.1. Modèles<a class="headerlink" href="#modeles" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>4.2. Modèles<a class="headerlink" href="#modeles" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Voici le schèma général des différentes classes utilisées.</p>
 <a class="reference external image-reference" href="_images/models-base.png"><img alt="Schéma des classes d'objets" src="_images/models-base.png" style="width: 100.0px; height: 50.0px;" /></a>
 <p>À nouveau les différentes classes avec leurs héritages.</p>
 <p class="graphviz">
-<img src="_images/inheritance-21d49c2c083a52456a80f102f08a8e669f75592b.png" alt="Inheritance diagram of possum.base.models" usemap="#inheritance785a29abdc" class="inheritance"/>
+<img src="_images/inheritance-fd03609dc30953a17bd5ab1f2fa8aea16e9719a7.png" alt="Inheritance diagram of possum.base.models" usemap="#inheritance785a29abdc" class="inheritance"/>
 <map id="inheritance785a29abdc" name="inheritance785a29abdc">
-<area shape="rect" id="node9" href="#possum.base.models.Cuisson" title="Cuisson" alt="" coords="316,35,388,63"/>
-<area shape="rect" id="node13" href="#possum.base.models.LogType" title="LogType" alt="" coords="316,390,388,418"/>
-<area shape="rect" id="node20" href="#possum.base.models.Table" title="Table" alt="" coords="316,440,388,468"/>
-<area shape="rect" id="node22" href="#possum.base.models.Etat" title="Etat" alt="" coords="316,86,388,114"/>
-<area shape="rect" id="node32" href="#possum.base.models.Categorie" title="Categorie" alt="" coords="311,136,393,164"/>
-<area shape="rect" id="node35" href="#possum.base.models.Accompagnement" title="Accompagnement" alt="" coords="283,491,421,519"/>
-<area shape="rect" id="node37" href="#possum.base.models.Zone" title="Zone" alt="" coords="316,187,388,215"/>
-<area shape="rect" id="node48" href="#possum.base.models.Couleur" title="Couleur" alt="" coords="316,238,388,266"/>
-<area shape="rect" id="node52" href="#possum.base.models.Sauce" title="Sauce" alt="" coords="316,288,388,316"/>
-<area shape="rect" id="node25" href="#possum.base.models.Paiement" title="Paiement" alt="" coords="137,618,220,646"/>
-<area shape="rect" id="node27" href="#possum.base.models.Log" title="Log" alt="" coords="143,668,215,696"/>
-<area shape="rect" id="node39" href="#possum.base.models.Facture" title="Facture" alt="" coords="143,719,215,747"/>
-<area shape="rect" id="node44" href="#possum.base.models.ProduitVendu" title="ProduitVendu" alt="" coords="125,770,232,798"/>
-<area shape="rect" id="node50" href="#possum.base.models.Suivi" title="Suivi" alt="" coords="143,820,215,848"/>
-<area shape="rect" id="node15" href="#possum.base.models.PaiementType" title="PaiementType" alt="" coords="473,136,583,164"/>
-<area shape="rect" id="node46" href="#possum.base.models.Produit" title="Produit" alt="" coords="492,339,564,367"/>
+<area shape="rect" id="node26" href="#possum.base.models.PaiementType" title="PaiementType" alt="" coords="473,136,583,164"/>
+<area shape="rect" id="node44" href="#possum.base.models.Produit" title="Produit" alt="" coords="492,339,564,367"/>
+<area shape="rect" id="node4" href="#possum.base.models.LogType" title="LogType" alt="" coords="316,390,388,418"/>
+<area shape="rect" id="node17" href="#possum.base.models.Couleur" title="Couleur" alt="" coords="316,440,388,468"/>
+<area shape="rect" id="node22" href="#possum.base.models.Etat" title="Etat" alt="" coords="316,35,388,63"/>
+<area shape="rect" id="node29" href="#possum.base.models.Table" title="Table" alt="" coords="316,491,388,519"/>
+<area shape="rect" id="node31" href="#possum.base.models.Cuisson" title="Cuisson" alt="" coords="316,86,388,114"/>
+<area shape="rect" id="node37" href="#possum.base.models.Accompagnement" title="Accompagnement" alt="" coords="283,187,421,215"/>
+<area shape="rect" id="node39" href="#possum.base.models.Categorie" title="Categorie" alt="" coords="311,136,393,164"/>
+<area shape="rect" id="node42" href="#possum.base.models.Zone" title="Zone" alt="" coords="316,238,388,266"/>
+<area shape="rect" id="node50" href="#possum.base.models.Sauce" title="Sauce" alt="" coords="316,288,388,316"/>
+<area shape="rect" id="node11" href="#possum.base.models.Facture" title="Facture" alt="" coords="143,618,215,646"/>
+<area shape="rect" id="node15" href="#possum.base.models.Log" title="Log" alt="" coords="143,668,215,696"/>
+<area shape="rect" id="node19" href="#possum.base.models.ProduitVendu" title="ProduitVendu" alt="" coords="125,719,232,747"/>
+<area shape="rect" id="node34" href="#possum.base.models.Paiement" title="Paiement" alt="" coords="137,770,220,798"/>
+<area shape="rect" id="node48" href="#possum.base.models.Suivi" title="Suivi" alt="" coords="143,820,215,848"/>
 </map>
 </p>
 <p>La classe centrale, et donc la plus importante, est la classe <a class="reference internal" href="#facture">Facture</a>.</p>
 <div class="section" id="accompagnement">
-<h3>4.1.1. Accompagnement<a class="headerlink" href="#accompagnement" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.2.1. Accompagnement<a class="headerlink" href="#accompagnement" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-e9f2716207634ee545a79fa79476c40ea72be7e5.png" alt="Inheritance diagram of possum.base.models.Accompagnement" usemap="#inheritance43dd7a8bdd" class="inheritance"/>
 <map id="inheritance43dd7a8bdd" name="inheritance43dd7a8bdd">
@@ -111,9 +116,9 @@
 
 </div>
 <div class="section" id="categorie">
-<span id="id1"></span><h3>4.1.2. Categorie<a class="headerlink" href="#categorie" title="Lien permanent vers ce titre">¶</a></h3>
+<span id="id1"></span><h3>4.2.2. Categorie<a class="headerlink" href="#categorie" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-7817af7d795c1c555a03ce7fc95c2a8fb6703ef5.png" alt="Inheritance diagram of possum.base.models.Categorie" usemap="#inheritance9ce7763502" class="inheritance"/>
+<img src="_images/inheritance-588e871af52c76ccf75e3c95f2cbe5962dddfa3e.png" alt="Inheritance diagram of possum.base.models.Categorie" usemap="#inheritance9ce7763502" class="inheritance"/>
 <map id="inheritance9ce7763502" name="inheritance9ce7763502">
 <area shape="rect" id="node1" href="#possum.base.models.Categorie" title="Categorie" alt="" coords="247,30,329,58"/>
 </map>
@@ -125,7 +130,7 @@
 
 </div>
 <div class="section" id="couleur">
-<h3>4.1.3. Couleur<a class="headerlink" href="#couleur" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.2.3. Couleur<a class="headerlink" href="#couleur" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-e142b1ba26153bb14a0cc70a3a18dc2ee4293223.png" alt="Inheritance diagram of possum.base.models.Couleur" usemap="#inheritance4390dde6b9" class="inheritance"/>
 <map id="inheritance4390dde6b9" name="inheritance4390dde6b9">
@@ -145,9 +150,9 @@
 
 </div>
 <div class="section" id="cuisson">
-<h3>4.1.4. Cuisson<a class="headerlink" href="#cuisson" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.2.4. Cuisson<a class="headerlink" href="#cuisson" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-b9dc2f61b90e923100794eedf1cd12b3971ca38b.png" alt="Inheritance diagram of possum.base.models.Cuisson" usemap="#inheritance75480d9d2e" class="inheritance"/>
+<img src="_images/inheritance-7c7da63459c3e57b7793cd39f9981239238eb08a.png" alt="Inheritance diagram of possum.base.models.Cuisson" usemap="#inheritance75480d9d2e" class="inheritance"/>
 <map id="inheritance75480d9d2e" name="inheritance75480d9d2e">
 <area shape="rect" id="node1" href="#possum.base.models.Cuisson" title="Cuisson" alt="" coords="245,30,317,58"/>
 </map>
@@ -159,9 +164,9 @@
 
 </div>
 <div class="section" id="etat">
-<h3>4.1.5. Etat<a class="headerlink" href="#etat" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.2.5. Etat<a class="headerlink" href="#etat" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-3079036388f7a7e8deb0eba1a4c8702d9805cb04.png" alt="Inheritance diagram of possum.base.models.Etat" usemap="#inheritancec55e45be36" class="inheritance"/>
+<img src="_images/inheritance-39d4feaac770cb80a43367f33b506ef9909cbf6a.png" alt="Inheritance diagram of possum.base.models.Etat" usemap="#inheritancec55e45be36" class="inheritance"/>
 <map id="inheritancec55e45be36" name="inheritancec55e45be36">
 <area shape="rect" id="node1" href="#possum.base.models.Etat" title="Etat" alt="" coords="245,30,317,58"/>
 </map>
@@ -173,7 +178,7 @@
 
 </div>
 <div class="section" id="facture">
-<span id="id2"></span><h3>4.1.6. Facture<a class="headerlink" href="#facture" title="Lien permanent vers ce titre">¶</a></h3>
+<span id="id2"></span><h3>4.2.6. Facture<a class="headerlink" href="#facture" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-adf3916b38a9f749f971cd441fa0824e60d8725d.png" alt="Inheritance diagram of possum.base.models.Facture" usemap="#inheritanceae60faf467" class="inheritance"/>
 <map id="inheritanceae60faf467" name="inheritanceae60faf467">
@@ -397,7 +402,7 @@ de zone.</dd></dl>
 
 </div>
 <div class="section" id="log">
-<h3>4.1.7. Log<a class="headerlink" href="#log" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.2.7. Log<a class="headerlink" href="#log" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-9d359f14c12c73a93fe7d98fa88a1bf5157e7f3a.png" alt="Inheritance diagram of possum.base.models.Log" usemap="#inheritance1962c7af42" class="inheritance"/>
 <map id="inheritance1962c7af42" name="inheritance1962c7af42">
@@ -411,7 +416,7 @@ de zone.</dd></dl>
 
 </div>
 <div class="section" id="logtype">
-<h3>4.1.8. LogType<a class="headerlink" href="#logtype" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.2.8. LogType<a class="headerlink" href="#logtype" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-141403d57b92c00d4313d79443a615e3f9bd2e96.png" alt="Inheritance diagram of possum.base.models.LogType" usemap="#inheritance4d765ab671" class="inheritance"/>
 <map id="inheritance4d765ab671" name="inheritance4d765ab671">
@@ -425,7 +430,7 @@ de zone.</dd></dl>
 
 </div>
 <div class="section" id="paiement">
-<h3>4.1.9. Paiement<a class="headerlink" href="#paiement" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.2.9. Paiement<a class="headerlink" href="#paiement" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-20c47feed3f6bef7ae9815568f9f14c062827938.png" alt="Inheritance diagram of possum.base.models.Paiement" usemap="#inheritancee8f6f08ee7" class="inheritance"/>
 <map id="inheritancee8f6f08ee7" name="inheritancee8f6f08ee7">
@@ -439,11 +444,11 @@ de zone.</dd></dl>
 
 </div>
 <div class="section" id="paiementtype">
-<h3>4.1.10. PaiementType<a class="headerlink" href="#paiementtype" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.2.10. PaiementType<a class="headerlink" href="#paiementtype" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-92f64a7ae0696c8ab505c1b6e5b56783aa5d1305.png" alt="Inheritance diagram of possum.base.models.PaiementType" usemap="#inheritance090bea6f52" class="inheritance"/>
+<img src="_images/inheritance-c44da39d1498713fe10394db6672c6eb443f8465.png" alt="Inheritance diagram of possum.base.models.PaiementType" usemap="#inheritance090bea6f52" class="inheritance"/>
 <map id="inheritance090bea6f52" name="inheritance090bea6f52">
-<area shape="rect" id="node7" href="#possum.base.models.PaiementType" title="PaiementType" alt="" coords="393,30,503,58"/>
+<area shape="rect" id="node1" href="#possum.base.models.PaiementType" title="PaiementType" alt="" coords="393,30,503,58"/>
 </map>
 </p>
 <dl class="class">
@@ -453,7 +458,7 @@ de zone.</dd></dl>
 
 </div>
 <div class="section" id="produit">
-<h3>4.1.11. Produit<a class="headerlink" href="#produit" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.2.11. Produit<a class="headerlink" href="#produit" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-656a8e3f0c754b8294499d8f93aeb172c9c3069a.png" alt="Inheritance diagram of possum.base.models.Produit" usemap="#inheritance71efa81021" class="inheritance"/>
 <map id="inheritance71efa81021" name="inheritance71efa81021">
@@ -467,7 +472,7 @@ de zone.</dd></dl>
 
 </div>
 <div class="section" id="produitvendu">
-<h3>4.1.12. ProduitVendu<a class="headerlink" href="#produitvendu" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.2.12. ProduitVendu<a class="headerlink" href="#produitvendu" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-5a6cb887baf8bfb38782302fc8077ed2edce73d0.png" alt="Inheritance diagram of possum.base.models.ProduitVendu" usemap="#inheritancee2e6b12761" class="inheritance"/>
 <map id="inheritancee2e6b12761" name="inheritancee2e6b12761">
@@ -541,7 +546,7 @@ et False sinon.</p>
 
 </div>
 <div class="section" id="sauce">
-<span id="id3"></span><h3>4.1.13. Sauce<a class="headerlink" href="#sauce" title="Lien permanent vers ce titre">¶</a></h3>
+<span id="id3"></span><h3>4.2.13. Sauce<a class="headerlink" href="#sauce" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-b6c74ca1b6d8dfde96e009b292e97ca3e58cb66f.png" alt="Inheritance diagram of possum.base.models.Sauce" usemap="#inheritance15fcffc51a" class="inheritance"/>
 <map id="inheritance15fcffc51a" name="inheritance15fcffc51a">
@@ -555,7 +560,7 @@ et False sinon.</p>
 
 </div>
 <div class="section" id="suivi">
-<span id="id4"></span><h3>4.1.14. Suivi<a class="headerlink" href="#suivi" title="Lien permanent vers ce titre">¶</a></h3>
+<span id="id4"></span><h3>4.2.14. Suivi<a class="headerlink" href="#suivi" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-32b36e2fbb0d06906950849f29ca87353d0835d9.png" alt="Inheritance diagram of possum.base.models.Suivi" usemap="#inheritance848b84f3b8" class="inheritance"/>
 <map id="inheritance848b84f3b8" name="inheritance848b84f3b8">
@@ -569,7 +574,7 @@ et False sinon.</p>
 
 </div>
 <div class="section" id="table">
-<span id="id5"></span><h3>4.1.15. Table<a class="headerlink" href="#table" title="Lien permanent vers ce titre">¶</a></h3>
+<span id="id5"></span><h3>4.2.15. Table<a class="headerlink" href="#table" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
 <img src="_images/inheritance-62387c47423e0a39b8827f5f7f99a048f8068f58.png" alt="Inheritance diagram of possum.base.models.Table" usemap="#inheritance4781591a4e" class="inheritance"/>
 <map id="inheritance4781591a4e" name="inheritance4781591a4e">
@@ -583,7 +588,7 @@ et False sinon.</p>
 
 </div>
 <div class="section" id="zone">
-<span id="id6"></span><h3>4.1.16. Zone<a class="headerlink" href="#zone" title="Lien permanent vers ce titre">¶</a></h3>
+<span id="id6"></span><h3>4.2.16. Zone<a class="headerlink" href="#zone" title="Lien permanent vers ce titre">¶</a></h3>
 <dl class="class">
 <dt id="possum.base.models.Zone">
 <em class="property">class </em><tt class="descclassname">possum.base.models.</tt><tt class="descname">Zone</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#possum.base.models.Zone" title="Lien permanent vers cette définition">¶</a></dt>
@@ -592,7 +597,7 @@ et False sinon.</p>
 </div>
 </div>
 <div class="section" id="qualite">
-<h2>4.2. Qualité<a class="headerlink" href="#qualite" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>4.3. Qualité<a class="headerlink" href="#qualite" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La qualité générale de Possum est mesurée par Pylint.
 La définition de tous les codes est <a class="reference external" href="http://pylint-messages.wikidot.com/all-codes">ici</a>.</p>
 <html>
@@ -7074,9 +7079,9 @@ Your code has been rated at 4.82/10 (previous run: 4.86/10)</div>
 </html>
 </div>
 <div class="section" id="les-bugs">
-<h2>4.3. Les bugs<a class="headerlink" href="#les-bugs" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>4.4. Les bugs<a class="headerlink" href="#les-bugs" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="section" id="nouveau-bug">
-<h3>4.3.1. Nouveau bug<a class="headerlink" href="#nouveau-bug" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.4.1. Nouveau bug<a class="headerlink" href="#nouveau-bug" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Lorsque vous avez trouvé un bug, vous pouvez vérifier en tout premier si ce bug est déjà connu.
 Pour cela, il suffit de consulter la page suivante: <a class="reference external" href="https://github.com/possum-software/possum/issues">GitHub</a>.</p>
 <p>Si votre bug est inconnu, alors nous vous serons reconnaissant de décrire ce bug et si possible les conditions
@@ -7088,7 +7093,7 @@ créer un bug dans le gestionnaire de bug. En effet, on essayera de corriger le 
 de le rendre public.</p>
 </div>
 <div class="section" id="correction-d-un-bug">
-<h3>4.3.2. Correction d&#8217;un bug<a class="headerlink" href="#correction-d-un-bug" title="Lien permanent vers ce titre">¶</a></h3>
+<h3>4.4.2. Correction d&#8217;un bug<a class="headerlink" href="#correction-d-un-bug" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Cette section concerne surtout les développeurs.</p>
 <p>Si vous avez corriger un bug qui est référencé dans le gestionnaire de bug, alors vous pouvez le fermer
 automatiquement avec l&#8217;opération de commit en utilisant son numéro d&#8217;identifiant. Par exemple pour fermer
@@ -7111,29 +7116,30 @@ du bug dans le commentaire du commit. Par exemple: &#8216;&#8217;Prépare la cor
             <h3><a href="index.html">Table des matières</a></h3>
             <ul>
 <li><a class="reference external" href="#">4. Développement</a><ul>
-<li><a class="reference external" href="#modeles">4.1. Modèles</a><ul>
-<li><a class="reference external" href="#accompagnement">4.1.1. Accompagnement</a></li>
-<li><a class="reference external" href="#categorie">4.1.2. Categorie</a></li>
-<li><a class="reference external" href="#couleur">4.1.3. Couleur</a></li>
-<li><a class="reference external" href="#cuisson">4.1.4. Cuisson</a></li>
-<li><a class="reference external" href="#etat">4.1.5. Etat</a></li>
-<li><a class="reference external" href="#facture">4.1.6. Facture</a></li>
-<li><a class="reference external" href="#log">4.1.7. Log</a></li>
-<li><a class="reference external" href="#logtype">4.1.8. LogType</a></li>
-<li><a class="reference external" href="#paiement">4.1.9. Paiement</a></li>
-<li><a class="reference external" href="#paiementtype">4.1.10. PaiementType</a></li>
-<li><a class="reference external" href="#produit">4.1.11. Produit</a></li>
-<li><a class="reference external" href="#produitvendu">4.1.12. ProduitVendu</a></li>
-<li><a class="reference external" href="#sauce">4.1.13. Sauce</a></li>
-<li><a class="reference external" href="#suivi">4.1.14. Suivi</a></li>
-<li><a class="reference external" href="#table">4.1.15. Table</a></li>
-<li><a class="reference external" href="#zone">4.1.16. Zone</a></li>
+<li><a class="reference external" href="#convention-de-codage">4.1. Convention de codage</a></li>
+<li><a class="reference external" href="#modeles">4.2. Modèles</a><ul>
+<li><a class="reference external" href="#accompagnement">4.2.1. Accompagnement</a></li>
+<li><a class="reference external" href="#categorie">4.2.2. Categorie</a></li>
+<li><a class="reference external" href="#couleur">4.2.3. Couleur</a></li>
+<li><a class="reference external" href="#cuisson">4.2.4. Cuisson</a></li>
+<li><a class="reference external" href="#etat">4.2.5. Etat</a></li>
+<li><a class="reference external" href="#facture">4.2.6. Facture</a></li>
+<li><a class="reference external" href="#log">4.2.7. Log</a></li>
+<li><a class="reference external" href="#logtype">4.2.8. LogType</a></li>
+<li><a class="reference external" href="#paiement">4.2.9. Paiement</a></li>
+<li><a class="reference external" href="#paiementtype">4.2.10. PaiementType</a></li>
+<li><a class="reference external" href="#produit">4.2.11. Produit</a></li>
+<li><a class="reference external" href="#produitvendu">4.2.12. ProduitVendu</a></li>
+<li><a class="reference external" href="#sauce">4.2.13. Sauce</a></li>
+<li><a class="reference external" href="#suivi">4.2.14. Suivi</a></li>
+<li><a class="reference external" href="#table">4.2.15. Table</a></li>
+<li><a class="reference external" href="#zone">4.2.16. Zone</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="#qualite">4.2. Qualité</a></li>
-<li><a class="reference external" href="#les-bugs">4.3. Les bugs</a><ul>
-<li><a class="reference external" href="#nouveau-bug">4.3.1. Nouveau bug</a></li>
-<li><a class="reference external" href="#correction-d-un-bug">4.3.2. Correction d&#8217;un bug</a></li>
+<li><a class="reference external" href="#qualite">4.3. Qualité</a></li>
+<li><a class="reference external" href="#les-bugs">4.4. Les bugs</a><ul>
+<li><a class="reference external" href="#nouveau-bug">4.4.1. Nouveau bug</a></li>
+<li><a class="reference external" href="#correction-d-un-bug">4.4.2. Correction d&#8217;un bug</a></li>
 </ul>
 </li>
 </ul>

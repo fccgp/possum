@@ -20,7 +20,9 @@ Pourquoi seulement en français ?
 --------------------------------
 
 À cause des taux de TVA particulier à la France, le plus simple pour le moment
-est de rester focaliser sur la France.
+est de rester focaliser sur la France. Il est prévu de traduire le logiciel et la 
+documentation en anglais dans un second temps. Toutefois, il est tout à fait possible
+d'écrire sur les listes de diffusions et sur le gestionnaire de bugs en anglais.
 
 Que faire lorsqu'un bug est trouvé ?
 ------------------------------------
@@ -48,8 +50,8 @@ Vous ne pourrez pas poster de message sur cette liste.
 Pour finir, il y a la liste dédiée aux rapports sur la sécurité. Vous ne pourrez pas vous abonner mais
 vous pourrez poster les bugs de sécurité que vous avez découvert: `security <https://possum.insa-rouen.fr/cgi-bin/mailman/listinfo/security>`_.
 
-Messagerie instantannée
-=======================
+Messagerie instantanée
+======================
 
 Pour le moment, nous n'avons pas de salon dédié. Il est préférable d'utiliser
 la liste de diffusion.
