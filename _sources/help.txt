@@ -25,15 +25,7 @@ est de rester focaliser sur la France.
 Que faire lorsqu'un bug est trouvé ?
 ------------------------------------
 
-1/ faite une recherche dans le `gestionnaire de bugs <https://github.com/possum-software/possum/issues>`_
-pour savoir si le bug est déjà connu ou pas.
-
-2/ faite une recherche dans les ` archives de la liste de diffusion <http://www.mail-archive.com/devs@possum.insa-rouen.fr/>`_
-
-3/ il n'est malheureusement pas possible de créer un rapport
-de bug directement (sans avoir de compte) sur le gestionnaire de bug. 
-Si le bug est avèré, vous devez créer une
-nouvelle entrée au niveau du gestionnaire de bug.
+Voir la partie ''Développement / Les bugs''.
 
 Comment contribuer au projet ?
 ------------------------------

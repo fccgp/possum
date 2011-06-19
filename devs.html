@@ -67,42 +67,41 @@
             
   <div class="section" id="developpement">
 <h1>4. Développement<a class="headerlink" href="#developpement" title="Lien permanent vers ce titre">¶</a></h1>
-<p>Lors d&#8217;un commit, on peut indiquer la référence à un ticket en indiquant dans les commentaires &#8216;&#8217;refs #234&#8217;&#8216;.
-On peut aussi fermer un ticket en indiquant &#8216;&#8217;fixes #234&#8217;&#8216;.</p>
-<p>Voici un exemple de commentaire: &#8216;&#8217;Ce commit concerne les refs #1, #2 et fixes #3&#8217;&#8216;</p>
+<p>Voici le cycle de développement adopté pour la sortie des versions:</p>
+<img alt="Cycle de développement du projet" src="_images/cycle_de_developpement.png" />
 <div class="section" id="modeles">
 <h2>4.1. Modèles<a class="headerlink" href="#modeles" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Voici le schèma général des différentes classes utilisées.</p>
 <a class="reference external image-reference" href="_images/models-base.png"><img alt="Schéma des classes d'objets" src="_images/models-base.png" style="width: 100.0px; height: 50.0px;" /></a>
 <p>À nouveau les différentes classes avec leurs héritages.</p>
 <p class="graphviz">
-<img src="_images/inheritance-a4a1b776b83fbec25c0cba52f6e875d57e303771.png" alt="Inheritance diagram of possum.base.models" usemap="#inheritance785a29abdc" class="inheritance"/>
+<img src="_images/inheritance-21d49c2c083a52456a80f102f08a8e669f75592b.png" alt="Inheritance diagram of possum.base.models" usemap="#inheritance785a29abdc" class="inheritance"/>
 <map id="inheritance785a29abdc" name="inheritance785a29abdc">
-<area shape="rect" id="node7" href="devs/Couleur.html#possum.base.models.Couleur" title="Couleur" alt="" coords="316,157,388,185"/>
-<area shape="rect" id="node9" href="devs/Zone.html#possum.base.models.Zone" title="Zone" alt="" coords="316,207,388,235"/>
-<area shape="rect" id="node15" href="devs/Sauce.html#possum.base.models.Sauce" title="Sauce" alt="" coords="316,258,388,286"/>
-<area shape="rect" id="node17" href="devs/Table.html#possum.base.models.Table" title="Table" alt="" coords="316,309,388,337"/>
-<area shape="rect" id="node19" href="devs/Etat.html#possum.base.models.Etat" title="Etat" alt="" coords="316,359,388,387"/>
-<area shape="rect" id="node22" href="devs/Categorie.html#possum.base.models.Categorie" title="Categorie" alt="" coords="311,410,393,438"/>
-<area shape="rect" id="node36" href="devs/LogType.html#possum.base.models.LogType" title="LogType" alt="" coords="316,55,388,83"/>
-<area shape="rect" id="node40" href="devs/Accompagnement.html#possum.base.models.Accompagnement" title="Accompagnement" alt="" coords="283,106,421,134"/>
-<area shape="rect" id="node48" href="devs/Cuisson.html#possum.base.models.Cuisson" title="Cuisson" alt="" coords="316,461,388,489"/>
-<area shape="rect" id="node25" href="devs/Log.html#possum.base.models.Log" title="Log" alt="" coords="143,638,215,666"/>
-<area shape="rect" id="node32" href="devs/Paiement.html#possum.base.models.Paiement" title="Paiement" alt="" coords="137,689,220,717"/>
-<area shape="rect" id="node34" href="devs/ProduitVendu.html#possum.base.models.ProduitVendu" title="ProduitVendu" alt="" coords="125,739,232,767"/>
-<area shape="rect" id="node42" href="devs/Facture.html#possum.base.models.Facture" title="Facture" alt="" coords="143,790,215,818"/>
-<area shape="rect" id="node51" href="devs/Suivi.html#possum.base.models.Suivi" title="Suivi" alt="" coords="143,841,215,869"/>
-<area shape="rect" id="node45" href="devs/PaiementType.html#possum.base.models.PaiementType" title="PaiementType" alt="" coords="473,283,583,311"/>
-<area shape="rect" id="node29" href="devs/Produit.html#possum.base.models.Produit" title="Produit" alt="" coords="492,5,564,33"/>
+<area shape="rect" id="node9" href="#possum.base.models.Cuisson" title="Cuisson" alt="" coords="316,35,388,63"/>
+<area shape="rect" id="node13" href="#possum.base.models.LogType" title="LogType" alt="" coords="316,390,388,418"/>
+<area shape="rect" id="node20" href="#possum.base.models.Table" title="Table" alt="" coords="316,440,388,468"/>
+<area shape="rect" id="node22" href="#possum.base.models.Etat" title="Etat" alt="" coords="316,86,388,114"/>
+<area shape="rect" id="node32" href="#possum.base.models.Categorie" title="Categorie" alt="" coords="311,136,393,164"/>
+<area shape="rect" id="node35" href="#possum.base.models.Accompagnement" title="Accompagnement" alt="" coords="283,491,421,519"/>
+<area shape="rect" id="node37" href="#possum.base.models.Zone" title="Zone" alt="" coords="316,187,388,215"/>
+<area shape="rect" id="node48" href="#possum.base.models.Couleur" title="Couleur" alt="" coords="316,238,388,266"/>
+<area shape="rect" id="node52" href="#possum.base.models.Sauce" title="Sauce" alt="" coords="316,288,388,316"/>
+<area shape="rect" id="node25" href="#possum.base.models.Paiement" title="Paiement" alt="" coords="137,618,220,646"/>
+<area shape="rect" id="node27" href="#possum.base.models.Log" title="Log" alt="" coords="143,668,215,696"/>
+<area shape="rect" id="node39" href="#possum.base.models.Facture" title="Facture" alt="" coords="143,719,215,747"/>
+<area shape="rect" id="node44" href="#possum.base.models.ProduitVendu" title="ProduitVendu" alt="" coords="125,770,232,798"/>
+<area shape="rect" id="node50" href="#possum.base.models.Suivi" title="Suivi" alt="" coords="143,820,215,848"/>
+<area shape="rect" id="node15" href="#possum.base.models.PaiementType" title="PaiementType" alt="" coords="473,136,583,164"/>
+<area shape="rect" id="node46" href="#possum.base.models.Produit" title="Produit" alt="" coords="492,339,564,367"/>
 </map>
 </p>
 <p>La classe centrale, et donc la plus importante, est la classe <a class="reference internal" href="#facture">Facture</a>.</p>
 <div class="section" id="accompagnement">
 <h3>4.1.1. Accompagnement<a class="headerlink" href="#accompagnement" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-ca6a5bf4e4874d53f54fbadc98632adba368515c.png" alt="Inheritance diagram of possum.base.models.Accompagnement" usemap="#inheritance43dd7a8bdd" class="inheritance"/>
+<img src="_images/inheritance-e9f2716207634ee545a79fa79476c40ea72be7e5.png" alt="Inheritance diagram of possum.base.models.Accompagnement" usemap="#inheritance43dd7a8bdd" class="inheritance"/>
 <map id="inheritance43dd7a8bdd" name="inheritance43dd7a8bdd">
-<area shape="rect" id="node1" href="devs/Accompagnement.html#possum.base.models.Accompagnement" title="Accompagnement" alt="" coords="247,5,385,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.Accompagnement" title="Accompagnement" alt="" coords="247,5,385,33"/>
 </map>
 </p>
 <dl class="class">
@@ -114,9 +113,9 @@ On peut aussi fermer un ticket en indiquant &#8216;&#8217;fixes #234&#8217;&#821
 <div class="section" id="categorie">
 <span id="id1"></span><h3>4.1.2. Categorie<a class="headerlink" href="#categorie" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-bcdf0d7a1ec230724de2348b724f4c58aa5b2867.png" alt="Inheritance diagram of possum.base.models.Categorie" usemap="#inheritance9ce7763502" class="inheritance"/>
+<img src="_images/inheritance-7817af7d795c1c555a03ce7fc95c2a8fb6703ef5.png" alt="Inheritance diagram of possum.base.models.Categorie" usemap="#inheritance9ce7763502" class="inheritance"/>
 <map id="inheritance9ce7763502" name="inheritance9ce7763502">
-<area shape="rect" id="node1" href="devs/Categorie.html#possum.base.models.Categorie" title="Categorie" alt="" coords="247,30,329,58"/>
+<area shape="rect" id="node1" href="#possum.base.models.Categorie" title="Categorie" alt="" coords="247,30,329,58"/>
 </map>
 </p>
 <dl class="class">
@@ -128,9 +127,9 @@ On peut aussi fermer un ticket en indiquant &#8216;&#8217;fixes #234&#8217;&#821
 <div class="section" id="couleur">
 <h3>4.1.3. Couleur<a class="headerlink" href="#couleur" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-524311e7a0689460de6ede8b24ab209598634803.png" alt="Inheritance diagram of possum.base.models.Couleur" usemap="#inheritance4390dde6b9" class="inheritance"/>
+<img src="_images/inheritance-e142b1ba26153bb14a0cc70a3a18dc2ee4293223.png" alt="Inheritance diagram of possum.base.models.Couleur" usemap="#inheritance4390dde6b9" class="inheritance"/>
 <map id="inheritance4390dde6b9" name="inheritance4390dde6b9">
-<area shape="rect" id="node1" href="devs/Couleur.html#possum.base.models.Couleur" title="Couleur" alt="" coords="245,5,317,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.Couleur" title="Couleur" alt="" coords="245,5,317,33"/>
 </map>
 </p>
 <dl class="class">
@@ -148,9 +147,9 @@ On peut aussi fermer un ticket en indiquant &#8216;&#8217;fixes #234&#8217;&#821
 <div class="section" id="cuisson">
 <h3>4.1.4. Cuisson<a class="headerlink" href="#cuisson" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-d46b3e6b07f59a204a5006e8e1bdfbe2be3f13d3.png" alt="Inheritance diagram of possum.base.models.Cuisson" usemap="#inheritance75480d9d2e" class="inheritance"/>
+<img src="_images/inheritance-b9dc2f61b90e923100794eedf1cd12b3971ca38b.png" alt="Inheritance diagram of possum.base.models.Cuisson" usemap="#inheritance75480d9d2e" class="inheritance"/>
 <map id="inheritance75480d9d2e" name="inheritance75480d9d2e">
-<area shape="rect" id="node1" href="devs/Cuisson.html#possum.base.models.Cuisson" title="Cuisson" alt="" coords="245,30,317,58"/>
+<area shape="rect" id="node1" href="#possum.base.models.Cuisson" title="Cuisson" alt="" coords="245,30,317,58"/>
 </map>
 </p>
 <dl class="class">
@@ -162,9 +161,9 @@ On peut aussi fermer un ticket en indiquant &#8216;&#8217;fixes #234&#8217;&#821
 <div class="section" id="etat">
 <h3>4.1.5. Etat<a class="headerlink" href="#etat" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-7452b3220e267dc3b8d896889028c254e965f1e9.png" alt="Inheritance diagram of possum.base.models.Etat" usemap="#inheritancec55e45be36" class="inheritance"/>
+<img src="_images/inheritance-3079036388f7a7e8deb0eba1a4c8702d9805cb04.png" alt="Inheritance diagram of possum.base.models.Etat" usemap="#inheritancec55e45be36" class="inheritance"/>
 <map id="inheritancec55e45be36" name="inheritancec55e45be36">
-<area shape="rect" id="node1" href="devs/Etat.html#possum.base.models.Etat" title="Etat" alt="" coords="245,30,317,58"/>
+<area shape="rect" id="node1" href="#possum.base.models.Etat" title="Etat" alt="" coords="245,30,317,58"/>
 </map>
 </p>
 <dl class="class">
@@ -176,9 +175,9 @@ On peut aussi fermer un ticket en indiquant &#8216;&#8217;fixes #234&#8217;&#821
 <div class="section" id="facture">
 <span id="id2"></span><h3>4.1.6. Facture<a class="headerlink" href="#facture" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-a68dee81fd81a4fbde6804c10409c2d188c17f84.png" alt="Inheritance diagram of possum.base.models.Facture" usemap="#inheritanceae60faf467" class="inheritance"/>
+<img src="_images/inheritance-adf3916b38a9f749f971cd441fa0824e60d8725d.png" alt="Inheritance diagram of possum.base.models.Facture" usemap="#inheritanceae60faf467" class="inheritance"/>
 <map id="inheritanceae60faf467" name="inheritanceae60faf467">
-<area shape="rect" id="node1" href="devs/Facture.html#possum.base.models.Facture" title="Facture" alt="" coords="125,5,197,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.Facture" title="Facture" alt="" coords="125,5,197,33"/>
 </map>
 </p>
 <dl class="class">
@@ -400,9 +399,9 @@ de zone.</dd></dl>
 <div class="section" id="log">
 <h3>4.1.7. Log<a class="headerlink" href="#log" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-96fc8c24cae6553a19ca8d84bcc1b4c3d5152036.png" alt="Inheritance diagram of possum.base.models.Log" usemap="#inheritance1962c7af42" class="inheritance"/>
+<img src="_images/inheritance-9d359f14c12c73a93fe7d98fa88a1bf5157e7f3a.png" alt="Inheritance diagram of possum.base.models.Log" usemap="#inheritance1962c7af42" class="inheritance"/>
 <map id="inheritance1962c7af42" name="inheritance1962c7af42">
-<area shape="rect" id="node1" href="devs/Log.html#possum.base.models.Log" title="Log" alt="" coords="125,5,197,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.Log" title="Log" alt="" coords="125,5,197,33"/>
 </map>
 </p>
 <dl class="class">
@@ -414,9 +413,9 @@ de zone.</dd></dl>
 <div class="section" id="logtype">
 <h3>4.1.8. LogType<a class="headerlink" href="#logtype" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-6d611ea203973486d720e9f9e9bb16ba2417122b.png" alt="Inheritance diagram of possum.base.models.LogType" usemap="#inheritance4d765ab671" class="inheritance"/>
+<img src="_images/inheritance-141403d57b92c00d4313d79443a615e3f9bd2e96.png" alt="Inheritance diagram of possum.base.models.LogType" usemap="#inheritance4d765ab671" class="inheritance"/>
 <map id="inheritance4d765ab671" name="inheritance4d765ab671">
-<area shape="rect" id="node1" href="devs/LogType.html#possum.base.models.LogType" title="LogType" alt="" coords="247,5,319,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.LogType" title="LogType" alt="" coords="247,5,319,33"/>
 </map>
 </p>
 <dl class="class">
@@ -428,9 +427,9 @@ de zone.</dd></dl>
 <div class="section" id="paiement">
 <h3>4.1.9. Paiement<a class="headerlink" href="#paiement" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-015387426be75b64327add5d7fc1c82b9cf21d59.png" alt="Inheritance diagram of possum.base.models.Paiement" usemap="#inheritancee8f6f08ee7" class="inheritance"/>
+<img src="_images/inheritance-20c47feed3f6bef7ae9815568f9f14c062827938.png" alt="Inheritance diagram of possum.base.models.Paiement" usemap="#inheritancee8f6f08ee7" class="inheritance"/>
 <map id="inheritancee8f6f08ee7" name="inheritancee8f6f08ee7">
-<area shape="rect" id="node1" href="devs/Paiement.html#possum.base.models.Paiement" title="Paiement" alt="" coords="125,5,208,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.Paiement" title="Paiement" alt="" coords="125,5,208,33"/>
 </map>
 </p>
 <dl class="class">
@@ -442,9 +441,9 @@ de zone.</dd></dl>
 <div class="section" id="paiementtype">
 <h3>4.1.10. PaiementType<a class="headerlink" href="#paiementtype" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-e550f1e82d8733296392b544c909fee4adff23fd.png" alt="Inheritance diagram of possum.base.models.PaiementType" usemap="#inheritance090bea6f52" class="inheritance"/>
+<img src="_images/inheritance-92f64a7ae0696c8ab505c1b6e5b56783aa5d1305.png" alt="Inheritance diagram of possum.base.models.PaiementType" usemap="#inheritance090bea6f52" class="inheritance"/>
 <map id="inheritance090bea6f52" name="inheritance090bea6f52">
-<area shape="rect" id="node6" href="devs/PaiementType.html#possum.base.models.PaiementType" title="PaiementType" alt="" coords="393,30,503,58"/>
+<area shape="rect" id="node7" href="#possum.base.models.PaiementType" title="PaiementType" alt="" coords="393,30,503,58"/>
 </map>
 </p>
 <dl class="class">
@@ -456,9 +455,9 @@ de zone.</dd></dl>
 <div class="section" id="produit">
 <h3>4.1.11. Produit<a class="headerlink" href="#produit" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-d1f65b20e355d8bf902fee4bdf6dc936868d2804.png" alt="Inheritance diagram of possum.base.models.Produit" usemap="#inheritance71efa81021" class="inheritance"/>
+<img src="_images/inheritance-656a8e3f0c754b8294499d8f93aeb172c9c3069a.png" alt="Inheritance diagram of possum.base.models.Produit" usemap="#inheritance71efa81021" class="inheritance"/>
 <map id="inheritance71efa81021" name="inheritance71efa81021">
-<area shape="rect" id="node1" href="devs/Produit.html#possum.base.models.Produit" title="Produit" alt="" coords="392,5,464,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.Produit" title="Produit" alt="" coords="392,5,464,33"/>
 </map>
 </p>
 <dl class="class">
@@ -470,9 +469,9 @@ de zone.</dd></dl>
 <div class="section" id="produitvendu">
 <h3>4.1.12. ProduitVendu<a class="headerlink" href="#produitvendu" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-40bca2d2bc6ac27bac0284f4ff242d73c87f2ed3.png" alt="Inheritance diagram of possum.base.models.ProduitVendu" usemap="#inheritancee2e6b12761" class="inheritance"/>
+<img src="_images/inheritance-5a6cb887baf8bfb38782302fc8077ed2edce73d0.png" alt="Inheritance diagram of possum.base.models.ProduitVendu" usemap="#inheritancee2e6b12761" class="inheritance"/>
 <map id="inheritancee2e6b12761" name="inheritancee2e6b12761">
-<area shape="rect" id="node1" href="devs/ProduitVendu.html#possum.base.models.ProduitVendu" title="ProduitVendu" alt="" coords="125,5,232,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.ProduitVendu" title="ProduitVendu" alt="" coords="125,5,232,33"/>
 </map>
 </p>
 <dl class="class">
@@ -544,9 +543,9 @@ et False sinon.</p>
 <div class="section" id="sauce">
 <span id="id3"></span><h3>4.1.13. Sauce<a class="headerlink" href="#sauce" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-de78604a99975bdfc94f44de8041e0318a9d3009.png" alt="Inheritance diagram of possum.base.models.Sauce" usemap="#inheritance15fcffc51a" class="inheritance"/>
+<img src="_images/inheritance-b6c74ca1b6d8dfde96e009b292e97ca3e58cb66f.png" alt="Inheritance diagram of possum.base.models.Sauce" usemap="#inheritance15fcffc51a" class="inheritance"/>
 <map id="inheritance15fcffc51a" name="inheritance15fcffc51a">
-<area shape="rect" id="node1" href="devs/Sauce.html#possum.base.models.Sauce" title="Sauce" alt="" coords="245,5,317,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.Sauce" title="Sauce" alt="" coords="245,5,317,33"/>
 </map>
 </p>
 <dl class="class">
@@ -558,9 +557,9 @@ et False sinon.</p>
 <div class="section" id="suivi">
 <span id="id4"></span><h3>4.1.14. Suivi<a class="headerlink" href="#suivi" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-904da000ac6b8fc39d019f7c291db6b83e5fb787.png" alt="Inheritance diagram of possum.base.models.Suivi" usemap="#inheritance848b84f3b8" class="inheritance"/>
+<img src="_images/inheritance-32b36e2fbb0d06906950849f29ca87353d0835d9.png" alt="Inheritance diagram of possum.base.models.Suivi" usemap="#inheritance848b84f3b8" class="inheritance"/>
 <map id="inheritance848b84f3b8" name="inheritance848b84f3b8">
-<area shape="rect" id="node1" href="devs/Suivi.html#possum.base.models.Suivi" title="Suivi" alt="" coords="125,5,197,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.Suivi" title="Suivi" alt="" coords="125,5,197,33"/>
 </map>
 </p>
 <dl class="class">
@@ -572,9 +571,9 @@ et False sinon.</p>
 <div class="section" id="table">
 <span id="id5"></span><h3>4.1.15. Table<a class="headerlink" href="#table" title="Lien permanent vers ce titre">¶</a></h3>
 <p class="graphviz">
-<img src="_images/inheritance-a82e741f421f57820e5dbf353a4301cd1ec3e6a3.png" alt="Inheritance diagram of possum.base.models.Table" usemap="#inheritance4781591a4e" class="inheritance"/>
+<img src="_images/inheritance-62387c47423e0a39b8827f5f7f99a048f8068f58.png" alt="Inheritance diagram of possum.base.models.Table" usemap="#inheritance4781591a4e" class="inheritance"/>
 <map id="inheritance4781591a4e" name="inheritance4781591a4e">
-<area shape="rect" id="node1" href="devs/Table.html#possum.base.models.Table" title="Table" alt="" coords="245,5,317,33"/>
+<area shape="rect" id="node1" href="#possum.base.models.Table" title="Table" alt="" coords="245,5,317,33"/>
 </map>
 </p>
 <dl class="class">
@@ -596,6 +595,6507 @@ et False sinon.</p>
 <h2>4.2. Qualité<a class="headerlink" href="#qualite" title="Lien permanent vers ce titre">¶</a></h2>
 <p>La qualité générale de Possum est mesurée par Pylint.
 La définition de tous les codes est <a class="reference external" href="http://pylint-messages.wikidot.com/all-codes">ici</a>.</p>
+<html>
+<body>
+<div>
+<h1>Report</h1>
+<p>2440 statements analysed.</p><div>
+<h2>Statistics by type</h2>
+<table>
+<tr class="header">
+<th>type</th>
+<th>number</th>
+<th>old number</th>
+<th>difference</th>
+<th>%documented</th>
+<th>%badname</th>
+</tr>
+<tr class="even">
+<td>module</td>
+<td>2</td>
+<td>2</td>
+<td>=</td>
+<td>50.00</td>
+<td>0.00</td>
+</tr>
+<tr class="odd">
+<td>class</td>
+<td>33</td>
+<td>33</td>
+<td>=</td>
+<td>42.42</td>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<td>method</td>
+<td>68</td>
+<td>68</td>
+<td>=</td>
+<td>70.59</td>
+<td>10.29</td>
+</tr>
+<tr class="odd">
+<td>function</td>
+<td>83</td>
+<td>83</td>
+<td>=</td>
+<td>53.01</td>
+<td>0.00</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>External dependencies</h2>
+<pre>django 
+  \-conf 
+  | \-settings (possum.base.models,efl)
+  \-contrib 
+  | \-auth 
+  |   \-authenticate (possum.base.models)
+  |   \-models 
+  |     \-User (possum.base.models)
+  \-db 
+    \-models (possum.base.models)
+      \-Avg (possum.base.models)
+      \-Max (possum.base.models)
+      \-Min (possum.base.models)
+      \-Sum (possum.base.models)
+ecore (efl)
+elementary (efl)
+  \-cursors (efl)
+evas (efl)
+mpd (efl)
+possum 
+  \-base 
+    \-models 
+      \-Accompagnement (efl)
+      \-Categorie (efl)
+      \-Couleur (efl)
+      \-Cuisson (efl)
+      \-Etat (efl)
+      \-Facture (efl)
+      \-Log (efl)
+      \-LogType (efl)
+      \-Paiement (efl)
+      \-PaiementType (efl)
+      \-Produit (efl)
+      \-ProduitVendu (efl)
+      \-Sauce (efl)
+      \-StatsJourGeneral (efl)
+      \-Suivi (efl)
+      \-Table (efl)
+      \-Zone (efl)</pre></div>
+<div>
+<h2>Modules dependencies graph</h2>
+<p>imports graph has been written to pylint-import-graph.dot</p><p>external imports graph has been written to pylint-ext-import-graph.dot</p><p>internal imports graph has been written to pylint-int-import-graph.dot</p></div>
+<div>
+<h2>Raw metrics</h2>
+<table>
+<tr class="header">
+<th>type</th>
+<th>number</th>
+<th>%</th>
+<th>previous</th>
+<th>difference</th>
+</tr>
+<tr class="even">
+<td>code</td>
+<td>2679</td>
+<td>76.26</td>
+<td>2679</td>
+<td>=</td>
+</tr>
+<tr class="odd">
+<td>docstring</td>
+<td>356</td>
+<td>10.13</td>
+<td>356</td>
+<td>=</td>
+</tr>
+<tr class="even">
+<td>comment</td>
+<td>235</td>
+<td>6.69</td>
+<td>235</td>
+<td>=</td>
+</tr>
+<tr class="odd">
+<td>empty</td>
+<td>243</td>
+<td>6.92</td>
+<td>243</td>
+<td>=</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>Duplication</h2>
+<table>
+<tr class="header">
+<th>&#160;</th>
+<th>now</th>
+<th>previous</th>
+<th>difference</th>
+</tr>
+<tr class="even">
+<th>nb duplicated lines</th>
+<td>0</td>
+<td>0</td>
+<td>=</td>
+</tr>
+<tr class="odd">
+<th>percent duplicated lines</th>
+<td>0.000</td>
+<td>0.000</td>
+<td>=</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>Messages by category</h2>
+<table>
+<tr class="header">
+<th>type</th>
+<th>number</th>
+<th>previous</th>
+<th>difference</th>
+</tr>
+<tr class="even">
+<td>convention</td>
+<td>483</td>
+<td>483</td>
+<td>=</td>
+</tr>
+<tr class="odd">
+<td>refactor</td>
+<td>38</td>
+<td>38</td>
+<td>=</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>252</td>
+<td>252</td>
+<td>=</td>
+</tr>
+<tr class="odd">
+<td>error</td>
+<td>98</td>
+<td>96</td>
+<td>+2.00</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>% errors / warnings by module</h2>
+<table>
+<tr class="header">
+<th>module</th>
+<th>error</th>
+<th>warning</th>
+<th>refactor</th>
+<th>convention</th>
+</tr>
+<tr class="even">
+<td>possum.base.models</td>
+<td>72.45</td>
+<td>9.13</td>
+<td>81.58</td>
+<td>29.19</td>
+</tr>
+<tr class="odd">
+<td>efl</td>
+<td>27.55</td>
+<td>90.87</td>
+<td>18.42</td>
+<td>70.81</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>Messages</h2>
+<table>
+<tr class="header">
+<th>message id</th>
+<th>occurrences</th>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>329</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>114</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>94</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>79</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>62</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>55</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>24</td>
+</tr>
+<tr class="odd">
+<td>C0324</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td>R0201</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>W0702</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td>W0601</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>W0232</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>R0903</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>W0611</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>R0915</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>W0603</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>W0612</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>R0914</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>E0602</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>W0622</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>R0912</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>C0302</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>W0621</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>R0904</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>E0611</td>
+<td>1</td>
+</tr>
+</table>
+</div>
+<div>
+<h2>Global evaluation</h2>
+Your code has been rated at 4.82/10 (previous run: 4.86/10)</div>
+<div>
+<h2>Messages</h2>
+<table>
+<tr class="header">
+<th>type</th>
+<th>module</th>
+<th>object</th>
+<th>line</th>
+<th>message</th>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>1144</td>
+<td>Line too long (81/80)</td>
+</tr>
+<tr class="odd">
+<td>C0302</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>1</td>
+<td>Too many lines in module (2461)</td>
+</tr>
+<tr class="even">
+<td>E0611</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>25</td>
+<td>No name 'cursors' in module 'elementary'</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>74</td>
+<td>Class 'Zone' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>80</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>W0702</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>146</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>143</td>
+<td>Class 'Paiement' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>W0702</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>151</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>148</td>
+<td>Class 'Paiement' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>156</td>
+<td>Invalid name "facture" (should match (([A-Z_][A-Z1-9_]*)|(__.*__))$)</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>gl_label_get</td>
+<td>177</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_label_get</td>
+<td>177</td>
+<td>Unused argument 'part'</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_label_get</td>
+<td>177</td>
+<td>Unused argument 'obj'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>gl_label_get_sub</td>
+<td>180</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_label_get_sub</td>
+<td>180</td>
+<td>Unused argument 'part'</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_label_get_sub</td>
+<td>180</td>
+<td>Unused argument 'obj'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>gl_label_get_str</td>
+<td>183</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_label_get_str</td>
+<td>183</td>
+<td>Unused argument 'part'</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_label_get_str</td>
+<td>183</td>
+<td>Unused argument 'obj'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>gl_icon_get</td>
+<td>186</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>gl_icon_get</td>
+<td>187</td>
+<td>Invalid name "ic" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_icon_get</td>
+<td>186</td>
+<td>Unused argument 'part'</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_icon_get</td>
+<td>186</td>
+<td>Unused argument 'data'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>gl_state_get</td>
+<td>190</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_state_get</td>
+<td>190</td>
+<td>Unused argument 'item_data'</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_state_get</td>
+<td>190</td>
+<td>Unused argument 'part'</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>gl_state_get</td>
+<td>190</td>
+<td>Unused argument 'obj'</td>
+</tr>
+<tr class="odd">
+<td>W0702</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>213</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>destroy</td>
+<td>217</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>destroy</td>
+<td>219</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>destroy</td>
+<td>217</td>
+<td>Unused argument 'obj'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>225</td>
+<td>Invalid name "win" (should match (([A-Z_][A-Z1-9_]*)|(__.*__))$)</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>admin_panel_exit</td>
+<td>235</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_panel_exit</td>
+<td>235</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_panel_exit</td>
+<td>235</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>admin_panel_exit</td>
+<td>236</td>
+<td>Using global for 'notify_admin_panel' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0601</td>
+<td>efl</td>
+<td>admin_panel_exit</td>
+<td>236</td>
+<td>Global variable 'notify_admin_panel' undefined at the module level</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>admin_panel_exit</td>
+<td>235</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>239</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>239</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>239</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>240</td>
+<td>Using global for 'notify_admin_panel' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0601</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>240</td>
+<td>Global variable 'notify_admin_panel' undefined at the module level</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>240</td>
+<td>Using global for 'RAPPORT_JOUR_BT' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>240</td>
+<td>Using global for 'RAPPORT_MOIS_BT' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0601</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>240</td>
+<td>Global variable 'RAPPORT_MOIS_BT' undefined at the module level</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>240</td>
+<td>Using global for 'RAPPORT_ANNEE_BT' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0601</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>240</td>
+<td>Global variable 'RAPPORT_ANNEE_BT' undefined at the module level</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>262</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>admin_access_ok</td>
+<td>239</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>calcul_des_stats</td>
+<td>266</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>maj_stats</td>
+<td>274</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>maj_stats</td>
+<td>279</td>
+<td>Invalid name "bx" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>maj_stats</td>
+<td>294</td>
+<td>Invalid name "lb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>admin_access_add</td>
+<td>303</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_access_add</td>
+<td>303</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_access_add</td>
+<td>303</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>admin_access_add</td>
+<td>303</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>admin_access_del</td>
+<td>308</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_access_del</td>
+<td>308</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_access_del</td>
+<td>308</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>admin_access_del</td>
+<td>308</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>admin_access_cancel</td>
+<td>313</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_access_cancel</td>
+<td>313</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_access_cancel</td>
+<td>313</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>admin_access_cancel</td>
+<td>313</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>admin_access_user_change</td>
+<td>318</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_access_user_change</td>
+<td>318</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>admin_access_user_change</td>
+<td>318</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>324</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>330</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>336</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>355</td>
+<td>Module 'elementary' has no 'ScrolledEntry' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>365</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>366</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>368</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>375</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>377</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>384</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>385</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>388</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>395</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>396</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>397</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>400</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>407</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>408</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>409</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>412</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>419</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>420</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>421</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>424</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>431</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>432</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>433</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>436</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>443</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>444</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>445</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>448</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>455</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>456</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>457</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>459</td>
+<td>Invalid name "sp" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>463</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>465</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>477</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>R0915</td>
+<td>efl</td>
+<td>create_admin_access</td>
+<td>321</td>
+<td>Too many statements (129/50)</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>choix_jour_clicked</td>
+<td>490</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_jour_clicked</td>
+<td>490</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_jour_clicked</td>
+<td>490</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0603</td>
+<td>efl</td>
+<td>choix_jour_clicked</td>
+<td>491</td>
+<td>Using the global statement</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>choix_jour_clicked</td>
+<td>490</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>choix_mois_clicked</td>
+<td>498</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_mois_clicked</td>
+<td>498</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_mois_clicked</td>
+<td>498</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>choix_mois_clicked</td>
+<td>499</td>
+<td>Using global for 'RAPPORT_JOUR_BT' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>choix_mois_clicked</td>
+<td>498</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>choix_annee_clicked</td>
+<td>510</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_annee_clicked</td>
+<td>510</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_annee_clicked</td>
+<td>510</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>choix_annee_clicked</td>
+<td>511</td>
+<td>Using global for 'RAPPORT_JOUR_BT' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>choix_annee_clicked</td>
+<td>510</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>choix_jour</td>
+<td>522</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>choix_jour</td>
+<td>523</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_jour</td>
+<td>528</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_jour</td>
+<td>534</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_jour</td>
+<td>545</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_jour</td>
+<td>546</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_jour</td>
+<td>548</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_jour</td>
+<td>556</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_jour</td>
+<td>558</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_jour</td>
+<td>559</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>choix_mois</td>
+<td>562</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>choix_mois</td>
+<td>563</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_mois</td>
+<td>568</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_mois</td>
+<td>574</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_mois</td>
+<td>582</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_mois</td>
+<td>583</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_mois</td>
+<td>587</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_mois</td>
+<td>595</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_mois</td>
+<td>597</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_mois</td>
+<td>598</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>choix_annee</td>
+<td>604</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_annee</td>
+<td>609</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_annee</td>
+<td>615</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>choix_annee</td>
+<td>619</td>
+<td>Class 'Facture' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_annee</td>
+<td>622</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_annee</td>
+<td>623</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_annee</td>
+<td>625</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_annee</td>
+<td>633</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_annee</td>
+<td>635</td>
+<td>Invalid name "y" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>choix_annee</td>
+<td>636</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>create_graph_panel</td>
+<td>641</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_graph_panel</td>
+<td>647</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_graph_panel</td>
+<td>653</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_graph_panel</td>
+<td>658</td>
+<td>Invalid name "sp" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_graph_panel</td>
+<td>663</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>675</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0601</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>675</td>
+<td>Global variable 'notify_admin_panel' undefined at the module level</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>675</td>
+<td>Using global for 'RAPPORT_DATE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0601</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>675</td>
+<td>Global variable 'RAPPORT_MOIS_BT' undefined at the module level</td>
+</tr>
+<tr class="odd">
+<td>W0601</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>675</td>
+<td>Global variable 'RAPPORT_ANNEE_BT' undefined at the module level</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>683</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>689</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>694</td>
+<td>Invalid name "l" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>699</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>708</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>717</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>726</td>
+<td>Invalid name "sp" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>731</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>739</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>747</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>755</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>763</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>771</td>
+<td>Invalid name "sp" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>776</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>R0915</td>
+<td>efl</td>
+<td>create_admin_panel</td>
+<td>673</td>
+<td>Too many statements (91/50)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>histo_exit</td>
+<td>786</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>histo_exit</td>
+<td>786</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>histo_exit</td>
+<td>786</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>histo_facture</td>
+<td>790</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>histo_facture</td>
+<td>790</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>histo_facture</td>
+<td>790</td>
+<td>Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>histo_facture</td>
+<td>790</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>histo_facture</td>
+<td>790</td>
+<td>Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>histo_facture</td>
+<td>791</td>
+<td>Using global for 'HISTO_PRODUITS' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>histo_facture</td>
+<td>791</td>
+<td>Using global for 'HISTO_PAIEMENTS' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>histo_facture</td>
+<td>790</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>histo_facture</td>
+<td>790</td>
+<td>Unused argument 'item'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>notify_imprimable</td>
+<td>813</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>notify_imprimable</td>
+<td>819</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0324</td>
+<td>efl</td>
+<td>notify_imprimable</td>
+<td>839</td>
+<td>Comma not followed by a space
+    tb.pack(liste,0,0,15,15)
+                 ^^</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>notify_imprimable</td>
+<td>841</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>notify_imprimable</td>
+<td>849</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>liste_des_produits</td>
+<td>859</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>liste_des_produits</td>
+<td>859</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>liste_des_produits</td>
+<td>863</td>
+<td>Class 'Categorie' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>liste_des_produits</td>
+<td>866</td>
+<td>Class 'Produit' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>liste_des_produits</td>
+<td>859</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>R0914</td>
+<td>efl</td>
+<td>historique</td>
+<td>872</td>
+<td>Too many local variables (20/15)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>historique</td>
+<td>872</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>historique</td>
+<td>872</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>historique</td>
+<td>874</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>historique</td>
+<td>874</td>
+<td>Using global for 'RAPPORT_DATE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>historique</td>
+<td>880</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>historique</td>
+<td>886</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>historique</td>
+<td>968</td>
+<td>Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>historique</td>
+<td>980</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>historique</td>
+<td>999</td>
+<td>Invalid name "en" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>R0915</td>
+<td>efl</td>
+<td>historique</td>
+<td>872</td>
+<td>Too many statements (88/50)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_t_choix_frame</td>
+<td>1084</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>create_t_choix_frame</td>
+<td>1085</td>
+<td>Class 'Zone' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_t_choix_frame</td>
+<td>1086</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_t_choix_frame</td>
+<td>1091</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>create_t_choix_frame</td>
+<td>1095</td>
+<td>Class 'Table' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>create_t_choix_frame</td>
+<td>1096</td>
+<td>Class 'Table' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_t_choix_frame</td>
+<td>1103</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_t_choix_frame</td>
+<td>1105</td>
+<td>Invalid name "t" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_t_choix_frame</td>
+<td>1114</td>
+<td>Invalid name "x" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_c_choix_frame</td>
+<td>1125</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_c_choix_frame</td>
+<td>1132</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_c_choix_frame</td>
+<td>1140</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_c_choix_frame</td>
+<td>1141</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>create_notify_vendu</td>
+<td>1154</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>create_notify_vendu</td>
+<td>1157</td>
+<td>Class 'Produit' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_notify_vendu</td>
+<td>1166</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_notify_vendu</td>
+<td>1182</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_notify_vendu</td>
+<td>1190</td>
+<td>Invalid name "ic" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0621</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1238</td>
+<td>Redefining name 'F_LISTE_PAIEMENT_COURANT' from outer scope (line 135)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_SOLDEE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_NON_SOLDEE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'f_label' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0601</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Global variable 'f_label' undefined at the module level</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'f_stats' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0601</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Global variable 'f_stats' undefined at the module level</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_COUVERTS' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_ETAT' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_TABLE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_LISTE_PRODUITS' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_PAYER' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_TOTAL' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_TVA' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'CPT_TOTAL' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'CPT_RESTE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1204</td>
+<td>Using global for 'F_LISTE_PAIEMENTS' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1209</td>
+<td>Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1238</td>
+<td>Invalid name "F_LISTE_PAIEMENT_COURANT" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0612</td>
+<td>efl</td>
+<td>f_show</td>
+<td>1238</td>
+<td>Unused variable 'F_LISTE_PAIEMENT_COURANT'</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_valeur_tr_clicked</td>
+<td>1250</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_valeur_tr_clicked</td>
+<td>1250</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_valeur_tr_clicked</td>
+<td>1253</td>
+<td>Using global for 'BT_TR' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_valeur_tr_clicked</td>
+<td>1253</td>
+<td>Using global for 'NOMBRES_VALEUR' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>f_valeur_tr_clicked</td>
+<td>1250</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_valeur_ancv_clicked</td>
+<td>1259</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_valeur_ancv_clicked</td>
+<td>1259</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_valeur_ancv_clicked</td>
+<td>1262</td>
+<td>Using global for 'BT_ANCV' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_valeur_ancv_clicked</td>
+<td>1262</td>
+<td>Using global for 'NOMBRES_VALEUR' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_valeur_ancv_clicked</td>
+<td>1259</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1268</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1269</td>
+<td>Using global for 'VALEUR_ANCV' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1269</td>
+<td>Using global for 'VALEUR_TR' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1269</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1271</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1277</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1282</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1282</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1283</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1291</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1309</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1309</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1310</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1318</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1318</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1319</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1327</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1336</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1336</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1337</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1346</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1346</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1347</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>R0915</td>
+<td>efl</td>
+<td>create_paiements</td>
+<td>1268</td>
+<td>Too many statements (67/50)</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>create_produits</td>
+<td>1357</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_produits</td>
+<td>1358</td>
+<td>Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>create_produits</td>
+<td>1358</td>
+<td>Class 'Categorie' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_produits</td>
+<td>1360</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_produits</td>
+<td>1366</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0324</td>
+<td>efl</td>
+<td>create_produits</td>
+<td>1372</td>
+<td>Comma not followed by a space
+    ite = Produit.objects.filter(categorie=c,actif=True).iterator()
+                                            ^^</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>create_produits</td>
+<td>1372</td>
+<td>Class 'Produit' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_produits</td>
+<td>1375</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_produits</td>
+<td>1377</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_produits</td>
+<td>1385</td>
+<td>Invalid name "ic" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>nombres_clicked</td>
+<td>1400</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>nombres_clicked</td>
+<td>1400</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>nombres_clicked</td>
+<td>1402</td>
+<td>Using global for 'CPT_CAL' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>efl</td>
+<td>nombres_clicked</td>
+<td>1403</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>nombres_clicked</td>
+<td>1400</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>nombres_dot</td>
+<td>1417</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>nombres_dot</td>
+<td>1417</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0603</td>
+<td>efl</td>
+<td>nombres_dot</td>
+<td>1419</td>
+<td>Using the global statement</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>nombres_dot</td>
+<td>1417</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>nombres_raz</td>
+<td>1422</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>nombres_raz</td>
+<td>1422</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>nombres_raz</td>
+<td>1425</td>
+<td>Using global for 'CPT_CAL' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>nombres_raz</td>
+<td>1422</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>t_clicked</td>
+<td>1430</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>t_clicked</td>
+<td>1430</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>efl</td>
+<td>t_clicked</td>
+<td>1432</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>t_clicked</td>
+<td>1433</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>t_clicked</td>
+<td>1433</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>t_clicked</td>
+<td>1430</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>p_sub_clicked</td>
+<td>1439</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>p_sub_clicked</td>
+<td>1439</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>p_sub_clicked</td>
+<td>1441</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>p_sub_clicked</td>
+<td>1441</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>p_sub_clicked</td>
+<td>1441</td>
+<td>Using global for 'NOTIFY_VENDU' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>p_sub_clicked</td>
+<td>1439</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_paiement_clicked</td>
+<td>1458</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_paiement_clicked</td>
+<td>1458</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>efl</td>
+<td>f_paiement_clicked</td>
+<td>1460</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_clicked</td>
+<td>1461</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_clicked</td>
+<td>1461</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_clicked</td>
+<td>1461</td>
+<td>Using global for 'NOMBRES_VALEUR' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_paiement_clicked</td>
+<td>1458</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_paiement_ancv_clicked</td>
+<td>1466</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_paiement_ancv_clicked</td>
+<td>1466</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>efl</td>
+<td>f_paiement_ancv_clicked</td>
+<td>1468</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_ancv_clicked</td>
+<td>1469</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_ancv_clicked</td>
+<td>1469</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_ancv_clicked</td>
+<td>1469</td>
+<td>Using global for 'VALEUR_ANCV' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_ancv_clicked</td>
+<td>1469</td>
+<td>Using global for 'NOMBRES_VALEUR' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_paiement_ancv_clicked</td>
+<td>1466</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_paiement_tr_clicked</td>
+<td>1474</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_paiement_tr_clicked</td>
+<td>1474</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>efl</td>
+<td>f_paiement_tr_clicked</td>
+<td>1476</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_tr_clicked</td>
+<td>1477</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_tr_clicked</td>
+<td>1477</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_tr_clicked</td>
+<td>1477</td>
+<td>Using global for 'VALEUR_TR' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_paiement_tr_clicked</td>
+<td>1477</td>
+<td>Using global for 'NOMBRES_VALEUR' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_paiement_tr_clicked</td>
+<td>1474</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1482</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1482</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1486</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1487</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1487</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1487</td>
+<td>Using global for 'NOTIFY_VENDU' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1487</td>
+<td>Using global for 'NOMBRES_VALEUR' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1489</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1492</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1482</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>W0612</td>
+<td>efl</td>
+<td>p_clicked</td>
+<td>1506</td>
+<td>Unused variable 'i'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>m_label_update</td>
+<td>1514</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>m_label_update</td>
+<td>1515</td>
+<td>Using global for 'PB_LABEL' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>m_label_update</td>
+<td>1515</td>
+<td>Using global for 'PB' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>m_label_update</td>
+<td>1515</td>
+<td>Using global for 'MPD_CLIENT' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0702</td>
+<td>efl</td>
+<td>m_label_update</td>
+<td>1533</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="even">
+<td>W0702</td>
+<td>efl</td>
+<td>m_label_update</td>
+<td>1527</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="odd">
+<td>W0702</td>
+<td>efl</td>
+<td>m_label_update</td>
+<td>1538</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_menage</td>
+<td>1550</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_menage</td>
+<td>1552</td>
+<td>Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>efl</td>
+<td>f_menage</td>
+<td>1554</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_menage</td>
+<td>1567</td>
+<td>Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_etat_change</td>
+<td>1579</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_etat_change</td>
+<td>1579</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>f_etat_change</td>
+<td>1579</td>
+<td>Unused argument 'item'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>f_couverts_change</td>
+<td>1584</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_couverts_change</td>
+<td>1584</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_couverts_change</td>
+<td>1584</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_couverts_change</td>
+<td>1584</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_couverts_change</td>
+<td>1584</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_couverts_change</td>
+<td>1585</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_couverts_change</td>
+<td>1585</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>f_couverts_change</td>
+<td>1584</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_new</td>
+<td>1590</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_new</td>
+<td>1590</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_new</td>
+<td>1595</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_new</td>
+<td>1603</td>
+<td>Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_new</td>
+<td>1590</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_prev</td>
+<td>1615</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_prev</td>
+<td>1615</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_prev</td>
+<td>1618</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_prev</td>
+<td>1615</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_next</td>
+<td>1628</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_next</td>
+<td>1628</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_next</td>
+<td>1631</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_next</td>
+<td>1628</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>W0622</td>
+<td>efl</td>
+<td>categorie_clicked</td>
+<td>1641</td>
+<td>Redefining built-in 'id'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>categorie_clicked</td>
+<td>1641</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>categorie_clicked</td>
+<td>1641</td>
+<td>Invalid name "id" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>categorie_clicked</td>
+<td>1641</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>categorie_clicked</td>
+<td>1641</td>
+<td>Invalid name "id" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>categorie_clicked</td>
+<td>1643</td>
+<td>Using global for 'FRAMES_PRODUITS' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>efl</td>
+<td>categorie_clicked</td>
+<td>1644</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>categorie_clicked</td>
+<td>1641</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>create_categories</td>
+<td>1650</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_categories</td>
+<td>1651</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_categories</td>
+<td>1657</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>create_categories</td>
+<td>1663</td>
+<td>Class 'Categorie' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_categories</td>
+<td>1671</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_categories</td>
+<td>1673</td>
+<td>Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_categories</td>
+<td>1677</td>
+<td>Invalid name "ic" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1693</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1694</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1700</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1705</td>
+<td>Invalid name "ic" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0702</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1718</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1720</td>
+<td>Invalid name "l" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1725</td>
+<td>Invalid name "sp" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1730</td>
+<td>Invalid name "ck" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1734</td>
+<td>Invalid name "l" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1739</td>
+<td>Invalid name "sp" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1743</td>
+<td>Invalid name "ic" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_info</td>
+<td>1750</td>
+<td>Invalid name "l" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>create_music</td>
+<td>1757</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>W0603</td>
+<td>efl</td>
+<td>create_music</td>
+<td>1758</td>
+<td>Using the global statement</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_music</td>
+<td>1760</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_music</td>
+<td>1766</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_music</td>
+<td>1782</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_music</td>
+<td>1790</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_music</td>
+<td>1798</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_music</td>
+<td>1806</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>m_next</td>
+<td>1819</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>m_next</td>
+<td>1819</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>m_next</td>
+<td>1819</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>m_next</td>
+<td>1820</td>
+<td>Using global for 'MPD_CLIENT' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0702</td>
+<td>efl</td>
+<td>m_next</td>
+<td>1825</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="even">
+<td>E0602</td>
+<td>efl</td>
+<td>m_next</td>
+<td>1823</td>
+<td>Undefined variable 'self'</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>m_next</td>
+<td>1819</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>m_prev</td>
+<td>1827</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>m_prev</td>
+<td>1827</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>m_prev</td>
+<td>1827</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>m_prev</td>
+<td>1828</td>
+<td>Using global for 'MPD_CLIENT' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0702</td>
+<td>efl</td>
+<td>m_prev</td>
+<td>1833</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="odd">
+<td>E0602</td>
+<td>efl</td>
+<td>m_prev</td>
+<td>1831</td>
+<td>Undefined variable 'self'</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>m_prev</td>
+<td>1827</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>m_play</td>
+<td>1835</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>m_play</td>
+<td>1835</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>m_play</td>
+<td>1835</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>m_play</td>
+<td>1836</td>
+<td>Using global for 'MPD_CLIENT' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0702</td>
+<td>efl</td>
+<td>m_play</td>
+<td>1843</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="even">
+<td>E0602</td>
+<td>efl</td>
+<td>m_play</td>
+<td>1841</td>
+<td>Undefined variable 'self'</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>m_play</td>
+<td>1835</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>m_remove</td>
+<td>1845</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>m_remove</td>
+<td>1845</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>m_remove</td>
+<td>1845</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>m_remove</td>
+<td>1846</td>
+<td>Using global for 'MPD_CLIENT' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0702</td>
+<td>efl</td>
+<td>m_remove</td>
+<td>1855</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>efl</td>
+<td>m_remove</td>
+<td>1850</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>efl</td>
+<td>m_remove</td>
+<td>1855</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>m_remove</td>
+<td>1845</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>show</td>
+<td>1858</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>show</td>
+<td>1858</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>show</td>
+<td>1858</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>show_on_event</td>
+<td>1862</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>show_on_event</td>
+<td>1862</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>show_on_event</td>
+<td>1862</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>show_on_event</td>
+<td>1862</td>
+<td>Unused argument 'event'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>hide</td>
+<td>1868</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>hide</td>
+<td>1868</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>hide</td>
+<td>1868</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>hide</td>
+<td>1868</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>notify_show</td>
+<td>1871</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>notify_show</td>
+<td>1872</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>notify_show</td>
+<td>1878</td>
+<td>Invalid name "bx" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>notify_show</td>
+<td>1884</td>
+<td>Invalid name "lb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>notify_show</td>
+<td>1889</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_select</td>
+<td>1896</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_select</td>
+<td>1896</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_select</td>
+<td>1898</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_select</td>
+<td>1896</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>f_select</td>
+<td>1896</td>
+<td>Unused argument 'item'</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_update_liste</td>
+<td>1904</td>
+<td>Using global for 'f_label' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0601</td>
+<td>efl</td>
+<td>f_update_liste</td>
+<td>1904</td>
+<td>Global variable 'f_label' undefined at the module level</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_update_liste</td>
+<td>1904</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_update_liste</td>
+<td>1904</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1911</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>W0601</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1912</td>
+<td>Global variable 'f_label' undefined at the module level</td>
+</tr>
+<tr class="odd">
+<td>W0601</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1912</td>
+<td>Global variable 'f_stats' undefined at the module level</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1912</td>
+<td>Using global for 'F_PAYER' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1912</td>
+<td>Using global for 'F_TOTAL' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1912</td>
+<td>Using global for 'CPT_RESTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1912</td>
+<td>Using global for 'CPT_TOTAL' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1916</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1924</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1928</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1944</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1957</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1986</td>
+<td>Invalid name "e" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1986</td>
+<td>Class 'Etat' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>2012</td>
+<td>Invalid name "l" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>2027</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>2035</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>2048</td>
+<td>Invalid name "sp" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>2066</td>
+<td>Invalid name "l" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>2081</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>2089</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>R0915</td>
+<td>efl</td>
+<td>create_facture</td>
+<td>1911</td>
+<td>Too many statements (125/50)</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2102</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2102</td>
+<td>Invalid name "CPT" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2102</td>
+<td>Invalid name "CPT" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2103</td>
+<td>Using global for 'COMPTEUR_CAL' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2103</td>
+<td>Using global for 'COMPTEUR_TOTAL' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2103</td>
+<td>Using global for 'COMPTEUR_RESTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2103</td>
+<td>Using global for 'CPT_CAL' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2103</td>
+<td>Using global for 'CPT_TOTAL' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2103</td>
+<td>Using global for 'CPT_RESTE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0702</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2110</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2107</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2111</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>efl</td>
+<td>show_compteur</td>
+<td>2120</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_compteur</td>
+<td>2134</td>
+<td>Invalid name "CPT" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_compteur</td>
+<td>2134</td>
+<td>Invalid name "CPT" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>create_compteur</td>
+<td>2148</td>
+<td>Using global for 'win' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>create_compteur</td>
+<td>2148</td>
+<td>Using global for 'CPT_CAL' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>create_compteur</td>
+<td>2148</td>
+<td>Using global for 'CPT_TOTAL' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>create_compteur</td>
+<td>2148</td>
+<td>Using global for 'CPT_RESTE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_compteur</td>
+<td>2152</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_compteur</td>
+<td>2165</td>
+<td>Invalid name "ic" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>efl</td>
+<td>create_compteur</td>
+<td>2186</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2190</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2191</td>
+<td>Invalid name "fr" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2197</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2203</td>
+<td>Using global for 'CPT_CAL' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2207</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2215</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2223</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2231</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2239</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2247</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2255</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2263</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2271</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2279</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2287</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2295</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>R0915</td>
+<td>efl</td>
+<td>create_nombres</td>
+<td>2190</td>
+<td>Too many statements (98/50)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_paiement_select</td>
+<td>2305</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_paiement_select</td>
+<td>2305</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>efl</td>
+<td>f_paiement_select</td>
+<td>2307</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>W0603</td>
+<td>efl</td>
+<td>f_paiement_select</td>
+<td>2308</td>
+<td>Using the global statement</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>f_paiement_select</td>
+<td>2305</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_paiement_select</td>
+<td>2305</td>
+<td>Unused argument 'item'</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_enlever_tous_les_paiements</td>
+<td>2311</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_enlever_tous_les_paiements</td>
+<td>2311</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_tous_les_paiements</td>
+<td>2313</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_tous_les_paiements</td>
+<td>2313</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>f_enlever_tous_les_paiements</td>
+<td>2311</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>f_enlever_paiement</td>
+<td>2320</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_enlever_paiement</td>
+<td>2320</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_enlever_paiement</td>
+<td>2320</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_paiement</td>
+<td>2321</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_paiement</td>
+<td>2321</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_paiement</td>
+<td>2321</td>
+<td>Using global for 'F_LISTE_PAIEMENT_COURANT' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_enlever_paiement</td>
+<td>2320</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_enlever_tous_les_produits</td>
+<td>2329</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_enlever_tous_les_produits</td>
+<td>2329</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_tous_les_produits</td>
+<td>2331</td>
+<td>Using global for 'F_LISTE_PRODUITS' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_tous_les_produits</td>
+<td>2331</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_tous_les_produits</td>
+<td>2331</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_enlever_tous_les_produits</td>
+<td>2329</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_produit_select</td>
+<td>2338</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_produit_select</td>
+<td>2338</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0603</td>
+<td>efl</td>
+<td>f_produit_select</td>
+<td>2341</td>
+<td>Using the global statement</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_produit_select</td>
+<td>2338</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>f_produit_select</td>
+<td>2338</td>
+<td>Unused argument 'item'</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>f_enlever_produit</td>
+<td>2344</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>f_enlever_produit</td>
+<td>2344</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>f_enlever_produit</td>
+<td>2344</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_produit</td>
+<td>2345</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_produit</td>
+<td>2345</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>f_enlever_produit</td>
+<td>2345</td>
+<td>Using global for 'F_LISTE_PRODUIT_COURANT' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>W0613</td>
+<td>efl</td>
+<td>f_enlever_produit</td>
+<td>2344</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>efl</td>
+<td>afficher_rapport_jour</td>
+<td>2354</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>afficher_rapport_jour</td>
+<td>2354</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>afficher_rapport_jour</td>
+<td>2354</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>afficher_rapport_jour</td>
+<td>2355</td>
+<td>Using global for 'RAPPORT_DATE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>afficher_rapport_jour</td>
+<td>2354</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>afficher_rapport_mois</td>
+<td>2360</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>afficher_rapport_mois</td>
+<td>2360</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>afficher_rapport_mois</td>
+<td>2362</td>
+<td>Using global for 'RAPPORT_DATE' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>afficher_rapport_mois</td>
+<td>2360</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>imprimer_texte</td>
+<td>2366</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>imprimer_texte</td>
+<td>2366</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>imprimer_texte</td>
+<td>2373</td>
+<td>Invalid name "fd" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>W0613</td>
+<td>efl</td>
+<td>imprimer_texte</td>
+<td>2366</td>
+<td>Unused argument 'bt'</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>imprimer</td>
+<td>2387</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>imprimer</td>
+<td>2387</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0602</td>
+<td>efl</td>
+<td>imprimer</td>
+<td>2389</td>
+<td>Using global for 'F_INDEX' but no assignment is done</td>
+</tr>
+<tr class="even">
+<td>W0602</td>
+<td>efl</td>
+<td>imprimer</td>
+<td>2389</td>
+<td>Using global for 'F_LISTE' but no assignment is done</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>efl</td>
+<td>create_ihm</td>
+<td>2401</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_ihm</td>
+<td>2404</td>
+<td>Invalid name "bg" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>efl</td>
+<td>create_ihm</td>
+<td>2411</td>
+<td>Invalid name "tb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_ihm</td>
+<td>2424</td>
+<td>Invalid name "c" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>efl</td>
+<td>create_ihm</td>
+<td>2424</td>
+<td>Class 'Categorie' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>efl</td>
+<td>create_ihm</td>
+<td>2434</td>
+<td>Invalid name "bt" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0611</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>63</td>
+<td>Unused import Cuisson</td>
+</tr>
+<tr class="even">
+<td>W0611</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>63</td>
+<td>Unused import Couleur</td>
+</tr>
+<tr class="odd">
+<td>W0611</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>63</td>
+<td>Unused import Sauce</td>
+</tr>
+<tr class="even">
+<td>W0611</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>31</td>
+<td>Unused import io</td>
+</tr>
+<tr class="odd">
+<td>W0611</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>63</td>
+<td>Unused import Suivi</td>
+</tr>
+<tr class="even">
+<td>W0611</td>
+<td>efl</td>
+<td>&#160;</td>
+<td>63</td>
+<td>Unused import Accompagnement</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>100</td>
+<td>Line too long (97/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>104</td>
+<td>Line too long (95/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>108</td>
+<td>Line too long (104/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>127</td>
+<td>Line too long (99/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>131</td>
+<td>Line too long (92/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>216</td>
+<td>Line too long (112/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>218</td>
+<td>Line too long (102/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>220</td>
+<td>Line too long (96/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>221</td>
+<td>Line too long (123/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>264</td>
+<td>Line too long (105/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>316</td>
+<td>Line too long (88/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>317</td>
+<td>Line too long (83/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>320</td>
+<td>Line too long (90/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>325</td>
+<td>Line too long (81/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>492</td>
+<td>Line too long (84/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>515</td>
+<td>Line too long (91/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>520</td>
+<td>Line too long (83/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>521</td>
+<td>Line too long (83/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>525</td>
+<td>Line too long (84/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>606</td>
+<td>Line too long (83/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>608</td>
+<td>Line too long (83/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>763</td>
+<td>Line too long (82/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>767</td>
+<td>Line too long (82/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>776</td>
+<td>Line too long (84/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>801</td>
+<td>Line too long (85/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>868</td>
+<td>Line too long (110/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>917</td>
+<td>Line too long (95/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>923</td>
+<td>Line too long (105/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>931</td>
+<td>Line too long (129/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>936</td>
+<td>Line too long (129/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1065</td>
+<td>Line too long (97/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1067</td>
+<td>Line too long (97/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1082</td>
+<td>Line too long (133/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1228</td>
+<td>Line too long (90/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1232</td>
+<td>Line too long (81/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1235</td>
+<td>Line too long (89/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1238</td>
+<td>Line too long (89/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1241</td>
+<td>Line too long (93/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1244</td>
+<td>Line too long (93/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1249</td>
+<td>Line too long (94/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1257</td>
+<td>Line too long (91/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1262</td>
+<td>Line too long (91/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1270</td>
+<td>Line too long (89/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1275</td>
+<td>Line too long (89/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1280</td>
+<td>Line too long (89/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1288</td>
+<td>Line too long (99/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1294</td>
+<td>Line too long (108/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1298</td>
+<td>Line too long (122/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1302</td>
+<td>Line too long (113/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1307</td>
+<td>Line too long (101/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1345</td>
+<td>Line too long (94/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1347</td>
+<td>Line too long (95/80)</td>
+</tr>
+<tr class="odd">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1368</td>
+<td>Line too long (92/80)</td>
+</tr>
+<tr class="even">
+<td>C0301</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1405</td>
+<td>Line too long (87/80)</td>
+</tr>
+<tr class="odd">
+<td>C0302</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1</td>
+<td>Too many lines in module (1409)</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>1</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>remplissage</td>
+<td>35</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>remplissage</td>
+<td>35</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>remplissage</td>
+<td>39</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>remplissage</td>
+<td>42</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Nom</td>
+<td>46</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Nom.__cmp__</td>
+<td>52</td>
+<td>Comma not followed by a space
+    def __cmp__(self,other):
+                    ^^</td>
+</tr>
+<tr class="odd">
+<td>W0232</td>
+<td>possum.base.models</td>
+<td>Nom.Meta</td>
+<td>55</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Nom.Meta</td>
+<td>55</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>R0903</td>
+<td>possum.base.models</td>
+<td>Nom.Meta</td>
+<td>55</td>
+<td>Too few public methods (0/1)</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>NomDouble</td>
+<td>59</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>W0232</td>
+<td>possum.base.models</td>
+<td>NomDouble.Meta</td>
+<td>62</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>NomDouble.Meta</td>
+<td>62</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>R0903</td>
+<td>possum.base.models</td>
+<td>NomDouble.Meta</td>
+<td>62</td>
+<td>Too few public methods (0/1)</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Priorite</td>
+<td>65</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>W0232</td>
+<td>possum.base.models</td>
+<td>Priorite.Meta</td>
+<td>68</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Priorite.Meta</td>
+<td>68</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>R0903</td>
+<td>possum.base.models</td>
+<td>Priorite.Meta</td>
+<td>68</td>
+<td>Too few public methods (0/1)</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Priorite.__cmp__</td>
+<td>73</td>
+<td>Comma not followed by a space
+        return cmp(self.priorite,other.priorite)
+                                ^^</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Couleur</td>
+<td>76</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Etat.__cmp__</td>
+<td>114</td>
+<td>Comma not followed by a space
+        return cmp(self.priorite,other.priorite)
+                                ^^</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Categorie</td>
+<td>125</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Categorie.__cmp__</td>
+<td>133</td>
+<td>Comma not followed by a space
+    def __cmp__(self,other):
+                    ^^</td>
+</tr>
+<tr class="odd">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Categorie.__cmp__</td>
+<td>152</td>
+<td>Comma not followed by a space
+            return cmp(self.nom,other.nom)
+                               ^^</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Categorie.__cmp__</td>
+<td>154</td>
+<td>Comma not followed by a space
+            return cmp(self.priorite,other.priorite)
+                                    ^^</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Categorie.show</td>
+<td>156</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Categorie.show</td>
+<td>157</td>
+<td>Comma not followed by a space
+        nb = Produit.objects.filter(categorie=self,actif=True).count()
+                                                  ^^</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Categorie.show</td>
+<td>157</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Categorie.show</td>
+<td>157</td>
+<td>Class 'Produit' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Produit</td>
+<td>171</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Produit.__cmp__</td>
+<td>187</td>
+<td>Comma not followed by a space
+    def __cmp__(self,other):
+                    ^^</td>
+</tr>
+<tr class="odd">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Produit.__cmp__</td>
+<td>189</td>
+<td>Comma not followed by a space
+            return cmp(self.nom,other.nom)
+                               ^^</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Produit.__cmp__</td>
+<td>191</td>
+<td>Comma not followed by a space
+            return cmp(self.categorie,other.categorie)
+                                     ^^</td>
+</tr>
+<tr class="odd">
+<td>W0232</td>
+<td>possum.base.models</td>
+<td>Produit.Meta</td>
+<td>193</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Produit.Meta</td>
+<td>193</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>R0903</td>
+<td>possum.base.models</td>
+<td>Produit.Meta</td>
+<td>193</td>
+<td>Too few public methods (0/1)</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Produit.est_un_menu</td>
+<td>201</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Produit.show</td>
+<td>207</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>W0232</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.Meta</td>
+<td>226</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.Meta</td>
+<td>226</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>R0903</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.Meta</td>
+<td>226</td>
+<td>Too few public methods (0/1)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.isFull</td>
+<td>232</td>
+<td>Invalid name "isFull" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.__cmp__</td>
+<td>270</td>
+<td>Comma not followed by a space
+    def __cmp__(self,other):
+                    ^^</td>
+</tr>
+<tr class="odd">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.__cmp__</td>
+<td>272</td>
+<td>Comma not followed by a space
+            return cmp(self.produit.nom,other.produit.nom)
+                                       ^^</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.__cmp__</td>
+<td>274</td>
+<td>Comma not followed by a space
+            return cmp(self.produit.categorie,other.produit.categorie)
+                                             ^^</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.est_un_menu</td>
+<td>276</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.show</td>
+<td>282</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.showSubProducts</td>
+<td>286</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.showSubProducts</td>
+<td>286</td>
+<td>Invalid name "showSubProducts" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.getFreeCategorie</td>
+<td>289</td>
+<td>Invalid name "getFreeCategorie" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>ProduitVendu.getFreeCategorie</td>
+<td>320</td>
+<td>Instance of 'ProduitVendu' has no 'id' member</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Zone</td>
+<td>323</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Zone.est_surtaxe</td>
+<td>328</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Table</td>
+<td>332</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Table.est_surtaxe</td>
+<td>335</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Log</td>
+<td>348</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>W0232</td>
+<td>possum.base.models</td>
+<td>Log.Meta</td>
+<td>352</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Log.Meta</td>
+<td>352</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>R0903</td>
+<td>possum.base.models</td>
+<td>Log.Meta</td>
+<td>352</td>
+<td>Too few public methods (0/1)</td>
+</tr>
+<tr class="odd">
+<td>W0232</td>
+<td>possum.base.models</td>
+<td>StatsJour.Meta</td>
+<td>363</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>StatsJour.Meta</td>
+<td>363</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>R0903</td>
+<td>possum.base.models</td>
+<td>StatsJour.Meta</td>
+<td>363</td>
+<td>Too few public methods (0/1)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_data</td>
+<td>379</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_data</td>
+<td>380</td>
+<td>Class 'LogType' has no 'DoesNotExist' member</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_data</td>
+<td>381</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_data</td>
+<td>384</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_data</td>
+<td>386</td>
+<td>Class 'StatsJourGeneral' has no 'DoesNotExist' member</td>
+</tr>
+<tr class="odd">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_data</td>
+<td>375</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_max</td>
+<td>389</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_max</td>
+<td>391</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_max</td>
+<td>392</td>
+<td>Class 'LogType' has no 'DoesNotExist' member</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_max</td>
+<td>393</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_max</td>
+<td>395</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_max</td>
+<td>389</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_avg</td>
+<td>398</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_avg</td>
+<td>400</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_avg</td>
+<td>401</td>
+<td>Class 'LogType' has no 'DoesNotExist' member</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_avg</td>
+<td>402</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_avg</td>
+<td>404</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_avg</td>
+<td>398</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_min</td>
+<td>407</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_min</td>
+<td>409</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_min</td>
+<td>410</td>
+<td>Class 'LogType' has no 'DoesNotExist' member</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_min</td>
+<td>411</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_min</td>
+<td>413</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>StatsJourGeneral.get_min</td>
+<td>407</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>W0232</td>
+<td>possum.base.models</td>
+<td>Paiement.Meta</td>
+<td>496</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Paiement.Meta</td>
+<td>496</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>R0903</td>
+<td>possum.base.models</td>
+<td>Paiement.Meta</td>
+<td>496</td>
+<td>Too few public methods (0/1)</td>
+</tr>
+<tr class="odd">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Paiement.__cmp__</td>
+<td>507</td>
+<td>Comma not followed by a space
+    def __cmp__(self,other):
+                    ^^</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Paiement.__cmp__</td>
+<td>508</td>
+<td>Comma not followed by a space
+        return cmp(self.date.date,other.date.date)
+                                 ^^</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Paiement.show</td>
+<td>510</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Facture</td>
+<td>513</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>W0232</td>
+<td>possum.base.models</td>
+<td>Facture.Meta</td>
+<td>529</td>
+<td>Class has no __init__ method</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Facture.Meta</td>
+<td>529</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>R0903</td>
+<td>possum.base.models</td>
+<td>Facture.Meta</td>
+<td>529</td>
+<td>Too few public methods (0/1)</td>
+</tr>
+<tr class="even">
+<td>W0622</td>
+<td>possum.base.models</td>
+<td>Facture.__unicode__</td>
+<td>534</td>
+<td>Redefining built-in 'id'</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.__unicode__</td>
+<td>533</td>
+<td>Instance of 'Facture' has no 'id' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.__unicode__</td>
+<td>534</td>
+<td>Invalid name "id" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.__unicode__</td>
+<td>534</td>
+<td>Instance of 'Facture' has no 'id' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.__unicode__</td>
+<td>536</td>
+<td>Invalid name "id" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>W0612</td>
+<td>possum.base.models</td>
+<td>Facture.__unicode__</td>
+<td>543</td>
+<td>Unused variable 'total'</td>
+</tr>
+<tr class="even">
+<td>C0324</td>
+<td>possum.base.models</td>
+<td>Facture.__cmp__</td>
+<td>551</td>
+<td>Comma not followed by a space
+        return cmp(self.date_creation,other.date_creation)
+                                     ^^</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.guest_couverts</td>
+<td>555</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.set_couverts</td>
+<td>567</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.set_couverts</td>
+<td>567</td>
+<td>Invalid name "nb" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.nb_soldee_jour</td>
+<td>620</td>
+<td>Class 'Facture' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.nb_soldee_jour</td>
+<td>611</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.non_soldees</td>
+<td>628</td>
+<td>Class 'Facture' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.non_soldees</td>
+<td>630</td>
+<td>Class 'Facture' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.non_soldees</td>
+<td>625</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>possum.base.models</td>
+<td>Facture.add</td>
+<td>666</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>possum.base.models</td>
+<td>Facture.del_produit</td>
+<td>689</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>possum.base.models</td>
+<td>Facture.del_paiement</td>
+<td>726</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.get_users</td>
+<td>731</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Facture.get_last_connected</td>
+<td>739</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>W0702</td>
+<td>possum.base.models</td>
+<td>Facture.get_last_connected</td>
+<td>743</td>
+<td>No exception type(s) specified</td>
+</tr>
+<tr class="odd">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.get_last_connected</td>
+<td>739</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Facture.authenticate</td>
+<td>745</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>W6501</td>
+<td>possum.base.models</td>
+<td>Facture.authenticate</td>
+<td>751</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>possum.base.models</td>
+<td>Facture.authenticate</td>
+<td>754</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.authenticate</td>
+<td>745</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.getTvaNormal</td>
+<td>757</td>
+<td>Invalid name "getTvaNormal" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Facture.getTvaAlcool</td>
+<td>766</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.getTvaAlcool</td>
+<td>766</td>
+<td>Invalid name "getTvaAlcool" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Facture.get_resume</td>
+<td>770</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.get_resume</td>
+<td>771</td>
+<td>Instance of 'Facture' has no 'montant' member</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Facture.get_montant</td>
+<td>773</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>W6501</td>
+<td>possum.base.models</td>
+<td>Facture.ajout_paiement</td>
+<td>786</td>
+<td>Specify string format arguments as logging function parameters</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.ajout_paiement</td>
+<td>825</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Facture.total</td>
+<td>836</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.check_path</td>
+<td>877</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois</td>
+<td>913</td>
+<td>Class 'StatsJourPaiement' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois</td>
+<td>916</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois</td>
+<td>920</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois</td>
+<td>923</td>
+<td>Invalid name "ca" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois</td>
+<td>923</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois</td>
+<td>925</td>
+<td>Invalid name "ca" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois</td>
+<td>931</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois</td>
+<td>936</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois</td>
+<td>887</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois_old</td>
+<td>974</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois_old</td>
+<td>974</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois_old</td>
+<td>977</td>
+<td>Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois_old</td>
+<td>977</td>
+<td>Class 'Facture' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois_old</td>
+<td>982</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois_old</td>
+<td>997</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois_old</td>
+<td>997</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_mois_old</td>
+<td>947</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.get_factures_du_jour</td>
+<td>1021</td>
+<td>Class 'Facture' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.get_factures_du_jour</td>
+<td>1016</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour</td>
+<td>1069</td>
+<td>Class 'StatsJourPaiement' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour</td>
+<td>1078</td>
+<td>Class 'Categorie' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour</td>
+<td>1079</td>
+<td>Class 'StatsJourCategorie' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour</td>
+<td>1082</td>
+<td>Class 'StatsJourProduit' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour</td>
+<td>1085</td>
+<td>Class 'StatsJourCategorie' has no 'DoesNotExist' member</td>
+</tr>
+<tr class="even">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour</td>
+<td>1027</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="odd">
+<td>R0914</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1089</td>
+<td>Too many local variables (17/15)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1126</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1126</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1129</td>
+<td>Invalid name "f" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1129</td>
+<td>Class 'Facture' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1134</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1136</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1161</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1161</td>
+<td>Class 'PaiementType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1170</td>
+<td>Invalid name "p" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>R0912</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1089</td>
+<td>Too many branches (16/12)</td>
+</tr>
+<tr class="even">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.rapport_jour_old</td>
+<td>1089</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="odd">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats_avec_nouvelles_factures</td>
+<td>1197</td>
+<td>Invalid name "maj_stats_avec_nouvelles_factures" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats_avec_nouvelles_factures</td>
+<td>1200</td>
+<td>Class 'Facture' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>R0201</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats_avec_nouvelles_factures</td>
+<td>1197</td>
+<td>Method could be a function</td>
+</tr>
+<tr class="even">
+<td>R0914</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1206</td>
+<td>Too many local variables (21/15)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1210</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1211</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1212</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1213</td>
+<td>Invalid name "ca" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1213</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1214</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1215</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1216</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1217</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1218</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1219</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1220</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1221</td>
+<td>Class 'LogType' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1222</td>
+<td>Class 'LogType' has no 'DoesNotExist' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1228</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1232</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1235</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1238</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1241</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1244</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1249</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1257</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1262</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1270</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1275</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1280</td>
+<td>Class 'StatsJourGeneral' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1288</td>
+<td>Class 'StatsJourProduit' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1294</td>
+<td>Class 'StatsJourProduit' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1298</td>
+<td>Class 'StatsJourCategorie' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1302</td>
+<td>Class 'StatsJourCategorie' has no 'objects' member</td>
+</tr>
+<tr class="odd">
+<td>E1101</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1307</td>
+<td>Class 'StatsJourPaiement' has no 'objects' member</td>
+</tr>
+<tr class="even">
+<td>R0912</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1206</td>
+<td>Too many branches (14/12)</td>
+</tr>
+<tr class="odd">
+<td>R0915</td>
+<td>possum.base.models</td>
+<td>Facture.maj_stats</td>
+<td>1206</td>
+<td>Too many statements (93/50)</td>
+</tr>
+<tr class="even">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Facture.show</td>
+<td>1389</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="odd">
+<td>C0111</td>
+<td>possum.base.models</td>
+<td>Facture.showPaiements</td>
+<td>1400</td>
+<td>Missing docstring</td>
+</tr>
+<tr class="even">
+<td>C0103</td>
+<td>possum.base.models</td>
+<td>Facture.showPaiements</td>
+<td>1400</td>
+<td>Invalid name "showPaiements" (should match [a-z_][a-z0-9_]{2,30}$)</td>
+</tr>
+<tr class="odd">
+<td>R0904</td>
+<td>possum.base.models</td>
+<td>Facture</td>
+<td>513</td>
+<td>Too many public methods (46/20)</td>
+</tr>
+<tr class="even">
+<td>W0611</td>
+<td>possum.base.models</td>
+<td>&#160;</td>
+<td>27</td>
+<td>Unused import settings</td>
+</tr>
+</table>
+</div>
+</div>
+</body>
+</html>
+</div>
+<div class="section" id="les-bugs">
+<h2>4.3. Les bugs<a class="headerlink" href="#les-bugs" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="section" id="nouveau-bug">
+<h3>4.3.1. Nouveau bug<a class="headerlink" href="#nouveau-bug" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Lorsque vous avez trouvé un bug, vous pouvez vérifier en tout premier si ce bug est déjà connu.
+Pour cela, il suffit de consulter la page suivante: <a class="reference external" href="https://github.com/possum-software/possum/issues">GitHub</a>.</p>
+<p>Si votre bug est inconnu, alors nous vous serons reconnaissant de décrire ce bug et si possible les conditions
+pour le recréer à la même adresse que ci-dessus.</p>
+<p>Note importante:</p>
+<p>Si le bug est un bug de sécurité, il est préférable d&#8217;envoyer un mail à <a class="reference external" href="https://possum.insa-rouen.fr/cgi-bin/mailman/listinfo/security">la liste de
+de diffusion dédiée</a> et de ne pas
+créer un bug dans le gestionnaire de bug. En effet, on essayera de corriger le bug de sécurité avant
+de le rendre public.</p>
+</div>
+<div class="section" id="correction-d-un-bug">
+<h3>4.3.2. Correction d&#8217;un bug<a class="headerlink" href="#correction-d-un-bug" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Cette section concerne surtout les développeurs.</p>
+<p>Si vous avez corriger un bug qui est référencé dans le gestionnaire de bug, alors vous pouvez le fermer
+automatiquement avec l&#8217;opération de commit en utilisant son numéro d&#8217;identifiant. Par exemple pour fermer
+le bug numéro 42, il vous suffira d&#8217;ajouter dans le commentaire du commit: &#8216;&#8217;Closes #42&#8217;&#8216;.</p>
+<p>Si votre commit est en relation avec un bug mais ne le ferme pas, alors il suffit d&#8217;indiquer le numéro
+du bug dans le commentaire du commit. Par exemple: &#8216;&#8217;Prépare la correction de #42.&#8217;&#8216;.</p>
+</div>
 </div>
 </div>
 
@@ -631,6 +7131,11 @@ La définition de tous les codes est <a class="reference external" href="http://
 </ul>
 </li>
 <li><a class="reference external" href="#qualite">4.2. Qualité</a></li>
+<li><a class="reference external" href="#les-bugs">4.3. Les bugs</a><ul>
+<li><a class="reference external" href="#nouveau-bug">4.3.1. Nouveau bug</a></li>
+<li><a class="reference external" href="#correction-d-un-bug">4.3.2. Correction d&#8217;un bug</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
