@@ -7,6 +7,11 @@ Voici le cycle de développement adopté pour la sortie des versions:
 .. image:: images/cycle_de_developpement.png
    :alt: Cycle de développement du projet
 
+Convention de codage
+====================
+
+La convention de codage utilisée pour le projet suit le 
+`Style Guide for Python Code (PEP 8) <http://www.python.org/dev/peps/pep-0008/>`_.
 
 Modèles
 =======
