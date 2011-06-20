@@ -22,7 +22,7 @@ Epson MT M88 iv         imprimante à ticket
 écran tactile
 https://help.ubuntu.com/community/EloTouchScreen
 
-PosgreSQL
+PostgreSQL
 ---------
 
 Django
