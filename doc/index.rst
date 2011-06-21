@@ -2,6 +2,8 @@
 Sommaire
 ========
 
+`For english speakers <en/index.html>`_
+
 .. toctree::
    :numbered:
    :maxdepth: 2
