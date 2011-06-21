@@ -25,57 +25,33 @@ https://help.ubuntu.com/community/EloTouchScreen
 Enlightenment
 -------------
 
-cd /home/pos
-wget http://omicron.homeip.net/projects/easy_e17/easy_e17.sh
-chmod u+x ./easy_e17.sh
-cat .easy_e17.conf
---srcmode=full 
---low 
---disable-notification
---packagelist=full 
---skip=mpdule,emprint,screenshot,exalt,enjoy,wlan,eweather,alarm,calendar,cpu,drawer,efm_nav,efm_path,efm_pathbar,everything-mpris,everything-pidgin,everything-tracker,everything-wallpaper,everything-websearch,eweather,exalt-client,exebuf,execwatch,itask,itask-ng,flame,forecasts,iiirk,mail,mem,moon,net,news,notification,eooorg,penguins,photo,places,quickaccess,rain,skel,slideshow,snow,taskbar,tclock,tiling,uptime,weather,winlist-ng,winselector,emotion,libeweather,enlil,python-emotion,e_phys,editje,elicit,elsa,emote,empower,enki,ephoto,Eterm,expedite,exquisite,eyelight,image-viewer,rage,language,diskio,deskshow,ethumb,python-ethumb,shellementary
---cflags=-O2,-march=native,-s
---asuser
---srcrev=55768
---instpath=/home/pos/e17
---srcpath=/home/pos/e17_src/
+::
+  cd /home/pos
+  wget http://omicron.homeip.net/projects/easy_e17/easy_e17.sh
+  chmod u+x ./easy_e17.sh
+  cat .easy_e17.conf
+  --srcmode=full 
+  --low 
+  --disable-notification
+  --packagelist=full 
+  --skip=mpdule,emprint,screenshot,exalt,enjoy,wlan,eweather,alarm,calendar,cpu,drawer,efm_nav,efm_path,efm_pathbar,everything-mpris,everything-pidgin,everything-tracker,everything-wallpaper,everything-websearch,eweather,exalt-client,exebuf,execwatch,itask,itask-ng,flame,forecasts,iiirk,mail,mem,moon,net,news,notification,eooorg,penguins,photo,places,quickaccess,rain,skel,slideshow,snow,taskbar,tclock,tiling,uptime,weather,winlist-ng,winselector,emotion,libeweather,enlil,python-emotion,e_phys,editje,elicit,elsa,emote,empower,enki,ephoto,Eterm,expedite,exquisite,eyelight,image-viewer,rage,language,diskio,deskshow,ethumb,python-ethumb,shellementary
+  --cflags=-O2,-march=native,-s
+  --asuser
+  --srcrev=55768
+  --instpath=/home/pos/e17
+  --srcpath=/home/pos/e17_src/
 
-./easy_e17.sh -i
+  ./easy_e17.sh -i
 
-
-INSTALL NOTES:
---------------------------------------------------------------------------------
-The most incredible and really unbelievable dream has become true:
-You compiled e17 successfully!
 
 Starting e17:
 Create a file ~/.xsession with the line 'exec /home/pos/e17/bin/enlightenment_start'.
 Add a link to this file using 'ln -s ~/.xsession ~/.xinitrc'.
 
-If you're using a login manager (GDM/KDM), select the session type 'default' in them.
-If you're using the startx command, simply execute it now.
-
-Note: e17 is still not released and it won't be in the near future. So don't
-ask for a stable release. e17 is still very buggy and only for experienced users
-who know what they do...
-
-Rasterman didn't write this script so don't ask him for help with it.
-
-Hint: From now on you can easily keep your installation up to date.
-Simply run easy_e17.sh with -u instead of -i .
-
-We hope you will enjoy your trip into e17... Have fun!
---------------------------------------------------------------------------------
-
 ADD THESE ENVIRONMENT VARIABLES:
---------------------------------------------------------------------------------
 export PATH="/home/pos/e17/bin:$PATH"
 export PYTHONPATH="/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH"
 export LD_LIBRARY_PATH="/home/pos/e17/lib:$LD_LIBRARY_PATH"
---------------------------------------------------------------------------------
-
-
-
 
 PostgreSQL
 ----------
