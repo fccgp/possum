@@ -22,7 +22,7 @@
 """Interface graphique utilisant les EFL"""
 #import signal
 import os, sys
-from elementary import cursors
+#from elementary import cursors
 import elementary
 #import edje
 import ecore
@@ -227,7 +227,7 @@ win.resize(1024, 768)
 win.title_set("P.O.S.S.U.M")
 win.callback_destroy_add(destroy)
 
-CURSOR = cursors.ELM_CURSOR_TCROSS
+#CURSOR = cursors.ELM_CURSOR_TCROSS
 
 if not settings.DEBUG:
     win.fullscreen = True
@@ -1957,7 +1957,7 @@ def create_facture():
     bt = elementary.Button(win)
     bt.label_set("Nouvelle")
     bt.callback_clicked_add(f_new)
-    bt.cursor_set(CURSOR)
+#    bt.cursor_set(CURSOR)
     bt.size_hint_weight_set(evas.EVAS_HINT_EXPAND, 0.0)
     bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
     bt.show()
@@ -2450,7 +2450,7 @@ def create_ihm():
 #    global notify_admin_panel
 #    notify_admin_panel.show()
 
-    win.cursor_set(CURSOR)
+#    win.cursor_set(CURSOR)
     win.show()
 
     elementary.run()
