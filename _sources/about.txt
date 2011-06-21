@@ -2,8 +2,6 @@
 Introduction
 ============
 
-`For english speakers <en/index.html>`_
-
 Possum est un logiciel destiné au point de vente (POS / Point Of Sales)
 de type restaurant / bar / brasserie. 
 

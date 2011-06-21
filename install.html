@@ -86,7 +86,9 @@ Epson MT M88 iv         imprimante à ticket</p>
 </div>
 <div class="section" id="enlightenment">
 <h2>2.3. Enlightenment<a class="headerlink" href="#enlightenment" title="Lien permanent vers ce titre">¶</a></h2>
-<p>cd /home/pos
+<dl class="docutils">
+<dt>::</dt>
+<dd><p class="first">cd /home/pos
 wget <a class="reference external" href="http://omicron.homeip.net/projects/easy_e17/easy_e17.sh">http://omicron.homeip.net/projects/easy_e17/easy_e17.sh</a>
 chmod u+x ./easy_e17.sh
 cat .easy_e17.conf
@@ -100,46 +102,29 @@ cat .easy_e17.conf
 &#8211;srcrev=55768
 &#8211;instpath=/home/pos/e17
 &#8211;srcpath=/home/pos/e17_src/</p>
-<p>./easy_e17.sh -i</p>
-</div>
-<div class="section" id="install-notes">
-<h2>2.4. INSTALL NOTES:<a class="headerlink" href="#install-notes" title="Lien permanent vers ce titre">¶</a></h2>
-<p>The most incredible and really unbelievable dream has become true:
-You compiled e17 successfully!</p>
+<p class="last">./easy_e17.sh -i</p>
+</dd>
+</dl>
 <p>Starting e17:
 Create a file ~/.xsession with the line &#8216;exec /home/pos/e17/bin/enlightenment_start&#8217;.
 Add a link to this file using &#8216;ln -s ~/.xsession ~/.xinitrc&#8217;.</p>
-<p>If you&#8217;re using a login manager (GDM/KDM), select the session type &#8216;default&#8217; in them.
-If you&#8217;re using the startx command, simply execute it now.</p>
-<p>Note: e17 is still not released and it won&#8217;t be in the near future. So don&#8217;t
-ask for a stable release. e17 is still very buggy and only for experienced users
-who know what they do...</p>
-<p>Rasterman didn&#8217;t write this script so don&#8217;t ask him for help with it.</p>
-<p>Hint: From now on you can easily keep your installation up to date.
-Simply run easy_e17.sh with -u instead of -i .</p>
-</div>
-<div class="section" id="we-hope-you-will-enjoy-your-trip-into-e17-have-fun">
-<h2>2.5. We hope you will enjoy your trip into e17... Have fun!<a class="headerlink" href="#we-hope-you-will-enjoy-your-trip-into-e17-have-fun" title="Lien permanent vers ce titre">¶</a></h2>
-</div>
-<div class="section" id="add-these-environment-variables">
-<h2>2.6. ADD THESE ENVIRONMENT VARIABLES:<a class="headerlink" href="#add-these-environment-variables" title="Lien permanent vers ce titre">¶</a></h2>
-<p>export PATH=&#8221;/home/pos/e17/bin:$PATH&#8221;
+<p>ADD THESE ENVIRONMENT VARIABLES:
+export PATH=&#8221;/home/pos/e17/bin:$PATH&#8221;
 export PYTHONPATH=&#8221;/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH&#8221;
-export LD_LIBRARY_PATH=&#8221;/home/pos/e17/lib:$LD_LIBRARY_PATH&#8221;
-&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+export LD_LIBRARY_PATH=&#8221;/home/pos/e17/lib:$LD_LIBRARY_PATH&#8221;</p>
 </div>
 <div class="section" id="postgresql">
-<h2>2.7. PostgreSQL<a class="headerlink" href="#postgresql" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.4. PostgreSQL<a class="headerlink" href="#postgresql" title="Lien permanent vers ce titre">¶</a></h2>
 </div>
 <div class="section" id="django">
-<h2>2.8. Django<a class="headerlink" href="#django" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.5. Django<a class="headerlink" href="#django" title="Lien permanent vers ce titre">¶</a></h2>
 </div>
 <div class="section" id="possum">
-<h2>2.9. Possum<a class="headerlink" href="#possum" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.6. Possum<a class="headerlink" href="#possum" title="Lien permanent vers ce titre">¶</a></h2>
 <p>dans /home/pos/possum</p>
 </div>
 <div class="section" id="apache">
-<h2>2.10. Apache<a class="headerlink" href="#apache" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.7. Apache<a class="headerlink" href="#apache" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour accèder à la partie d&#8217;administration, il nous faudra un serveur web.</p>
 <div class="highlight-python"><pre>&gt; sudo apt-get install libapache2-mod-wsgi
 &gt; cat /etc/apache2/ssleay.cnf
@@ -169,13 +154,13 @@ A REMPLIR !!
 <p>Suivre la documentation: <a class="reference external" href="http://docs.djangoproject.com/en/1.2/howto/deployment/modwsgi/">http://docs.djangoproject.com/en/1.2/howto/deployment/modwsgi/</a></p>
 </div>
 <div class="section" id="configuration">
-<h2>2.11. Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.8. Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
 <p>init de la base
 comment renseigner la base ?
 ne pas oublier de sauvegarder la base de données !!</p>
 </div>
 <div class="section" id="sauvegarde">
-<h2>2.12. Sauvegarde<a class="headerlink" href="#sauvegarde" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.9. Sauvegarde<a class="headerlink" href="#sauvegarde" title="Lien permanent vers ce titre">¶</a></h2>
 <dl class="docutils">
 <dt>sauvegarde complète de la base:</dt>
 <dd>pg_dumpall &#8211;clean &#8211;file=bd.dump</dd>
@@ -184,7 +169,7 @@ ne pas oublier de sauvegarder la base de données !!</p>
 </dl>
 </div>
 <div class="section" id="restauration">
-<h2>2.13. Restauration<a class="headerlink" href="#restauration" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.10. Restauration<a class="headerlink" href="#restauration" title="Lien permanent vers ce titre">¶</a></h2>
 <p>/usr/bin/psql -f possum-20100109.dump postgres</p>
 <p>/usr/bin/psql -f bd-stats.dump possumdb</p>
 </div>
@@ -205,16 +190,13 @@ ne pas oublier de sauvegarder la base de données !!</p>
 <li><a class="reference external" href="#requis">2.1. Requis</a></li>
 <li><a class="reference external" href="#materiels">2.2. Matériels</a></li>
 <li><a class="reference external" href="#enlightenment">2.3. Enlightenment</a></li>
-<li><a class="reference external" href="#install-notes">2.4. INSTALL NOTES:</a></li>
-<li><a class="reference external" href="#we-hope-you-will-enjoy-your-trip-into-e17-have-fun">2.5. We hope you will enjoy your trip into e17... Have fun!</a></li>
-<li><a class="reference external" href="#add-these-environment-variables">2.6. ADD THESE ENVIRONMENT VARIABLES:</a></li>
-<li><a class="reference external" href="#postgresql">2.7. PostgreSQL</a></li>
-<li><a class="reference external" href="#django">2.8. Django</a></li>
-<li><a class="reference external" href="#possum">2.9. Possum</a></li>
-<li><a class="reference external" href="#apache">2.10. Apache</a></li>
-<li><a class="reference external" href="#configuration">2.11. Configuration</a></li>
-<li><a class="reference external" href="#sauvegarde">2.12. Sauvegarde</a></li>
-<li><a class="reference external" href="#restauration">2.13. Restauration</a></li>
+<li><a class="reference external" href="#postgresql">2.4. PostgreSQL</a></li>
+<li><a class="reference external" href="#django">2.5. Django</a></li>
+<li><a class="reference external" href="#possum">2.6. Possum</a></li>
+<li><a class="reference external" href="#apache">2.7. Apache</a></li>
+<li><a class="reference external" href="#configuration">2.8. Configuration</a></li>
+<li><a class="reference external" href="#sauvegarde">2.9. Sauvegarde</a></li>
+<li><a class="reference external" href="#restauration">2.10. Restauration</a></li>
 </ul>
 </li>
 </ul>
