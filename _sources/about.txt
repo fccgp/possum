@@ -2,17 +2,26 @@
 Introduction
 ============
 
-Possum est un logiciel destiné au point de vente (POS / Point Of Sales).
-Tout le code source est sous GPLv3 et la documentation sous FDL.
+`For english speakers <en/index.html>`_
 
-Possum peut être utilisé avec une imprimante à ticket et un écran tactile.
-Possum est capable de sortir des rapports journaliers et mensuels ainsi qu'un
-ensemble de statistiques permettant d'améliorer l'activité du restaurant. Le poste
-utilisé pour la caisse peut également servir de jukebox pour jouer de la musique.
+Possum est un logiciel destiné au point de vente (POS / Point Of Sales)
+de type restaurant / bar / brasserie. 
 
+Il est conseillé d'utiliser Possum avec une imprimante à ticket et un écran tactile.
 
-Keep it stupid and simple ! Finger power !
+Possum peut servir à servir à la facturation et présente différentes statistiques
+(chiffre d'affaire, montant de TVA, totaux des réglements par type de paiement,
+nombre de couverts, ticket moyen par table, ...). Ces statistiques sont calculés 
+par jour et par mois et aidera le gérant du commerce à connaître la tendance
+des ventes.
 
+Il est également possible de gérer des listes de lecture, ceci vous permettra d'utiliser
+Possum comme un jukebox pour diffuser de la musique dans l'établissement.
+
+Tout le code source est sous GPLv3 et la documentation sous FDL. L'interface 
+graphique utilise la librairie EFL et tout le backend utilise Python / Django.
+
+Le maître mot: essayer de rester simple pour l'utilisateur.
 
 Historique
 ==========
