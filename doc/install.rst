@@ -1,26 +1,13 @@
 Installation
 ============
 
-Requis
-------
+Utilisateur
+-----------
 
-postgres / django / EFL
+Tout d'abord, nous allons créer un utilisateur ''pos'' qui aura comme ''home'' : /home/pos:
 
-Matériels
----------
-
-Ceci est la liste des matériels utilisés.
-
-ubuntu on:
-Mini ITX VIA M6000G
-1Go DDR 400Mhz
-Hard Disk 80Go P-ATA
-Asus EEE PC
-ELo Touch 1515L         support moyen de la part de EloTouch
-Epson MT M88 iv         imprimante à ticket
-
-écran tactile
-https://help.ubuntu.com/community/EloTouchScreen
+::
+  adduser pos
 
 Enlightenment
 -------------
@@ -43,21 +30,23 @@ Enlightenment
 
   ./easy_e17.sh -i
 
+  echo 'exec /home/pos/e17/bin/enlightenment_start' > ~/.xsession
+  ln -sf ~/.xsession ~/.xinitrc
 
-Starting e17:
-Create a file ~/.xsession with the line 'exec /home/pos/e17/bin/enlightenment_start'.
-Add a link to this file using 'ln -s ~/.xsession ~/.xinitrc'.
-
-ADD THESE ENVIRONMENT VARIABLES:
-export PATH="/home/pos/e17/bin:$PATH"
-export PYTHONPATH="/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH"
-export LD_LIBRARY_PATH="/home/pos/e17/lib:$LD_LIBRARY_PATH"
-
-PostgreSQL
-----------
+  dans ~/.bashrc
+  export PATH="/home/pos/e17/bin:$PATH"
+  export PYTHONPATH="/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH"
+  export LD_LIBRARY_PATH="/home/pos/e17/lib:$LD_LIBRARY_PATH"
 
 Django
 ------
+
+Installation de Django:
+
+::
+  sudo apt-get install python-django
+
+Il est conseillé de prendre au minimum une version 1.2.3.
 
 Possum
 ------
@@ -119,4 +108,20 @@ Restauration
 /usr/bin/psql -f possum-20100109.dump postgres
 
 /usr/bin/psql -f bd-stats.dump possumdb
+
+Exemple de Matériels
+--------------------
+
+Ceci est la liste des matériels utilisés.
+
+ubuntu on:
+Mini ITX VIA M6000G
+1Go DDR 400Mhz
+Hard Disk 80Go P-ATA
+Asus EEE PC
+ELo Touch 1515L         support moyen de la part de EloTouch
+Epson MT M88 iv         imprimante à ticket
+
+écran tactile
+https://help.ubuntu.com/community/EloTouchScreen
 

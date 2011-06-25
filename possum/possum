@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 export DISPLAY=:0
-export PYTHONPATH="/opt/e17/lib/python2.6/site-packages:"
+
 cd /home/pos/possum
 python gui/efl.py > /home/pos/possum.log 2>&1 &
 exit 0
