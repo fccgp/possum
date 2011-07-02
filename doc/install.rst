@@ -12,6 +12,8 @@ Tout d'abord, nous allons créer un utilisateur ''pos'' qui aura comme ''home'' 
 Enlightenment
 -------------
 
+On utilise la réversion 59661 qui correspond à la version officielle 1.0.1 des EFL.
+
 ::
   cd /home/pos
   wget http://omicron.homeip.net/projects/easy_e17/easy_e17.sh
@@ -24,7 +26,7 @@ Enlightenment
   --skip=mpdule,emprint,screenshot,exalt,enjoy,wlan,eweather,alarm,calendar,cpu,drawer,efm_nav,efm_path,efm_pathbar,everything-mpris,everything-pidgin,everything-tracker,everything-wallpaper,everything-websearch,eweather,exalt-client,exebuf,execwatch,itask,itask-ng,flame,forecasts,iiirk,mail,mem,moon,net,news,notification,eooorg,penguins,photo,places,quickaccess,rain,skel,slideshow,snow,taskbar,tclock,tiling,uptime,weather,winlist-ng,winselector,emotion,libeweather,enlil,python-emotion,e_phys,editje,elicit,elsa,emote,empower,enki,ephoto,Eterm,expedite,exquisite,eyelight,image-viewer,rage,language,diskio,deskshow,ethumb,python-ethumb,shellementary
   --cflags=-O2,-march=native,-s
   --asuser
-  --srcrev=55768
+  --srcrev=59661
   --instpath=/home/pos/e17
   --srcpath=/home/pos/e17_src/
 
@@ -38,6 +40,21 @@ Enlightenment
   export PYTHONPATH="/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH"
   export LD_LIBRARY_PATH="/home/pos/e17/lib:$LD_LIBRARY_PATH"
 
+
+Ensuite il faut initialiser Enlightenment en lançant une session. Il y a plusieurs possibilités pour le faire:
+- startx
+- session gdm (expliquer comment faire)
+
+Une fois connecté, au premier lancement vous avez quelques paramètres à configurer:
+- Language: Français
+- Profil: Minimaliste 
+- Menus: Enlightenment Default
+
+Clic gauche
+- configuration > Fond d'écran
+- Système > Dark_Gradient
+ 
+
 Django
 ------
 
@@ -47,6 +64,9 @@ Installation de Django:
   sudo apt-get install python-django
 
 Il est conseillé de prendre au minimum une version 1.2.3.
+
+Il faudra également configurer une base de données, pour cela la documentation de Django
+est bien faite: `Installation de Django <http://docs.django-fr.org/intro/install.html>`_
 
 Possum
 ------
