@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-export DISPLAY=:0
+#export DISPLAY=:0
 
 cd /home/pos/possum
 python gui/efl.py > /home/pos/possum.log 2>&1 &

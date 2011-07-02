@@ -1710,15 +1710,9 @@ def create_info():
     ic.show()
     tb.pack(ic, 0, 0, 3, 1)
 
-    try:
-        rev = os.popen("/usr/bin/svn info -R | /usr/bin/tail -10" \
-                    ).readlines()[1].replace(" ","").replace("\n","" \
-                    ).split(':')[1]
-    except:
-        rev = "----"
-        logging.warning("/usr/bin/svn not found")
+    version = "X.X.X"
     l = elementary.Label(win)
-    l.label_set("revision # %s" % rev)
+    l.label_set("version %s" % version)
     l.show()
     tb.pack(l, 0, 1, 3, 1)
 
