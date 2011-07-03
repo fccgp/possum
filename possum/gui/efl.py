@@ -19,12 +19,11 @@
 #    along with POSSUM.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-"""Interface graphique utilisant les EFL"""
-#import signal
+"""POSSUM GUI using EFL"""
+
 import os, sys
-#from elementary import cursors
+from elementary import cursors
 import elementary
-#import edje
 import ecore
 import evas
 import locale
@@ -57,8 +56,6 @@ else:
     LOG = logging.getLogger('')
     LOG.addHandler(logging.handlers.SMTPHandler("localhost", \
                    "possum@localhost", ["root@localhost"], "[POSSUM] "))
-#    os.system("xsetroot -cursor /home/pos/possum/utils/empty.cursor "\
-#                                "/home/pos/possum/utils/empty.cursor")
 
 from possum.base.models import Accompagnement, Sauce, Etat, \
     Categorie, Couleur, Cuisson, Facture, Log, LogType, Paiement, \
@@ -227,7 +224,7 @@ win.resize(1024, 768)
 win.title_set("P.O.S.S.U.M")
 win.callback_destroy_add(destroy)
 
-#CURSOR = cursors.ELM_CURSOR_TCROSS
+CURSOR = cursors.ELM_CURSOR_TCROSS
 
 if not settings.DEBUG:
     win.fullscreen = True
@@ -1951,7 +1948,6 @@ def create_facture():
     bt = elementary.Button(win)
     bt.label_set("Nouvelle")
     bt.callback_clicked_add(f_new)
-#    bt.cursor_set(CURSOR)
     bt.size_hint_weight_set(evas.EVAS_HINT_EXPAND, 0.0)
     bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
     bt.show()
@@ -2436,15 +2432,7 @@ def create_ihm():
     create_admin_panel()
     create_graph_panel()
 
-    # pour le debug
-#    global RAPPORT_DATE
-#    RAPPORT_DATE = datetime(2011,1,27)
-#    RAPPORT_DATE = datetime(2010,3,3)
-#    historique(None)
-#    global notify_admin_panel
-#    notify_admin_panel.show()
-
-#    win.cursor_set(CURSOR)
+    win.cursor_set(CURSOR)
     win.show()
 
     elementary.run()

@@ -1,5 +1,5 @@
 #!/bin/bash
-Xephyr -ac -screen 1024x768 -br -reset -terminate :3 2>/dev/null &
+Xephyr -ac -screen 1024x768 -br -reset -terminate -host-cursor :3 2>/dev/null &
 sleep 1
 pushd /home/pos/possum > /dev/null
 DISPLAY=:3 python gui/efl.py &

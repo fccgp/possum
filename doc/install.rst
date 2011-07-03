@@ -68,8 +68,24 @@ Il est conseillé de prendre au minimum une version 1.2.3.
 Il faudra également configurer une base de données, pour cela la documentation de Django
 est bien faite: `Installation de Django <http://docs.django-fr.org/intro/install.html>`_
 
+
+Serveur Mail + creation d'un manager ...
+python-decimal
+
 Possum
 ------
+
+./manage.py syncdb
+
+You just installed Django's auth system, which means you don't have any superusers defined.
+Would you like to create one now? (yes/no): yes
+Username (Leave blank to use 'pos'): my_login
+E-mail address: my.login@example.org
+Password: 
+Password (again): 
+Superuser created successfully.
+
+
 
 dans /home/pos/possum
 

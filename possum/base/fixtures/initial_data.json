@@ -1,0 +1,1765 @@
+[
+    {
+        "pk": 1, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 0, 
+            "nom": "", 
+            "green": 159, 
+            "red": 255
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 153, 
+            "nom": "", 
+            "green": 204, 
+            "red": 102
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 50, 
+            "nom": "", 
+            "green": 200, 
+            "red": 255
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 189, 
+            "nom": "", 
+            "green": 159, 
+            "red": 166
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 42, 
+            "nom": "", 
+            "green": 218, 
+            "red": 184
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 0, 
+            "nom": "", 
+            "green": 161, 
+            "red": 201
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 108, 
+            "nom": "", 
+            "green": 224, 
+            "red": 69
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 160, 
+            "nom": "", 
+            "green": 249, 
+            "red": 255
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 78, 
+            "nom": "", 
+            "green": 249, 
+            "red": 255
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 255, 
+            "nom": "", 
+            "green": 166, 
+            "red": 148
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 33, 
+            "nom": "", 
+            "green": 225, 
+            "red": 255
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 220, 
+            "nom": "", 
+            "green": 179, 
+            "red": 68
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 149, 
+            "nom": "", 
+            "green": 101, 
+            "red": 234
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 109, 
+            "nom": "", 
+            "green": 90, 
+            "red": 255
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 181, 
+            "nom": "", 
+            "green": 151, 
+            "red": 234
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 149, 
+            "nom": "", 
+            "green": 135, 
+            "red": 255
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 165, 
+            "nom": "", 
+            "green": 255, 
+            "red": 29
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 96, 
+            "nom": "", 
+            "green": 53, 
+            "red": 255
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 39, 
+            "nom": "", 
+            "green": 240, 
+            "red": 136
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "base.couleur", 
+        "fields": {
+            "blue": 172, 
+            "nom": "", 
+            "green": 164, 
+            "red": 63
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "base.cuisson", 
+        "fields": {
+            "couleur": 1, 
+            "nom": "bien cuit", 
+            "priorite": 20
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "base.cuisson", 
+        "fields": {
+            "couleur": 1, 
+            "nom": "bleu", 
+            "priorite": 10
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "base.cuisson", 
+        "fields": {
+            "couleur": 1, 
+            "nom": "saignant", 
+            "priorite": 15
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "base.sauce", 
+        "fields": {
+            "couleur": null, 
+            "nom": "bearnaise"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "base.sauce", 
+        "fields": {
+            "couleur": null, 
+            "nom": "poivre"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "base.accompagnement", 
+        "fields": {
+            "couleur": null, 
+            "nom": "frites"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "base.accompagnement", 
+        "fields": {
+            "couleur": null, 
+            "nom": "gratin dauphinois"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "base.accompagnement", 
+        "fields": {
+            "couleur": null, 
+            "nom": "haricots verts"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "base.etat", 
+        "fields": {
+            "nom": "apero", 
+            "priorite": 10
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "base.etat", 
+        "fields": {
+            "nom": "cafe", 
+            "priorite": 30
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "base.etat", 
+        "fields": {
+            "nom": "dessert", 
+            "priorite": 25
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "base.etat", 
+        "fields": {
+            "nom": "entree", 
+            "priorite": 15
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "base.etat", 
+        "fields": {
+            "nom": "plat", 
+            "priorite": 20
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "base.etat", 
+        "fields": {
+            "nom": "solde", 
+            "priorite": 35
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Alcools", 
+            "disable_surtaxe": false, 
+            "couleur": 7, 
+            "alcool": true, 
+            "priorite": 3, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Bieres", 
+            "disable_surtaxe": false, 
+            "couleur": 11, 
+            "alcool": true, 
+            "priorite": 2, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Cafes", 
+            "disable_surtaxe": false, 
+            "couleur": 6, 
+            "alcool": false, 
+            "priorite": 12, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Cocktails", 
+            "disable_surtaxe": false, 
+            "couleur": 20, 
+            "alcool": true, 
+            "priorite": 19, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Desserts", 
+            "disable_surtaxe": true, 
+            "couleur": 4, 
+            "alcool": false, 
+            "priorite": 9, 
+            "surtaxable": false
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Eau", 
+            "disable_surtaxe": false, 
+            "couleur": 12, 
+            "alcool": false, 
+            "priorite": 10, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Entrees", 
+            "disable_surtaxe": true, 
+            "couleur": 2, 
+            "alcool": false, 
+            "priorite": 7, 
+            "surtaxable": false
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Formules", 
+            "disable_surtaxe": true, 
+            "couleur": 17, 
+            "alcool": false, 
+            "priorite": 13, 
+            "surtaxable": false
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Milk shake", 
+            "disable_surtaxe": false, 
+            "couleur": 19, 
+            "alcool": false, 
+            "priorite": 17, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Petit dej.", 
+            "disable_surtaxe": false, 
+            "couleur": 1, 
+            "alcool": false, 
+            "priorite": 0, 
+            "surtaxable": false
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Plats", 
+            "disable_surtaxe": true, 
+            "couleur": 3, 
+            "alcool": false, 
+            "priorite": 8, 
+            "surtaxable": false
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Smoothies", 
+            "disable_surtaxe": false, 
+            "couleur": 18, 
+            "alcool": false, 
+            "priorite": 15, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Sodas", 
+            "disable_surtaxe": false, 
+            "couleur": 10, 
+            "alcool": false, 
+            "priorite": 1, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Supp.", 
+            "disable_surtaxe": false, 
+            "couleur": 5, 
+            "alcool": false, 
+            "priorite": 5, 
+            "surtaxable": false
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Verres Blancs", 
+            "disable_surtaxe": false, 
+            "couleur": 8, 
+            "alcool": true, 
+            "priorite": 4, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Verres Roses", 
+            "disable_surtaxe": false, 
+            "couleur": 15, 
+            "alcool": true, 
+            "priorite": 4, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Verres Rouges", 
+            "disable_surtaxe": false, 
+            "couleur": 16, 
+            "alcool": true, 
+            "priorite": 4, 
+            "surtaxable": true
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Vins Blancs", 
+            "disable_surtaxe": false, 
+            "couleur": 9, 
+            "alcool": true, 
+            "priorite": 11, 
+            "surtaxable": false
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Vins Roses", 
+            "disable_surtaxe": false, 
+            "couleur": 13, 
+            "alcool": true, 
+            "priorite": 11, 
+            "surtaxable": false
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "base.categorie", 
+        "fields": {
+            "nom": "Vins Rouges", 
+            "disable_surtaxe": false, 
+            "couleur": 14, 
+            "alcool": true, 
+            "priorite": 11, 
+            "surtaxable": false
+        }
+    }, 
+    {
+        "pk": 448, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Americano", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "7.8", 
+            "categories_ok": [], 
+            "nom_facture": "Americano", 
+            "categorie": 8, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 437, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Baby Jack", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "4.3", 
+            "categories_ok": [], 
+            "nom_facture": "Jack Daniel baby (3,5cl)", 
+            "categorie": 8, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 503, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Digestif", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "3.1", 
+            "categories_ok": [], 
+            "nom_facture": "Digestif", 
+            "categorie": 8, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 439, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Martini", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "4.2", 
+            "categories_ok": [], 
+            "nom_facture": "Martini", 
+            "categorie": 8, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 504, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Rhum", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "4", 
+            "categories_ok": [], 
+            "nom_facture": "Rhum", 
+            "categorie": 8, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 141, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "1664", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "2.8", 
+            "categories_ok": [], 
+            "nom_facture": "1664", 
+            "categorie": 12, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 80, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Cafe", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "1.2", 
+            "categories_ok": [], 
+            "nom_facture": "Cafe express", 
+            "categorie": 7, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 243, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Cafe allonge", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "1.4", 
+            "categories_ok": [], 
+            "nom_facture": "Cafe allonge", 
+            "categorie": 7, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 430, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Gd chocolat", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "2", 
+            "categories_ok": [], 
+            "nom_facture": "Grand chocolat", 
+            "categorie": 7, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 316, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Pina colada", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "5.3", 
+            "categories_ok": [], 
+            "nom_facture": "Pina colada", 
+            "categorie": 20, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 210, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "1 boule", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "3.5", 
+            "categories_ok": [], 
+            "nom_facture": "Glace 1 boule", 
+            "categorie": 5, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 413, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "2 boules", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [
+                3, 
+                292, 
+                2
+            ], 
+            "prix": "3.5", 
+            "categories_ok": [], 
+            "nom_facture": "Glace 2 boules", 
+            "categorie": 5, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 420, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Ass. fromage", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [
+                293
+            ], 
+            "prix": "4.9", 
+            "categories_ok": [], 
+            "nom_facture": "Assiette de fromages", 
+            "categorie": 5, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 411, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Cafe liegois", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "5.1", 
+            "categories_ok": [], 
+            "nom_facture": "Cafe liegeois", 
+            "categorie": 5, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 412, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Chocolat liegeois", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "5.1", 
+            "categories_ok": [], 
+            "nom_facture": "Chocolat liegeois", 
+            "categorie": 5, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 478, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Pellegrino 100", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "6.8", 
+            "categories_ok": [], 
+            "nom_facture": "San Pellegrino 100cl", 
+            "categorie": 13, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 388, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Buffet froid", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [
+                242, 
+                292, 
+                1
+            ], 
+            "prix": "8.7", 
+            "categories_ok": [], 
+            "nom_facture": "Buffet froid", 
+            "categorie": 3, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 177, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Entree jour", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "4.8", 
+            "categories_ok": [], 
+            "nom_facture": "Entree du jour", 
+            "categorie": 3, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 154, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Enfant", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "8.2", 
+            "categories_ok": [], 
+            "nom_facture": "Formule enfant", 
+            "categorie": 1, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 242, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Express", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [
+                388, 
+                389,
+                400,
+                210,
+                413
+            ], 
+            "prix": "14.5", 
+            "categories_ok": [
+                5, 
+                3, 
+                4
+            ], 
+            "nom_facture": "Formule express", 
+            "categorie": 1, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 207, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Menu 20", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "20", 
+            "categories_ok": [], 
+            "nom_facture": "Formule", 
+            "categorie": 1, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 232, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Remise -10%", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "0", 
+            "categories_ok": [], 
+            "nom_facture": "Remise -10%", 
+            "categorie": 1, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 79, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Pain chocolat", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "1.2", 
+            "categories_ok": [], 
+            "nom_facture": "Pain au chocolat", 
+            "categorie": 2, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 524, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Pain raisins", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "1.8", 
+            "categories_ok": [], 
+            "nom_facture": "Pain aux raisins", 
+            "categorie": 2, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 389, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Entrecote", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [
+                242
+            ], 
+            "prix": "11.9", 
+            "categories_ok": [], 
+            "nom_facture": "Entrecote", 
+            "categorie": 4, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 400, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Pave de saumon", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [
+                242
+            ], 
+            "prix": "11", 
+            "categories_ok": [], 
+            "nom_facture": "Pave de saumon", 
+            "categorie": 4, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 169, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Plat du jour", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "8.5", 
+            "categories_ok": [], 
+            "nom_facture": "Plat du jour", 
+            "categorie": 4, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 463, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Coca light", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "3.4", 
+            "categories_ok": [], 
+            "nom_facture": "Coca Cola light", 
+            "categorie": 11, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 428, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Sup. sirop", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "0.4", 
+            "categories_ok": [], 
+            "nom_facture": "Supplement sirop", 
+            "categorie": 6, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 427, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "Sup. tonic", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "0.4", 
+            "categories_ok": [], 
+            "nom_facture": "Supplement Tonic", 
+            "categorie": 6, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 261, 
+        "model": "base.produit", 
+        "fields": {
+            "nom": "St-Emilion 75", 
+            "choix_sauce": false, 
+            "choix_accompagnement": false, 
+            "choix_cuisson": false, 
+            "produits_ok": [], 
+            "prix": "22.2", 
+            "categories_ok": [], 
+            "nom_facture": "St-Emilion (75cl)", 
+            "categorie": 15, 
+            "actif": true
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "base.zone", 
+        "fields": {
+            "nom": "1er", 
+            "prix_surtaxe": "0.2", 
+            "surtaxe": false
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "base.zone", 
+        "fields": {
+            "nom": "Bar", 
+            "prix_surtaxe": "0.2", 
+            "surtaxe": false
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "base.zone", 
+        "fields": {
+            "nom": "RdC", 
+            "prix_surtaxe": "0.2", 
+            "surtaxe": false
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "base.zone", 
+        "fields": {
+            "nom": "Terrasse", 
+            "prix_surtaxe": "0.2", 
+            "surtaxe": true
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T--", 
+            "zone": 6
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T01", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T02", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T03", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T04", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T05", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T06", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T07", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T08", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T09", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T10", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T11", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T12", 
+            "zone": 2
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T20", 
+            "zone": 3
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T21", 
+            "zone": 3
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T22", 
+            "zone": 3
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T23", 
+            "zone": 3
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T24", 
+            "zone": 3
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T25", 
+            "zone": 3
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T26", 
+            "zone": 3
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T27", 
+            "zone": 3
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T28", 
+            "zone": 3
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T29", 
+            "zone": 3
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T30", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T31", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T32", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T33", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T34", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T35", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T36", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T37", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T38", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T39", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T40", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T41", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T42", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T43", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T44", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T45", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T46", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T47", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T48", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T49", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T50", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T51", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T52", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T53", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T54", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T55", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T56", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T57", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T58", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "base.table", 
+        "fields": {
+            "nom": "T59", 
+            "zone": 4
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "Critical", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "Database initialized", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "Nouveau Montant", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "Rapport generated", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "Saint Saens Facturation System: ready", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "Saint Saens Facturation System: shutting down", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "Version", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "Warning", 
+            "description": ""
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "ca", 
+            "description": "CA TTC"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "ca_bar", 
+            "description": "CA bar"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "ca_resto", 
+            "description": "CA restauration"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "maj_stats", 
+            "description": "61982"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "montant_alcool", 
+            "description": "Montant Alcool"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "montant_normal", 
+            "description": "Montant Normal"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "nb_bar", 
+            "description": "Nombre de factures pour le bar"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "nb_couverts", 
+            "description": "Nombre de couverts"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "nb_factures", 
+            "description": "Nombre de factures"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "tm_bar", 
+            "description": "TM bar"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "tm_resto", 
+            "description": "TM restauration"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "tva_alcool", 
+            "description": "TVA Alcool"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "base.logtype", 
+        "fields": {
+            "nom": "tva_normal", 
+            "description": "TVA Normal"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "base.paiementtype", 
+        "fields": {
+            "nom_facture": "Ticket Resto", 
+            "nom": "Tic. Resto.", 
+            "priorite": 0, 
+            "fixed_value": true
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "base.paiementtype", 
+        "fields": {
+            "nom_facture": "ANCV", 
+            "nom": "ANCV", 
+            "priorite": 2, 
+            "fixed_value": true
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "base.paiementtype", 
+        "fields": {
+            "nom_facture": "CB", 
+            "nom": "CB", 
+            "priorite": 4, 
+            "fixed_value": false
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "base.paiementtype", 
+        "fields": {
+            "nom_facture": "Espece", 
+            "nom": "Espece", 
+            "priorite": 5, 
+            "fixed_value": false
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "base.paiementtype", 
+        "fields": {
+            "nom_facture": "Cheque", 
+            "nom": "Cheque", 
+            "priorite": 6, 
+            "fixed_value": false
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "base.paiementtype", 
+        "fields": {
+            "nom_facture": "American Express", 
+            "nom": "AMEX", 
+            "priorite": 7, 
+            "fixed_value": false
+        }
+    }
+]
