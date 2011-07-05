@@ -633,40 +633,6 @@ def choix_annee(bt_clicked):
             x += 1
     notify.show()
 
-#def create_graph_panel():
-    #"""Creation d'avance du panneau des graphiques."""
-    #global win
-
-    #notify = elementary.Notify(win)
-    #notify.repeat_events_set(False)
-    #notify.orient_set(elementary.ELM_NOTIFY_ORIENT_CENTER)
-
-    #fr = elementary.Frame(win)
-    #fr.label_set("Graphiques")
-    #fr.show()
-
-    #notify.content_set(fr)
-
-    #tb = elementary.Table(win)
-    ##tb.homogenous_set(True)
-    #tb.show()
-    #fr.content_set(tb)
-
-    #sp = elementary.Separator(win)
-    #sp.horizontal_set(True)
-    #sp.show()
-    #tb.pack(sp, 0, 4, 6, 1)
-
-    #bt = elementary.Button(win)
-    #bt.label_set("Retour au mode normal")
-    #bt.callback_clicked_add(admin_panel_exit)
-    #bt.size_hint_weight_set(evas.EVAS_HINT_EXPAND, 0.0)
-    #bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
-    #bt.show()
-    #tb.pack(bt, 0, 5, 6, 1)
-
-    #notify.hide()
-
 def create_admin_panel():
     """Creation d'avance du panneau de choix de table"""
     global win, notify_admin_panel, \
@@ -748,14 +714,6 @@ def create_admin_panel():
     bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
     bt.show()
     tb.pack(bt, 2, 2, 2, 1)
-
-#    bt = elementary.Button(win)
-#    bt.label_set("Graphiques")
-#    bt.callback_clicked_add(liste_des_produits)
-#    bt.size_hint_weight_set(evas.EVAS_HINT_EXPAND, 0.0)
-#    bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
-#    bt.show()
-#    tb.pack(bt, 4, 2, 2, 1)
 
     bt = elementary.Button(win)
     bt.label_set("Afficher la liste des produits")
@@ -2433,7 +2391,6 @@ def create_ihm():
     tb.pack(bt, 6, 14, 2, 1)
 
     create_admin_panel()
-#    create_graph_panel()
 
     win.cursor_set(CURSOR)
     win.show()
