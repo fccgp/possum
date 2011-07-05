@@ -666,13 +666,19 @@ class Facture(models.Model):
                 logging.debug("la remise est de: %s" % vendu.prix)
                 self.produits.add(vendu)
                 self.restant_a_payer += vendu.prix
+                self.montant_normal += vendu.prix
             else:
                 logging.debug("cette remise n'est pas connue")
         #self.produits.order_by('produit')
         self.save()
 
     def del_produit(self, vendu):
-        """On enleve un produit à la facture"""
+        """On enleve un produit à la facture.
+        
+        Si le montant est négatif après le retrait d'un élèment,
+        c'est qu'il reste certainement une remise, dans
+        ce cas on enlève tous les produits.
+        """
         if vendu in self.produits.all():
             self.produits.remove(vendu)
             #prix = vendu.produit.prix
@@ -685,6 +691,8 @@ class Facture(models.Model):
             self.restant_a_payer -= vendu.prix
             vendu.delete()
             self.save()
+            if self.get_montant() < Decimal("0"):
+				self.del_all_produits()
         else:
             logging.warning("[%s] on essaye de supprimer un produit "\
                             "qui n'est pas dans la facture" % self)

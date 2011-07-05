@@ -2116,10 +2116,13 @@ def show_compteur(CPT, nombre):
     #logging.debug("nouvelle valeur: %s" % compteur['valeur'])
 
     for case in xrange(nb_chiffre):
-        if ancien[case] != compteur['valeur'][case]:
+        new = compteur['valeur'][case]
+        if new not in "0123456789.":
+            new = "0"
+        if ancien[case] != new:
             # on cache l'ancien et montre le nouveau
             compteur[case][ancien[case]].hide()
-            compteur[case][compteur['valeur'][case]].show()
+            compteur[case][new].show()
 
 def create_compteur(CPT):
     """Cree une table et tous les IC qui vont bien
