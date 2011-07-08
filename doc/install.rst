@@ -7,7 +7,8 @@ Utilisateur
 Tout d'abord, nous allons créer un utilisateur ''pos'' qui aura comme ''home'' : /home/pos:
 
 ::
-  adduser pos
+
+  sudo adduser pos
 
 Enlightenment
 -------------
@@ -15,6 +16,7 @@ Enlightenment
 On utilise la réversion 59661 qui correspond à la version officielle 1.0.1 des EFL.
 
 ::
+
   cd /home/pos
   wget http://omicron.homeip.net/projects/easy_e17/easy_e17.sh
   chmod u+x ./easy_e17.sh
@@ -41,16 +43,20 @@ On utilise la réversion 59661 qui correspond à la version officielle 1.0.1 des
   export LD_LIBRARY_PATH="/home/pos/e17/lib:$LD_LIBRARY_PATH"
 
 
-Ensuite il faut initialiser Enlightenment en lançant une session. Il y a plusieurs possibilités pour le faire:
-- startx
-- session gdm (expliquer comment faire)
+Ensuite il faut initialiser Enlightenment en lançant une session. Le plus
+simple est de se connecter en mode texte avec l'utilisateur POS puis 
+lancer l'interface graphique avec la commande: startx
 
-Une fois connecté, au premier lancement vous avez quelques paramètres à configurer:
+Une fois connecté, au premier lancement vous avez quelques paramètres 
+à configurer:
+
 - Language: Français
 - Profil: Minimaliste 
 - Menus: Enlightenment Default
 
-Clic gauche
+Ensuite, on peut aussi changer le fond d'écran:
+
+- clic gauche sur le fond d'écran
 - configuration > Fond d'écran
 - Système > Dark_Gradient
  
@@ -61,6 +67,7 @@ Django
 Installation de Django:
 
 ::
+
   sudo apt-get install python-django
 
 Il est conseillé de prendre au minimum une version 1.2.3.
@@ -70,7 +77,7 @@ est bien faite: `Installation de Django <http://docs.django-fr.org/intro/install
 
 
 Serveur Mail + creation d'un manager ...
-python-decimal
+
 
 Possum
 ------
