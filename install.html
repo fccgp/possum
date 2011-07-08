@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -12,12 +14,13 @@
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
         VERSION:     '0.4',
-        COLLAPSE_MODINDEX: false,
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -67,64 +70,91 @@
             
   <div class="section" id="installation">
 <h1>2. Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="requis">
-<h2>2.1. Requis<a class="headerlink" href="#requis" title="Lien permanent vers ce titre">¶</a></h2>
-<p>postgres / django / EFL</p>
+<div class="section" id="utilisateur">
+<h2>2.1. Utilisateur<a class="headerlink" href="#utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Tout d&#8217;abord, nous allons créer un utilisateur &#8216;&#8217;pos&#8217;&#8217; qui aura comme &#8216;&#8217;home&#8217;&#8217; : /home/pos:</p>
+<div class="highlight-python"><pre>sudo adduser pos</pre>
 </div>
-<div class="section" id="materiels">
-<h2>2.2. Matériels<a class="headerlink" href="#materiels" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Ceci est la liste des matériels utilisés.</p>
-<p>ubuntu on:
-Mini ITX VIA M6000G
-1Go DDR 400Mhz
-Hard Disk 80Go P-ATA
-Asus EEE PC
-ELo Touch 1515L         support moyen de la part de EloTouch
-Epson MT M88 iv         imprimante à ticket</p>
-<p>écran tactile
-<a class="reference external" href="https://help.ubuntu.com/community/EloTouchScreen">https://help.ubuntu.com/community/EloTouchScreen</a></p>
 </div>
 <div class="section" id="enlightenment">
-<h2>2.3. Enlightenment<a class="headerlink" href="#enlightenment" title="Lien permanent vers ce titre">¶</a></h2>
-<dl class="docutils">
-<dt>::</dt>
-<dd><p class="first">cd /home/pos
-wget <a class="reference external" href="http://omicron.homeip.net/projects/easy_e17/easy_e17.sh">http://omicron.homeip.net/projects/easy_e17/easy_e17.sh</a>
+<h2>2.2. Enlightenment<a class="headerlink" href="#enlightenment" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On utilise la réversion 59661 qui correspond à la version officielle 1.0.1 des EFL.</p>
+<div class="highlight-python"><pre>cd /home/pos
+wget http://omicron.homeip.net/projects/easy_e17/easy_e17.sh
 chmod u+x ./easy_e17.sh
 cat .easy_e17.conf
-&#8211;srcmode=full
-&#8211;low
-&#8211;disable-notification
-&#8211;packagelist=full
-&#8211;skip=mpdule,emprint,screenshot,exalt,enjoy,wlan,eweather,alarm,calendar,cpu,drawer,efm_nav,efm_path,efm_pathbar,everything-mpris,everything-pidgin,everything-tracker,everything-wallpaper,everything-websearch,eweather,exalt-client,exebuf,execwatch,itask,itask-ng,flame,forecasts,iiirk,mail,mem,moon,net,news,notification,eooorg,penguins,photo,places,quickaccess,rain,skel,slideshow,snow,taskbar,tclock,tiling,uptime,weather,winlist-ng,winselector,emotion,libeweather,enlil,python-emotion,e_phys,editje,elicit,elsa,emote,empower,enki,ephoto,Eterm,expedite,exquisite,eyelight,image-viewer,rage,language,diskio,deskshow,ethumb,python-ethumb,shellementary
-&#8211;cflags=-O2,-march=native,-s
-&#8211;asuser
-&#8211;srcrev=55768
-&#8211;instpath=/home/pos/e17
-&#8211;srcpath=/home/pos/e17_src/</p>
-<p class="last">./easy_e17.sh -i</p>
-</dd>
-</dl>
-<p>Starting e17:
-Create a file ~/.xsession with the line &#8216;exec /home/pos/e17/bin/enlightenment_start&#8217;.
-Add a link to this file using &#8216;ln -s ~/.xsession ~/.xinitrc&#8217;.</p>
-<p>ADD THESE ENVIRONMENT VARIABLES:
-export PATH=&#8221;/home/pos/e17/bin:$PATH&#8221;
-export PYTHONPATH=&#8221;/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH&#8221;
-export LD_LIBRARY_PATH=&#8221;/home/pos/e17/lib:$LD_LIBRARY_PATH&#8221;</p>
+--srcmode=full
+--low
+--disable-notification
+--packagelist=full
+--skip=mpdule,emprint,screenshot,exalt,enjoy,wlan,eweather,alarm,calendar,cpu,drawer,efm_nav,efm_path,efm_pathbar,everything-mpris,everything-pidgin,everything-tracker,everything-wallpaper,everything-websearch,eweather,exalt-client,exebuf,execwatch,itask,itask-ng,flame,forecasts,iiirk,mail,mem,moon,net,news,notification,eooorg,penguins,photo,places,quickaccess,rain,skel,slideshow,snow,taskbar,tclock,tiling,uptime,weather,winlist-ng,winselector,emotion,libeweather,enlil,python-emotion,e_phys,editje,elicit,elsa,emote,empower,enki,ephoto,Eterm,expedite,exquisite,eyelight,image-viewer,rage,language,diskio,deskshow,ethumb,python-ethumb,shellementary
+--cflags=-O2,-march=native,-s
+--asuser
+--srcrev=59661
+--instpath=/home/pos/e17
+--srcpath=/home/pos/e17_src/
+
+./easy_e17.sh -i
+
+echo 'exec /home/pos/e17/bin/enlightenment_start' &gt; ~/.xsession
+ln -sf ~/.xsession ~/.xinitrc
+
+dans ~/.bashrc
+export PATH="/home/pos/e17/bin:$PATH"
+export PYTHONPATH="/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH"
+export LD_LIBRARY_PATH="/home/pos/e17/lib:$LD_LIBRARY_PATH"</pre>
 </div>
-<div class="section" id="postgresql">
-<h2>2.4. PostgreSQL<a class="headerlink" href="#postgresql" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ensuite il faut initialiser Enlightenment en lançant une session. Le plus
+simple est de se connecter en mode texte avec l&#8217;utilisateur POS puis
+lancer l&#8217;interface graphique avec la commande: startx</p>
+<p>Une fois connecté, au premier lancement vous avez quelques paramètres
+à configurer:</p>
+<ul class="simple">
+<li>Language: Français</li>
+<li>Profil: Minimaliste</li>
+<li>Menus: Enlightenment Default</li>
+</ul>
+<p>Ensuite, on peut aussi changer le fond d&#8217;écran:</p>
+<ul class="simple">
+<li>clic gauche sur le fond d&#8217;écran</li>
+<li>configuration &gt; Fond d&#8217;écran</li>
+<li>Système &gt; Dark_Gradient</li>
+</ul>
 </div>
 <div class="section" id="django">
-<h2>2.5. Django<a class="headerlink" href="#django" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.3. Django<a class="headerlink" href="#django" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Installation de Django:</p>
+<div class="highlight-python"><pre>sudo apt-get install python-django</pre>
+</div>
+<p>Il est conseillé de prendre au minimum une version 1.2.3.</p>
+<p>Il faudra également configurer une base de données, pour cela la documentation de Django
+est bien faite: <a class="reference external" href="http://docs.django-fr.org/intro/install.html">Installation de Django</a></p>
+<p>Serveur Mail + creation d&#8217;un manager ...</p>
 </div>
 <div class="section" id="possum">
-<h2>2.6. Possum<a class="headerlink" href="#possum" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.4. Possum<a class="headerlink" href="#possum" title="Lien permanent vers ce titre">¶</a></h2>
+<p>./manage.py syncdb</p>
+<p>You just installed Django&#8217;s auth system, which means you don&#8217;t have any superusers defined.
+Would you like to create one now? (yes/no): yes
+Username (Leave blank to use &#8216;pos&#8217;): my_login
+E-mail address: <a class="reference external" href="mailto:my&#46;login&#37;&#52;&#48;example&#46;org">my<span>&#46;</span>login<span>&#64;</span>example<span>&#46;</span>org</a>
+Password:
+Password (again):
+Superuser created successfully.</p>
 <p>dans /home/pos/possum</p>
+<p>Pour créer des utilisateurs:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span><span class="s">&#39;john&#39;</span><span class="p">,</span> <span class="s">&#39;lennon@thebeatles.com&#39;</span><span class="p">,</span> <span class="s">&#39;johnpassword&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p># At this point, user is a User object that has already been saved
+# to the database. You can continue to change its attributes
+# if you want to change other fields.
+&gt;&gt;&gt; user.is_staff = True
+&gt;&gt;&gt; user.save()</p>
 </div>
 <div class="section" id="apache">
-<h2>2.7. Apache<a class="headerlink" href="#apache" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.5. Apache<a class="headerlink" href="#apache" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Pour accèder à la partie d&#8217;administration, il nous faudra un serveur web.</p>
 <div class="highlight-python"><pre>&gt; sudo apt-get install libapache2-mod-wsgi
 &gt; cat /etc/apache2/ssleay.cnf
@@ -154,13 +184,13 @@ A REMPLIR !!
 <p>Suivre la documentation: <a class="reference external" href="http://docs.djangoproject.com/en/1.2/howto/deployment/modwsgi/">http://docs.djangoproject.com/en/1.2/howto/deployment/modwsgi/</a></p>
 </div>
 <div class="section" id="configuration">
-<h2>2.8. Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.6. Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
 <p>init de la base
 comment renseigner la base ?
 ne pas oublier de sauvegarder la base de données !!</p>
 </div>
 <div class="section" id="sauvegarde">
-<h2>2.9. Sauvegarde<a class="headerlink" href="#sauvegarde" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.7. Sauvegarde<a class="headerlink" href="#sauvegarde" title="Lien permanent vers ce titre">¶</a></h2>
 <dl class="docutils">
 <dt>sauvegarde complète de la base:</dt>
 <dd>pg_dumpall &#8211;clean &#8211;file=bd.dump</dd>
@@ -169,9 +199,22 @@ ne pas oublier de sauvegarder la base de données !!</p>
 </dl>
 </div>
 <div class="section" id="restauration">
-<h2>2.10. Restauration<a class="headerlink" href="#restauration" title="Lien permanent vers ce titre">¶</a></h2>
+<h2>2.8. Restauration<a class="headerlink" href="#restauration" title="Lien permanent vers ce titre">¶</a></h2>
 <p>/usr/bin/psql -f possum-20100109.dump postgres</p>
 <p>/usr/bin/psql -f bd-stats.dump possumdb</p>
+</div>
+<div class="section" id="exemple-de-materiels">
+<h2>2.9. Exemple de Matériels<a class="headerlink" href="#exemple-de-materiels" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ceci est la liste des matériels utilisés.</p>
+<p>ubuntu on:
+Mini ITX VIA M6000G
+1Go DDR 400Mhz
+Hard Disk 80Go P-ATA
+Asus EEE PC
+ELo Touch 1515L         support moyen de la part de EloTouch
+Epson MT M88 iv         imprimante à ticket</p>
+<p>écran tactile
+<a class="reference external" href="https://help.ubuntu.com/community/EloTouchScreen">https://help.ubuntu.com/community/EloTouchScreen</a></p>
 </div>
 </div>
 
@@ -184,42 +227,41 @@ ne pas oublier de sauvegarder la base de données !!</p>
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/bandeau-192.png" alt="Logo"/>
             </a></p>
-            <h3><a href="index.html">Table des matières</a></h3>
-            <ul>
-<li><a class="reference external" href="#">2. Installation</a><ul>
-<li><a class="reference external" href="#requis">2.1. Requis</a></li>
-<li><a class="reference external" href="#materiels">2.2. Matériels</a></li>
-<li><a class="reference external" href="#enlightenment">2.3. Enlightenment</a></li>
-<li><a class="reference external" href="#postgresql">2.4. PostgreSQL</a></li>
-<li><a class="reference external" href="#django">2.5. Django</a></li>
-<li><a class="reference external" href="#possum">2.6. Possum</a></li>
-<li><a class="reference external" href="#apache">2.7. Apache</a></li>
-<li><a class="reference external" href="#configuration">2.8. Configuration</a></li>
-<li><a class="reference external" href="#sauvegarde">2.9. Sauvegarde</a></li>
-<li><a class="reference external" href="#restauration">2.10. Restauration</a></li>
+  <h3><a href="index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2. Installation</a><ul>
+<li><a class="reference internal" href="#utilisateur">2.1. Utilisateur</a></li>
+<li><a class="reference internal" href="#enlightenment">2.2. Enlightenment</a></li>
+<li><a class="reference internal" href="#django">2.3. Django</a></li>
+<li><a class="reference internal" href="#possum">2.4. Possum</a></li>
+<li><a class="reference internal" href="#apache">2.5. Apache</a></li>
+<li><a class="reference internal" href="#configuration">2.6. Configuration</a></li>
+<li><a class="reference internal" href="#sauvegarde">2.7. Sauvegarde</a></li>
+<li><a class="reference internal" href="#restauration">2.8. Restauration</a></li>
+<li><a class="reference internal" href="#exemple-de-materiels">2.9. Exemple de Matériels</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Sujet précédent</h4>
-            <p class="topless"><a href="about.html"
-                                  title="Chapitre précédent">1. Introduction</a></p>
-            <h4>Sujet suivant</h4>
-            <p class="topless"><a href="utilisation.html"
-                                  title="Chapitre suivant">3. Utilisation</a></p>
-          <div id="searchbox" style="display: none">
-            <h3>Recherche rapide</h3>
-              <form class="search" action="search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="about.html"
+                        title="Chapitre précédent">1. Introduction</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="utilisation.html"
+                        title="Chapitre suivant">3. Utilisation</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -243,8 +285,8 @@ ne pas oublier de sauvegarder la base de données !!</p>
       </ul>
     </div>
     <div class="footer">
-      &copy; Copyright 2011, Bonnegent Sébastien.
-      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+        &copy; Copyright 2011, Bonnegent Sébastien.
+      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
     </div>
   </body>
 </html>

@@ -220,3 +220,4 @@ le bug numéro 42, il vous suffira d'ajouter dans le commentaire du commit: ''Cl
 Si votre commit est en relation avec un bug mais ne le ferme pas, alors il suffit d'indiquer le numéro
 du bug dans le commentaire du commit. Par exemple: ''Prépare la correction de #42.''.
 
+

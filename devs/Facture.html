@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -12,12 +14,13 @@
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
         VERSION:     '0.4',
-        COLLAPSE_MODINDEX: false,
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -60,9 +63,9 @@
   <div class="section" id="facture">
 <span id="id1"></span><h1>Facture<a class="headerlink" href="#facture" title="Lien permanent vers ce titre">¶</a></h1>
 <p class="graphviz">
-<img src="../_images/inheritance-adf3916b38a9f749f971cd441fa0824e60d8725d.png" alt="Inheritance diagram of possum.base.models.Facture" usemap="#inheritanceae60faf467" class="inheritance"/>
+<img src="../_images/inheritance-82ac0b0c2b686844b188ea105582240869e192ed.png" alt="Inheritance diagram of possum.base.models.Facture" usemap="#inheritanceae60faf467" class="inheritance"/>
 <map id="inheritanceae60faf467" name="inheritanceae60faf467">
-<area shape="rect" id="node1" href="#possum.base.models.Facture" title="Facture" alt="" coords="125,5,197,33"/>
+<area shape="rect" id="node2" href="#possum.base.models.Facture" title="Facture" alt="" coords="125,5,197,33"/>
 </map>
 </p>
 <dl class="class">
@@ -72,8 +75,9 @@
 <dl class="method">
 <dt id="possum.base.models.Facture.add">
 <tt class="descname">add</tt><big>(</big><em>vendu</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.add" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Ajout d&#8217;un produit à la facture.
-Si c&#8217;est le premier produit alors on modifie la date de creation</dd></dl>
+<dd><p>Ajout d&#8217;un produit à la facture.
+Si c&#8217;est le premier produit alors on modifie la date de creation</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.ajout_paiement">
@@ -87,99 +91,120 @@ espece.</p>
 <dl class="method">
 <dt id="possum.base.models.Facture.check_path">
 <tt class="descname">check_path</tt><big>(</big><em>path</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.check_path" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Verifie l&#8217;existance du chemin et cree le repertoire si besoin
-&#8216;</dd></dl>
+<dd><p>Verifie l&#8217;existance du chemin et cree le repertoire si besoin
+&#8216;</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.del_all_paiements">
 <tt class="descname">del_all_paiements</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_all_paiements" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>On supprime tous les paiements</dd></dl>
+<dd><p>On supprime tous les paiements</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.del_all_produits">
 <tt class="descname">del_all_produits</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_all_produits" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>On supprime tous les produits</dd></dl>
+<dd><p>On supprime tous les produits</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.del_paiement">
 <tt class="descname">del_paiement</tt><big>(</big><em>paiement</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_paiement" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>On supprime un paiement</dd></dl>
+<dd><p>On supprime un paiement</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.del_produit">
 <tt class="descname">del_produit</tt><big>(</big><em>vendu</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.del_produit" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>On enleve un produit à la facture</dd></dl>
+<dd><p>On enleve un produit à la facture.</p>
+<p>Si le montant est négatif après le retrait d&#8217;un élèment,
+c&#8217;est qu&#8217;il reste certainement une remise, dans
+ce cas on enlève tous les produits.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.est_soldee">
 <tt class="descname">est_soldee</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_soldee" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>La facture a été utilisée et soldée</dd></dl>
+<dd><p>La facture a été utilisée et soldée</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.est_surtaxe">
 <tt class="descname">est_surtaxe</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_surtaxe" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Table is surtaxed et il n&#8217;y a pas de nourriture.</dd></dl>
+<dd><p>Table is surtaxed et il n&#8217;y a pas de nourriture.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.est_un_repas">
 <tt class="descname">est_un_repas</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_un_repas" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Est ce que la facture contient un element compris dans les
-categories entrees, plats, desserts ou formules</dd></dl>
+<dd><p>Est ce que la facture contient un element compris dans les
+categories entrees, plats, desserts ou formules</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.est_vierge">
 <tt class="descname">est_vierge</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.est_vierge" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>La facture est vierge</dd></dl>
+<dd><p>La facture est vierge</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.getTvaNormal">
 <tt class="descname">getTvaNormal</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.getTvaNormal" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>calcul la TVA
+<dd><p>calcul la TVA
 On arrondi seulement à 1 parce que les 2 décimals sont dans la partie entière du montant
-# la TVA est sur le HT !!</dd></dl>
+# la TVA est sur le HT !!</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.get_factures_du_jour">
 <tt class="descname">get_factures_du_jour</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.get_factures_du_jour" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Retourne la liste des factures soldees du jour &#8216;date&#8217;</dd></dl>
+<dd><p>Retourne la liste des factures soldees du jour &#8216;date&#8217;</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.get_users">
 <tt class="descname">get_users</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.get_users" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Donne la liste des noms d&#8217;utilisateurs</dd></dl>
+<dd><p>Donne la liste des noms d&#8217;utilisateurs</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.get_working_date">
 <tt class="descname">get_working_date</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.get_working_date" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Retourne la journee de travail officiel
-(qui fini a 5h du matin)</dd></dl>
+<dd><p>Retourne la journee de travail officiel
+(qui fini a 5h du matin)</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.guest_couverts">
 <tt class="descname">guest_couverts</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.guest_couverts" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Essaye de deviner le nombre de couverts</dd></dl>
+<dd><p>Essaye de deviner le nombre de couverts</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.maj_stats">
 <tt class="descname">maj_stats</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.maj_stats" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Calcule les statistiques pour cette facture
-si elle est soldée</dd></dl>
+<dd><p>Calcule les statistiques pour cette facture
+si elle est soldée</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.maj_stats_avec_nouvelles_factures">
 <tt class="descname">maj_stats_avec_nouvelles_factures</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.maj_stats_avec_nouvelles_factures" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Calcule les stats pour toutes les nouvelles factures
-soldées.</dd></dl>
+<dd><p>Calcule les stats pour toutes les nouvelles factures
+soldées.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.nb_soldee_jour">
 <tt class="descname">nb_soldee_jour</tt><big>(</big><em>date</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.nb_soldee_jour" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Nombre de facture soldee le jour &#8216;date&#8217;</dd></dl>
+<dd><p>Nombre de facture soldee le jour &#8216;date&#8217;</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.non_soldees">
 <tt class="descname">non_soldees</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.non_soldees" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Retourne la liste des factures non soldees</dd></dl>
+<dd><p>Retourne la liste des factures non soldees</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.rapport_jour">
@@ -264,19 +289,22 @@ montant TVA 19,6:    263,82</p>
 <dl class="method">
 <dt id="possum.base.models.Facture.set_couverts">
 <tt class="descname">set_couverts</tt><big>(</big><em>nb</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.set_couverts" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Change le nombre de couvert</dd></dl>
+<dd><p>Change le nombre de couvert</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.set_table">
 <tt class="descname">set_table</tt><big>(</big><em>table</em><big>)</big><a class="headerlink" href="#possum.base.models.Facture.set_table" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Change la table de la facture
+<dd><p>Change la table de la facture
 On prend en compte le changement de tarification si changement
-de zone.</dd></dl>
+de zone.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="possum.base.models.Facture.ticket">
 <tt class="descname">ticket</tt><big>(</big><big>)</big><a class="headerlink" href="#possum.base.models.Facture.ticket" title="Lien permanent vers cette définition">¶</a></dt>
-<dd>Retourne le ticket sous la forme d&#8217;une liste de ligne.</dd></dl>
+<dd><p>Retourne le ticket sous la forme d&#8217;une liste de ligne.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -291,19 +319,19 @@ de zone.</dd></dl>
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/bandeau-192.png" alt="Logo"/>
             </a></p>
-          <div id="searchbox" style="display: none">
-            <h3>Recherche rapide</h3>
-              <form class="search" action="../search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+<div id="searchbox" style="display: none">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -321,8 +349,8 @@ de zone.</dd></dl>
       </ul>
     </div>
     <div class="footer">
-      &copy; Copyright 2011, Bonnegent Sébastien.
-      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+        &copy; Copyright 2011, Bonnegent Sébastien.
+      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
     </div>
   </body>
 </html>

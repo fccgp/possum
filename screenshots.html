@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -12,12 +14,13 @@
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
         VERSION:     '0.4',
-        COLLAPSE_MODINDEX: false,
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -70,11 +73,11 @@
 <p>Des captures des différentes parties.</p>
 <div class="section" id="version-0-4">
 <h2>6.1. version 0.4<a class="headerlink" href="#version-0-4" title="Lien permanent vers ce titre">¶</a></h2>
-<a class="reference external image-reference" href="_images/346-fenetre_principale.png"><img alt="page principale" src="_images/346-fenetre_principale.png" style="width: 512.0px; height: 384.0px;" /></a>
-<a class="reference external image-reference" href="_images/346-autre_categorie.png"><img alt="autre categorie" src="_images/346-autre_categorie.png" style="width: 512.0px; height: 384.0px;" /></a>
-<a class="reference external image-reference" href="_images/346-choix_couverts.png"><img alt="choix couverts" src="_images/346-choix_couverts.png" style="width: 512.0px; height: 384.0px;" /></a>
-<a class="reference external image-reference" href="_images/346-choix_table.png"><img alt="choix de la table" src="_images/346-choix_table.png" style="width: 512.0px; height: 384.0px;" /></a>
-<a class="reference external image-reference" href="_images/346-selection-menu.png"><img alt="sélection d'un plat dans menu" src="_images/346-selection-menu.png" style="width: 512.0px; height: 384.0px;" /></a>
+<a class="reference internal image-reference" href="_images/346-fenetre_principale.png"><img alt="page principale" src="_images/346-fenetre_principale.png" style="width: 512.0px; height: 384.0px;" /></a>
+<a class="reference internal image-reference" href="_images/346-autre_categorie.png"><img alt="autre categorie" src="_images/346-autre_categorie.png" style="width: 512.0px; height: 384.0px;" /></a>
+<a class="reference internal image-reference" href="_images/346-choix_couverts.png"><img alt="choix couverts" src="_images/346-choix_couverts.png" style="width: 512.0px; height: 384.0px;" /></a>
+<a class="reference internal image-reference" href="_images/346-choix_table.png"><img alt="choix de la table" src="_images/346-choix_table.png" style="width: 512.0px; height: 384.0px;" /></a>
+<a class="reference internal image-reference" href="_images/346-selection-menu.png"><img alt="sélection d'un plat dans menu" src="_images/346-selection-menu.png" style="width: 512.0px; height: 384.0px;" /></a>
 </div>
 </div>
 
@@ -87,33 +90,33 @@
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/bandeau-192.png" alt="Logo"/>
             </a></p>
-            <h3><a href="index.html">Table des matières</a></h3>
-            <ul>
-<li><a class="reference external" href="#">6. Screenshots</a><ul>
-<li><a class="reference external" href="#version-0-4">6.1. version 0.4</a></li>
+  <h3><a href="index.html">Table des matières</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">6. Screenshots</a><ul>
+<li><a class="reference internal" href="#version-0-4">6.1. version 0.4</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Sujet précédent</h4>
-            <p class="topless"><a href="help.html"
-                                  title="Chapitre précédent">5. Pour obtenir des informations</a></p>
-            <h4>Sujet suivant</h4>
-            <p class="topless"><a href="licence.html"
-                                  title="Chapitre suivant">7. Licence</a></p>
-          <div id="searchbox" style="display: none">
-            <h3>Recherche rapide</h3>
-              <form class="search" action="search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="help.html"
+                        title="Chapitre précédent">5. Pour obtenir des informations</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="licence.html"
+                        title="Chapitre suivant">7. Licence</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -137,8 +140,8 @@
       </ul>
     </div>
     <div class="footer">
-      &copy; Copyright 2011, Bonnegent Sébastien.
-      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+        &copy; Copyright 2011, Bonnegent Sébastien.
+      Créé avec <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.1.
     </div>
   </body>
 </html>

@@ -1,31 +1,22 @@
 Installation
 ============
 
-Requis
-------
+Utilisateur
+-----------
 
-postgres / django / EFL
+Tout d'abord, nous allons créer un utilisateur ''pos'' qui aura comme ''home'' : /home/pos:
 
-Matériels
----------
+::
 
-Ceci est la liste des matériels utilisés.
-
-ubuntu on:
-Mini ITX VIA M6000G
-1Go DDR 400Mhz
-Hard Disk 80Go P-ATA
-Asus EEE PC
-ELo Touch 1515L         support moyen de la part de EloTouch
-Epson MT M88 iv         imprimante à ticket
-
-écran tactile
-https://help.ubuntu.com/community/EloTouchScreen
+  sudo adduser pos
 
 Enlightenment
 -------------
 
+On utilise la réversion 59661 qui correspond à la version officielle 1.0.1 des EFL.
+
 ::
+
   cd /home/pos
   wget http://omicron.homeip.net/projects/easy_e17/easy_e17.sh
   chmod u+x ./easy_e17.sh
@@ -37,32 +28,84 @@ Enlightenment
   --skip=mpdule,emprint,screenshot,exalt,enjoy,wlan,eweather,alarm,calendar,cpu,drawer,efm_nav,efm_path,efm_pathbar,everything-mpris,everything-pidgin,everything-tracker,everything-wallpaper,everything-websearch,eweather,exalt-client,exebuf,execwatch,itask,itask-ng,flame,forecasts,iiirk,mail,mem,moon,net,news,notification,eooorg,penguins,photo,places,quickaccess,rain,skel,slideshow,snow,taskbar,tclock,tiling,uptime,weather,winlist-ng,winselector,emotion,libeweather,enlil,python-emotion,e_phys,editje,elicit,elsa,emote,empower,enki,ephoto,Eterm,expedite,exquisite,eyelight,image-viewer,rage,language,diskio,deskshow,ethumb,python-ethumb,shellementary
   --cflags=-O2,-march=native,-s
   --asuser
-  --srcrev=55768
+  --srcrev=59661
   --instpath=/home/pos/e17
   --srcpath=/home/pos/e17_src/
 
   ./easy_e17.sh -i
 
+  echo 'exec /home/pos/e17/bin/enlightenment_start' > ~/.xsession
+  ln -sf ~/.xsession ~/.xinitrc
 
-Starting e17:
-Create a file ~/.xsession with the line 'exec /home/pos/e17/bin/enlightenment_start'.
-Add a link to this file using 'ln -s ~/.xsession ~/.xinitrc'.
+  dans ~/.bashrc
+  export PATH="/home/pos/e17/bin:$PATH"
+  export PYTHONPATH="/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH"
+  export LD_LIBRARY_PATH="/home/pos/e17/lib:$LD_LIBRARY_PATH"
 
-ADD THESE ENVIRONMENT VARIABLES:
-export PATH="/home/pos/e17/bin:$PATH"
-export PYTHONPATH="/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH"
-export LD_LIBRARY_PATH="/home/pos/e17/lib:$LD_LIBRARY_PATH"
 
-PostgreSQL
-----------
+Ensuite il faut initialiser Enlightenment en lançant une session. Le plus
+simple est de se connecter en mode texte avec l'utilisateur POS puis 
+lancer l'interface graphique avec la commande: startx
+
+Une fois connecté, au premier lancement vous avez quelques paramètres 
+à configurer:
+
+- Language: Français
+- Profil: Minimaliste 
+- Menus: Enlightenment Default
+
+Ensuite, on peut aussi changer le fond d'écran:
+
+- clic gauche sur le fond d'écran
+- configuration > Fond d'écran
+- Système > Dark_Gradient
+ 
 
 Django
 ------
 
+Installation de Django:
+
+::
+
+  sudo apt-get install python-django
+
+Il est conseillé de prendre au minimum une version 1.2.3.
+
+Il faudra également configurer une base de données, pour cela la documentation de Django
+est bien faite: `Installation de Django <http://docs.django-fr.org/intro/install.html>`_
+
+
+Serveur Mail + creation d'un manager ...
+
+
 Possum
 ------
 
+./manage.py syncdb
+
+You just installed Django's auth system, which means you don't have any superusers defined.
+Would you like to create one now? (yes/no): yes
+Username (Leave blank to use 'pos'): my_login
+E-mail address: my.login@example.org
+Password: 
+Password (again): 
+Superuser created successfully.
+
+
+
 dans /home/pos/possum
+
+Pour créer des utilisateurs:
+
+>>> from django.contrib.auth.models import User
+>>> user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
+
+# At this point, user is a User object that has already been saved
+# to the database. You can continue to change its attributes
+# if you want to change other fields.
+>>> user.is_staff = True
+>>> user.save()
 
 Apache
 ------
@@ -119,4 +162,20 @@ Restauration
 /usr/bin/psql -f possum-20100109.dump postgres
 
 /usr/bin/psql -f bd-stats.dump possumdb
+
+Exemple de Matériels
+--------------------
+
+Ceci est la liste des matériels utilisés.
+
+ubuntu on:
+Mini ITX VIA M6000G
+1Go DDR 400Mhz
+Hard Disk 80Go P-ATA
+Asus EEE PC
+ELo Touch 1515L         support moyen de la part de EloTouch
+Epson MT M88 iv         imprimante à ticket
+
+écran tactile
+https://help.ubuntu.com/community/EloTouchScreen
 
