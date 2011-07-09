@@ -68,7 +68,7 @@ Installation de Django:
 
 ::
 
-  sudo apt-get install python-django
+  sudo apt-get install python-django python-werkzeug
 
 Il est conseillé de prendre au minimum une version 1.2.3.
 
@@ -76,106 +76,116 @@ Il faudra également configurer une base de données, pour cela la documentation
 est bien faite: `Installation de Django <http://docs.django-fr.org/intro/install.html>`_
 
 
-Serveur Mail + creation d'un manager ...
-
-
 Possum
 ------
 
-./manage.py syncdb
-
-You just installed Django's auth system, which means you don't have any superusers defined.
-Would you like to create one now? (yes/no): yes
-Username (Leave blank to use 'pos'): my_login
-E-mail address: my.login@example.org
-Password: 
-Password (again): 
-Superuser created successfully.
-
-
-
-dans /home/pos/possum
-
-Pour créer des utilisateurs:
-
->>> from django.contrib.auth.models import User
->>> user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
-
-# At this point, user is a User object that has already been saved
-# to the database. You can continue to change its attributes
-# if you want to change other fields.
->>> user.is_staff = True
->>> user.save()
-
-Apache
-------
-
-Pour accèder à la partie d'administration, il nous faudra un serveur web.
+Création de la base pour l'application:
 
 ::
 
-  > sudo apt-get install libapache2-mod-wsgi
-  > cat /etc/apache2/ssleay.cnf
+  ./manage.py syncdb
+  
+  You just installed Django's auth system, which means you don't have any superusers defined.
+  Would you like to create one now? (yes/no): yes
+  Username (Leave blank to use 'pos'): my_login
+  E-mail address: my.login@example.org
+  Password: 
+  Password (again): 
+  Superuser created successfully.
 
-  RANDFILE                = /dev/urandom
 
-  [ req ]
-  default_bits            = 2048
-  default_keyfile         = privkey.pem
-  distinguished_name      = req_distinguished_name
-  prompt                  = no
-  policy                  = policy_anything
+Il est préférable d'avoir un serveur de mail configurer sur le poste. En
+effet, POSSUM peut envoyé des messages s'il y a des tentatives d'accès
+au panneau d'administration ou des bugs.
 
-  [ req_distinguished_name ]
-  commonName              = @HostName@
+::
 
-  > sudo make-ssl-cert /etc/apache2/ssleay.cnf /etc/ssl/private/localhost.pem
-  > sudo a2enmod ssl
-  > sudo a2dissite default
-  > cat /etc/apache2/sites-available/possum
+  sudo apt-get install postfix bsd-mailx
 
-  A REMPLIR !!
+  Système satellite : Tous les messages sont envoyés vers une autre machine, nommée un smarthost. 
+  Nom de courrier : possum (ou le nom que vous voulez)
+  Serveur relais SMTP (vide pour aucun) :
+  Destinataire des courriels de « root » et de « postmaster » : votre_adresse_mail@example.org
+  Autres destinations pour lesquelles le courrier sera accepté (champ vide autorisé) : possum, localhost.localdomain, localhost
+  Faut-il forcer des mises à jour synchronisées de la file d'attente des courriels ? Non
+  Réseaux internes : 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+  Taille maximale des boîtes aux lettres (en octets) : 0
+  Caractère d'extension des adresses locales : +
+  Protocoles internet à utiliser : tous
+ 
+Si tout est bien configurer, vous devriez recevoir un mail avec comme
+sujet ''test'' et dans le message la date d'envoie en utilisant la 
+commande suivante:
 
-  > sudo a2ensite possum
-  > sudo /etc/init.d/apache2 restart
+::
 
-Suivre la documentation: http://docs.djangoproject.com/en/1.2/howto/deployment/modwsgi/
+  date | mail -s test root
 
-Configuration
--------------
+On crée le groupe pour les managers:
 
-init de la base
-comment renseigner la base ?
-ne pas oublier de sauvegarder la base de données !!
+::
 
-Sauvegarde
-----------
+  cd /home/pos/possum
+  ./manage.py shell_plus
+  g = Group(name='Managers')
+  g.save()
+  exit
+  
+On ajoute maintenant notre utilisateur au groupe des managers:
 
-sauvegarde complète de la base:
-    pg_dumpall --clean --file=bd.dump
+::
 
-sauvegarde seulement de certaines tables:
-    pg_dump --clean --file=bd-stats.dump -t base_statsjourcategorie -t base_statsjourgeneral -t base_statsjourproduit -t base_statssemainecategorie -t base_statssemainegeneral -t base_statssemaineproduit possumdb
+  cd /home/pos/possum
+  ./manage.py shell_plus
+  u = User.objects.get(username="my_login")
+  u.groups.add(Group.objects.get(name='Managers'))
+  u.save()
+  exit
 
-Restauration
-------------
-/usr/bin/psql -f possum-20100109.dump postgres
+On peut également créer d'autres utilisateurs-managers:
 
-/usr/bin/psql -f bd-stats.dump possumdb
+::
+
+  cd /home/pos/possum
+  ./manage.py shell_plus
+  u = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
+  u.groups.add(Group.objects.get(name='Managers'))
+  u.save()
+  exit
+
+
+L'installation est presque terminée, vous devez maintenant configurer
+la sauvegarde automatique de la base de données. Cette partie dépend du
+type de base que vous avez choisi. La plus simple étant la base sqlite,
+sa sauvegarde se limite à la copie d'un fichier.
+
+Configuration initiale
+----------------------
+
+Malheureusement, il n'y a pas encore d'interface web pour la modification
+et la saisie des produits, cela doit être fait à la main pour le moment.
+
+À partir de la version 0.5 une interface web de gestion sera en place et
+la documentation sera faire à ce moment là.
 
 Exemple de Matériels
 --------------------
 
-Ceci est la liste des matériels utilisés.
+Pour finir, voici un exemple de matériels utilisés et qui fonctionne:
 
-ubuntu on:
-Mini ITX VIA M6000G
-1Go DDR 400Mhz
-Hard Disk 80Go P-ATA
-Asus EEE PC
-ELo Touch 1515L         support moyen de la part de EloTouch
-Epson MT M88 iv         imprimante à ticket
+PC:
 
-écran tactile
-https://help.ubuntu.com/community/EloTouchScreen
+- carte Mini ITX VIA M6000G
+- Asus EEE PC
+- Shuttle SD11G5
 
+Écran tactile:
+
+- ELo Touch 1515L
+
+À noter que le support de la part de EloTouch est plutôt 
+moyen. Je vous conseille ce site: `EloTouchScreen <https://help.ubuntu.com/community/EloTouchScreen>`_
+
+Imprimante à ticket:
+
+- Epson MT M88 iv

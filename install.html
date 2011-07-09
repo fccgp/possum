@@ -124,97 +124,100 @@ lancer l&#8217;interface graphique avec la commande: startx</p>
 <div class="section" id="django">
 <h2>2.3. Django<a class="headerlink" href="#django" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Installation de Django:</p>
-<div class="highlight-python"><pre>sudo apt-get install python-django</pre>
+<div class="highlight-python"><pre>sudo apt-get install python-django python-werkzeug</pre>
 </div>
 <p>Il est conseillé de prendre au minimum une version 1.2.3.</p>
 <p>Il faudra également configurer une base de données, pour cela la documentation de Django
 est bien faite: <a class="reference external" href="http://docs.django-fr.org/intro/install.html">Installation de Django</a></p>
-<p>Serveur Mail + creation d&#8217;un manager ...</p>
 </div>
 <div class="section" id="possum">
 <h2>2.4. Possum<a class="headerlink" href="#possum" title="Lien permanent vers ce titre">¶</a></h2>
-<p>./manage.py syncdb</p>
-<p>You just installed Django&#8217;s auth system, which means you don&#8217;t have any superusers defined.
+<p>Création de la base pour l&#8217;application:</p>
+<div class="highlight-python"><pre>./manage.py syncdb
+
+You just installed Django's auth system, which means you don't have any superusers defined.
 Would you like to create one now? (yes/no): yes
-Username (Leave blank to use &#8216;pos&#8217;): my_login
-E-mail address: <a class="reference external" href="mailto:my&#46;login&#37;&#52;&#48;example&#46;org">my<span>&#46;</span>login<span>&#64;</span>example<span>&#46;</span>org</a>
+Username (Leave blank to use 'pos'): my_login
+E-mail address: my.login@example.org
 Password:
 Password (again):
-Superuser created successfully.</p>
-<p>dans /home/pos/possum</p>
-<p>Pour créer des utilisateurs:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span><span class="s">&#39;john&#39;</span><span class="p">,</span> <span class="s">&#39;lennon@thebeatles.com&#39;</span><span class="p">,</span> <span class="s">&#39;johnpassword&#39;</span><span class="p">)</span>
-</pre></div>
+Superuser created successfully.</pre>
 </div>
-<p># At this point, user is a User object that has already been saved
-# to the database. You can continue to change its attributes
-# if you want to change other fields.
-&gt;&gt;&gt; user.is_staff = True
-&gt;&gt;&gt; user.save()</p>
+<p>Il est préférable d&#8217;avoir un serveur de mail configurer sur le poste. En
+effet, POSSUM peut envoyé des messages s&#8217;il y a des tentatives d&#8217;accès
+au panneau d&#8217;administration ou des bugs.</p>
+<div class="highlight-python"><pre>sudo apt-get install postfix bsd-mailx
+
+Système satellite : Tous les messages sont envoyés vers une autre machine, nommée un smarthost.
+Nom de courrier : possum (ou le nom que vous voulez)
+Serveur relais SMTP (vide pour aucun) :
+Destinataire des courriels de « root » et de « postmaster » : votre_adresse_mail@example.org
+Autres destinations pour lesquelles le courrier sera accepté (champ vide autorisé) : possum, localhost.localdomain, localhost
+Faut-il forcer des mises à jour synchronisées de la file d'attente des courriels ? Non
+Réseaux internes : 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+Taille maximale des boîtes aux lettres (en octets) : 0
+Caractère d'extension des adresses locales : +
+Protocoles internet à utiliser : tous</pre>
 </div>
-<div class="section" id="apache">
-<h2>2.5. Apache<a class="headerlink" href="#apache" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Pour accèder à la partie d&#8217;administration, il nous faudra un serveur web.</p>
-<div class="highlight-python"><pre>&gt; sudo apt-get install libapache2-mod-wsgi
-&gt; cat /etc/apache2/ssleay.cnf
-
-RANDFILE                = /dev/urandom
-
-[ req ]
-default_bits            = 2048
-default_keyfile         = privkey.pem
-distinguished_name      = req_distinguished_name
-prompt                  = no
-policy                  = policy_anything
-
-[ req_distinguished_name ]
-commonName              = @HostName@
-
-&gt; sudo make-ssl-cert /etc/apache2/ssleay.cnf /etc/ssl/private/localhost.pem
-&gt; sudo a2enmod ssl
-&gt; sudo a2dissite default
-&gt; cat /etc/apache2/sites-available/possum
-
-A REMPLIR !!
-
-&gt; sudo a2ensite possum
-&gt; sudo /etc/init.d/apache2 restart</pre>
+<p>Si tout est bien configurer, vous devriez recevoir un mail avec comme
+sujet &#8216;&#8217;test&#8217;&#8217; et dans le message la date d&#8217;envoie en utilisant la
+commande suivante:</p>
+<div class="highlight-python"><pre>date | mail -s test root</pre>
 </div>
-<p>Suivre la documentation: <a class="reference external" href="http://docs.djangoproject.com/en/1.2/howto/deployment/modwsgi/">http://docs.djangoproject.com/en/1.2/howto/deployment/modwsgi/</a></p>
+<p>On crée le groupe pour les managers:</p>
+<div class="highlight-python"><pre>cd /home/pos/possum
+./manage.py shell_plus
+g = Group(name='Managers')
+g.save()
+exit</pre>
 </div>
-<div class="section" id="configuration">
-<h2>2.6. Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers ce titre">¶</a></h2>
-<p>init de la base
-comment renseigner la base ?
-ne pas oublier de sauvegarder la base de données !!</p>
+<p>On ajoute maintenant notre utilisateur au groupe des managers:</p>
+<div class="highlight-python"><pre>cd /home/pos/possum
+./manage.py shell_plus
+u = User.objects.get(username="my_login")
+u.groups.add(Group.objects.get(name='Managers'))
+u.save()
+exit</pre>
 </div>
-<div class="section" id="sauvegarde">
-<h2>2.7. Sauvegarde<a class="headerlink" href="#sauvegarde" title="Lien permanent vers ce titre">¶</a></h2>
-<dl class="docutils">
-<dt>sauvegarde complète de la base:</dt>
-<dd>pg_dumpall &#8211;clean &#8211;file=bd.dump</dd>
-<dt>sauvegarde seulement de certaines tables:</dt>
-<dd>pg_dump &#8211;clean &#8211;file=bd-stats.dump -t base_statsjourcategorie -t base_statsjourgeneral -t base_statsjourproduit -t base_statssemainecategorie -t base_statssemainegeneral -t base_statssemaineproduit possumdb</dd>
-</dl>
+<p>On peut également créer d&#8217;autres utilisateurs-managers:</p>
+<div class="highlight-python"><pre>cd /home/pos/possum
+./manage.py shell_plus
+u = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
+u.groups.add(Group.objects.get(name='Managers'))
+u.save()
+exit</pre>
 </div>
-<div class="section" id="restauration">
-<h2>2.8. Restauration<a class="headerlink" href="#restauration" title="Lien permanent vers ce titre">¶</a></h2>
-<p>/usr/bin/psql -f possum-20100109.dump postgres</p>
-<p>/usr/bin/psql -f bd-stats.dump possumdb</p>
+<p>L&#8217;installation est presque terminée, vous devez maintenant configurer
+la sauvegarde automatique de la base de données. Cette partie dépend du
+type de base que vous avez choisi. La plus simple étant la base sqlite,
+sa sauvegarde se limite à la copie d&#8217;un fichier.</p>
+</div>
+<div class="section" id="configuration-initiale">
+<h2>2.5. Configuration initiale<a class="headerlink" href="#configuration-initiale" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Malheureusement, il n&#8217;y a pas encore d&#8217;interface web pour la modification
+et la saisie des produits, cela doit être fait à la main pour le moment.</p>
+<p>À partir de la version 0.5 une interface web de gestion sera en place et
+la documentation sera faire à ce moment là.</p>
 </div>
 <div class="section" id="exemple-de-materiels">
-<h2>2.9. Exemple de Matériels<a class="headerlink" href="#exemple-de-materiels" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Ceci est la liste des matériels utilisés.</p>
-<p>ubuntu on:
-Mini ITX VIA M6000G
-1Go DDR 400Mhz
-Hard Disk 80Go P-ATA
-Asus EEE PC
-ELo Touch 1515L         support moyen de la part de EloTouch
-Epson MT M88 iv         imprimante à ticket</p>
-<p>écran tactile
-<a class="reference external" href="https://help.ubuntu.com/community/EloTouchScreen">https://help.ubuntu.com/community/EloTouchScreen</a></p>
+<h2>2.6. Exemple de Matériels<a class="headerlink" href="#exemple-de-materiels" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Pour finir, voici un exemple de matériels utilisés et qui fonctionne:</p>
+<p>PC:</p>
+<ul class="simple">
+<li>carte Mini ITX VIA M6000G</li>
+<li>Asus EEE PC</li>
+<li>Shuttle SD11G5</li>
+</ul>
+<p>Écran tactile:</p>
+<ul class="simple">
+<li>ELo Touch 1515L</li>
+</ul>
+<p>À noter que le support de la part de EloTouch est plutôt
+moyen. Je vous conseille ce site: <a class="reference external" href="https://help.ubuntu.com/community/EloTouchScreen">EloTouchScreen</a></p>
+<p>Imprimante à ticket:</p>
+<ul class="simple">
+<li>Epson MT M88 iv</li>
+</ul>
 </div>
 </div>
 
@@ -234,11 +237,8 @@ Epson MT M88 iv         imprimante à ticket</p>
 <li><a class="reference internal" href="#enlightenment">2.2. Enlightenment</a></li>
 <li><a class="reference internal" href="#django">2.3. Django</a></li>
 <li><a class="reference internal" href="#possum">2.4. Possum</a></li>
-<li><a class="reference internal" href="#apache">2.5. Apache</a></li>
-<li><a class="reference internal" href="#configuration">2.6. Configuration</a></li>
-<li><a class="reference internal" href="#sauvegarde">2.7. Sauvegarde</a></li>
-<li><a class="reference internal" href="#restauration">2.8. Restauration</a></li>
-<li><a class="reference internal" href="#exemple-de-materiels">2.9. Exemple de Matériels</a></li>
+<li><a class="reference internal" href="#configuration-initiale">2.5. Configuration initiale</a></li>
+<li><a class="reference internal" href="#exemple-de-materiels">2.6. Exemple de Matériels</a></li>
 </ul>
 </li>
 </ul>

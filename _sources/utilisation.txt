@@ -1,6 +1,8 @@
 Utilisation
 ===========
 
+Cette partie est encore à écrire.
+
 Ajouter un produit
 ------------------
 blabla
