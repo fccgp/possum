@@ -129,6 +129,7 @@ On crée le groupe pour les managers:
   ./manage.py shell_plus
   g = Group(name='Managers')
   g.save()
+  exit
   
 On ajoute maintenant notre utilisateur au groupe des managers:
 
@@ -139,6 +140,7 @@ On ajoute maintenant notre utilisateur au groupe des managers:
   u = User.objects.get(username="my_login")
   u.groups.add(Group.objects.get(name='Managers'))
   u.save()
+  exit
 
 On peut également créer d'autres utilisateurs-managers:
 
@@ -149,6 +151,7 @@ On peut également créer d'autres utilisateurs-managers:
   u = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
   u.groups.add(Group.objects.get(name='Managers'))
   u.save()
+  exit
 
 
 L'installation est presque terminée, vous devez maintenant configurer

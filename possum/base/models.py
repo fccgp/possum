@@ -381,8 +381,11 @@ class StatsJourGeneral(StatsJour):
             logging.debug("pas de LogType pour le nom: %s" % nom)
             return Decimal("0")
         try:
-            return StatsJourGeneral.objects.get(date=date,
-                                                type=log).valeur
+            stats = StatsJourGeneral.objects.get(date=date, type=log).valeur
+            if stats:
+                return stats
+            else:
+                return Decimal("0")
         except StatsJourGeneral.DoesNotExist:
             return Decimal("0")
 
@@ -392,8 +395,12 @@ class StatsJourGeneral(StatsJour):
         except LogType.DoesNotExist:
             logging.debug("pas de LogType pour le nom: %s" % nom)
             return Decimal("0")
-        return StatsJourGeneral.objects.filter(type=log).aggregate(
+        result = StatsJourGeneral.objects.filter(type=log).aggregate(
                                         Max('valeur'))['valeur__max']
+        if result:
+            return result
+        else:
+            return Decimal("0")
 
     def get_avg(self, nom):
         try:
@@ -401,8 +408,12 @@ class StatsJourGeneral(StatsJour):
         except LogType.DoesNotExist:
             logging.debug("pas de LogType pour le nom: %s" % nom)
             return Decimal("0")
-        return StatsJourGeneral.objects.filter(type=log).aggregate(
+        result = StatsJourGeneral.objects.filter(type=log).aggregate(
                                         Avg('valeur'))['valeur__avg']
+        if result:
+            return result
+        else:
+            return Decimal("0")
 
     def get_min(self, nom):
         try:
@@ -410,8 +421,13 @@ class StatsJourGeneral(StatsJour):
         except LogType.DoesNotExist:
             logging.debug("pas de LogType pour le nom: %s" % nom)
             return Decimal("0")
-        return StatsJourGeneral.objects.filter(type=log).aggregate(
+        result = StatsJourGeneral.objects.filter(type=log).aggregate(
                                         Min('valeur'))['valeur__min']
+        if result:
+            return result
+        else:
+            return Decimal("0")
+
 
 class StatsJourPaiement(StatsJour):
     """Les stats concernent les paiements :
@@ -692,7 +708,7 @@ class Facture(models.Model):
             vendu.delete()
             self.save()
             if self.get_montant() < Decimal("0"):
-				self.del_all_produits()
+                self.del_all_produits()
         else:
             logging.warning("[%s] on essaye de supprimer un produit "\
                             "qui n'est pas dans la facture" % self)

@@ -692,7 +692,7 @@ def create_admin_panel():
     tb.pack(sp, 0, 1, 4, 1)
 
     bt = elementary.Button(win)
-    bt.label_set("Afficher le rapport du jour sélectionné")
+    bt.label_set("Rapport du jour sélectionné")
     bt.callback_clicked_add(afficher_rapport_jour)
     bt.size_hint_weight_set(evas.EVAS_HINT_EXPAND, 0.0)
     bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
@@ -700,7 +700,7 @@ def create_admin_panel():
     tb.pack(bt, 0, 2, 2, 1)
 
     bt = elementary.Button(win)
-    bt.label_set("Afficher le rapport du mois sélectionné")
+    bt.label_set("Rapport du mois sélectionné")
     bt.callback_clicked_add(afficher_rapport_mois)
     bt.size_hint_weight_set(evas.EVAS_HINT_EXPAND, 0.0)
     bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
@@ -708,7 +708,7 @@ def create_admin_panel():
     tb.pack(bt, 0, 3, 2, 1)
 
     bt = elementary.Button(win)
-    bt.label_set("Afficher l'historique du jour sélectionné")
+    bt.label_set("Historique du jour sélectionné")
     bt.callback_clicked_add(historique)
     bt.size_hint_weight_set(evas.EVAS_HINT_EXPAND, 0.0)
     bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
@@ -716,7 +716,7 @@ def create_admin_panel():
     tb.pack(bt, 2, 2, 2, 1)
 
     bt = elementary.Button(win)
-    bt.label_set("Afficher la liste des produits")
+    bt.label_set("Liste des produits")
     bt.callback_clicked_add(liste_des_produits)
     bt.size_hint_weight_set(evas.EVAS_HINT_EXPAND, 0.0)
     bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
@@ -938,7 +938,17 @@ def historique(bt):
     bt.size_hint_weight_set(evas.EVAS_HINT_EXPAND, 0.0)
     bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
     bt.show()
-    tb.pack(bt, 0, 10, 10, 1)
+#    tb.pack(bt, 0, 10, 10, 1)
+    tb.pack(bt, 2, 10, 2, 1)
+
+    rapport = Facture().rapport_jour(RAPPORT_DATE)
+    bt = elementary.Button(win)
+    bt.label_set("Imprimer")
+    bt.callback_clicked_add(imprimer_texte, rapport)
+    bt.size_hint_weight_set(evas.EVAS_HINT_EXPAND, 0.0)
+    bt.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
+    bt.show()
+    tb.pack(bt, 6, 10, 2, 1)
 
     fr_stats = elementary.Frame(win)
     fr_stats.label_set("Informations")
@@ -953,7 +963,8 @@ def historique(bt):
 
     en = elementary.Label(win)
     stats = StatsJourGeneral()
-    en.label_set("<b>%s</><br>"
+    
+    en.label_set("<b>%s</><br>" 
                  "-----------------------------------------------------"
                  "-------------------------------------------------<br>"
                  "CA TTC: <b>%.2f</b>"
@@ -1014,9 +1025,10 @@ def historique(bt):
                     stats.get_data("ca_resto", last),
                     stats.get_data("nb_couverts", last),
                     stats.get_data("tm_resto", last),
-                    stats.get_data("ca_bar", last),
+                    stats.get_data("ca_bar", last), 
                     stats.get_data("tm_bar", last),
-                ))
+                )
+    )
     en.size_hint_weight_set(evas.EVAS_HINT_EXPAND, evas.EVAS_HINT_EXPAND)
     en.size_hint_align_set(evas.EVAS_HINT_FILL, evas.EVAS_HINT_FILL)
     en.show()
