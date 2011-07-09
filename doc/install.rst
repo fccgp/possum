@@ -100,7 +100,7 @@ au panneau d'administration ou des bugs.
 
 ::
 
-  sudo apt-get install postfix
+  sudo apt-get install postfix bsd-mailx
 
   Système satellite : Tous les messages sont envoyés vers une autre machine, nommée un smarthost. 
   Nom de courrier : possum (ou le nom que vous voulez)
