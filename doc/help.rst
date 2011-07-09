@@ -32,7 +32,18 @@ Voir la partie ''Développement / Les bugs''.
 Comment contribuer au projet ?
 ------------------------------
 
-à écrire ...
+Il y a pleins de possibilités: des remontés de bugs, des traductions et/ou
+du développement ...
+
+Comment sauvegarder/restaurer une base de données Postgresql ?
+--------------------------------------------------------------
+
+
+- sauvegarde complète de la base: pg_dumpall --clean --file=bd.dump
+- sauvegarde seulement de certaines tables: 
+	pg_dump --clean --file=bd-stats.dump -t base_statsjourcategorie -t base_statsjourgeneral possumdb
+- restauration après sauvegarde complète: psql -f possum-20100109.dump postgres
+- restauration d'une base: psql -f bd-stats.dump possumdb
 
 
 Listes de diffusion

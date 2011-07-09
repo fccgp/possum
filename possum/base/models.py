@@ -753,10 +753,10 @@ class Facture(models.Model):
     def authenticate(self, username, password):
         user = authenticate(username=username, password=password)
         if user is not None:
-            if user.is_active:
+            if user.groups.filter(name='Managers').count() == 1:
                 return True
             else:
-                logging.debug("utilisateur inactif: %s" % username)
+                logging.debug("utilisateur non authorise: %s" % username)
                 return False
         else:
             logging.debug("erreur avec: %s / %s" % (username, password))

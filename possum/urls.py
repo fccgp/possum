@@ -12,7 +12,6 @@ urlpatterns = patterns('',
     # to INSTALLED_APPS to enable admin documentation:
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^base/', include('possum.base.urls')),
-#       (r'^voting/', include('trunk.voting.urls')),
 
     # Uncomment the next line to enable the admin:
     (r'^accounts/login/$', 'django.contrib.auth.views.login'),

@@ -722,7 +722,9 @@
             "choix_sauce": false, 
             "choix_accompagnement": false, 
             "choix_cuisson": false, 
-            "produits_ok": [], 
+            "produits_ok": [
+                242
+            ], 
             "prix": "3.5", 
             "categories_ok": [], 
             "nom_facture": "Glace 1 boule", 
@@ -739,9 +741,7 @@
             "choix_accompagnement": false, 
             "choix_cuisson": false, 
             "produits_ok": [
-                3, 
-                292, 
-                2
+                242
             ], 
             "prix": "3.5", 
             "categories_ok": [], 
@@ -758,9 +758,7 @@
             "choix_sauce": false, 
             "choix_accompagnement": false, 
             "choix_cuisson": false, 
-            "produits_ok": [
-                293
-            ], 
+            "produits_ok": [], 
             "prix": "4.9", 
             "categories_ok": [], 
             "nom_facture": "Assiette de fromages", 
@@ -825,9 +823,7 @@
             "choix_accompagnement": false, 
             "choix_cuisson": false, 
             "produits_ok": [
-                242, 
-                292, 
-                1
+                242
             ], 
             "prix": "8.7", 
             "categories_ok": [], 
@@ -877,11 +873,11 @@
             "choix_accompagnement": false, 
             "choix_cuisson": false, 
             "produits_ok": [
+                210, 
+                413, 
                 388, 
-                389,
-                400,
-                210,
-                413
+                389, 
+                400
             ], 
             "prix": "14.5", 
             "categories_ok": [
