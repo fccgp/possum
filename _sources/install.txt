@@ -1,6 +1,8 @@
 Installation
 ============
 
+Cette documentation est écrite pour une distribution GNU/Linux Ubuntu 11.04.
+
 Utilisateur
 -----------
 
@@ -72,12 +74,23 @@ Installation de Django:
 
 Il est conseillé de prendre au minimum une version 1.2.3.
 
-Il faudra également configurer une base de données, pour cela la documentation de Django
-est bien faite: `Installation de Django <http://docs.django-fr.org/intro/install.html>`_
-
 
 Possum
 ------
+
+Vous pouvez télécharger POSSUM ici: `GitHub <https://github.com/possum-software/possum/archives/master>`_
+
+::
+
+  cd /home/pos
+  tar xzf possum-software-possum-*.tar.gz
+  ln -sf /home/pos/possum-software-possum-???????/possum possum
+  cd possum
+  cp settings.py-sample settings.py
+
+La base de données configurée par défaut est Sqlite, pour plus d'informations
+reportez vous à la documentation de Django: 
+`Installation de Django <http://docs.django-fr.org/intro/install.html>`_
 
 Création de la base pour l'application:
 

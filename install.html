@@ -13,7 +13,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.4',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -70,6 +70,7 @@
             
   <div class="section" id="installation">
 <h1>2. Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Cette documentation est écrite pour une distribution GNU/Linux Ubuntu 11.04.</p>
 <div class="section" id="utilisateur">
 <h2>2.1. Utilisateur<a class="headerlink" href="#utilisateur" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Tout d&#8217;abord, nous allons créer un utilisateur &#8216;&#8217;pos&#8217;&#8217; qui aura comme &#8216;&#8217;home&#8217;&#8217; : /home/pos:</p>
@@ -127,11 +128,19 @@ lancer l&#8217;interface graphique avec la commande: startx</p>
 <div class="highlight-python"><pre>sudo apt-get install python-django python-werkzeug</pre>
 </div>
 <p>Il est conseillé de prendre au minimum une version 1.2.3.</p>
-<p>Il faudra également configurer une base de données, pour cela la documentation de Django
-est bien faite: <a class="reference external" href="http://docs.django-fr.org/intro/install.html">Installation de Django</a></p>
 </div>
 <div class="section" id="possum">
 <h2>2.4. Possum<a class="headerlink" href="#possum" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Vous pouvez télécharger POSSUM ici: <a class="reference external" href="https://github.com/possum-software/possum/archives/master">GitHub</a></p>
+<div class="highlight-python"><pre>cd /home/pos
+tar xzf possum-software-possum-*.tar.gz
+ln -sf /home/pos/possum-software-possum-???????/possum possum
+cd possum
+cp settings.py-sample settings.py</pre>
+</div>
+<p>La base de données configurée par défaut est Sqlite, pour plus d&#8217;informations
+reportez vous à la documentation de Django:
+<a class="reference external" href="http://docs.django-fr.org/intro/install.html">Installation de Django</a></p>
 <p>Création de la base pour l&#8217;application:</p>
 <div class="highlight-python"><pre>./manage.py syncdb
 
