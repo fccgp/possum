@@ -1677,9 +1677,8 @@ def create_info():
     ic.show()
     tb.pack(ic, 0, 0, 3, 1)
 
-    version = "X.X.X"
     l = elementary.Label(win)
-    l.label_set("version %s" % version)
+    l.label_set("version %s" % settings.VERSION)
     l.show()
     tb.pack(l, 0, 1, 3, 1)
 

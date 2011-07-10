@@ -39,11 +39,13 @@ Vous pouvez aider au développement du projet en faisant un don. Vous
 aurez la chance d'apparaître dans la liste ci-dessous des donateurs (si
 vous le souhaitez).
 
-pourquoi des dons, pourquoi GPL ?
+Pourquoi des dons, pourquoi une license GPL ? Tout simplement parce que
+nous croyons à la communauté et cela est notre contribution.
 
-- parce que j'ai deja un boulot
-- croit a la communauté, et c'est ma contribution
-- croit en la responsabilisation: si vous l'utilisez, et que vous en avez les moyens alors vous pouvez donner un peu 
+Nous espérons que si vous utilisez le logiciel et qu'il vous satisfait,
+vous pourrez faire un don afin de nous aider à maintenir une infrastructure
+libre et communautaire.
+
 
 .. raw:: html
    :file: paypal.html

@@ -20,19 +20,14 @@ MANAGERS = ADMINS
 # restauration:
 # su postgres -c "/usr/bin/psql -f /tmp/pg_bkp.dump postgres"
 #
-#DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-#DATABASE_NAME = '/home/pos/possum/data/django.db'             # Or path to database file if using sqlite3.
-DATABASE_ENGINE = 'postgresql_psycopg2'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'possumdb'             # Or path to database file if using sqlite3.
+DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+DATABASE_NAME = '/home/pos/possum/data.db'             # Or path to database file if using sqlite3.
+#DATABASE_ENGINE = 'postgresql_psycopg2'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+#DATABASE_NAME = 'possumdb'             # Or path to database file if using sqlite3.
 DATABASE_USER = 'possum'             # Not used with sqlite3.
 DATABASE_PASSWORD = 'A_PASSWORD'         # Not used with sqlite3.
 DATABASE_HOST = 'localhost'             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = '5432'             # Set to empty string for default. Not used with sqlite3.
-
-# pour ne pas utiliser les transactions
-DATABASE_OPTIONS = {
-    "autocommit": True,
-}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -102,6 +97,7 @@ INSTALLED_APPS = (
 )
 
 # Configuration de POSSUM
+VERSION = "0.4.1"
 #PATH_TICKET = "/home/pos/possum/data/tickets"
 # tmp est en memoire (tmpfs)
 PATH_TICKET = "/tmp/tickets"
