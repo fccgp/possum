@@ -29,6 +29,8 @@ import evas
 import locale
 import io
 from datetime import datetime, timedelta
+import argparse
+
 locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
 
 sys.path.append('/home/pos')
@@ -219,15 +221,9 @@ def destroy(obj):
     logging.shutdown()
 
 elementary.init()
-win = elementary.Window("possum", elementary.ELM_WIN_BASIC)
-win.resize(1024, 768)
-win.title_set("P.O.S.S.U.M")
-win.callback_destroy_add(destroy)
+win = None
 
 CURSOR = cursors.ELM_CURSOR_TCROSS
-
-if not settings.DEBUG:
-    win.fullscreen = True
 
 def admin_panel_exit(bt):
     global notify_admin_panel
@@ -2410,5 +2406,19 @@ def create_ihm():
     elementary.shutdown()
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '--fullscreen', action='store_true', 
+        help='fullscreen mode (default: False)')
+    parser.add_argument('-v', '--version', action='version', 
+        version='POSSUM %s' % settings.VERSION)
+    args = parser.parse_args()
+
+    win = elementary.Window("possum", elementary.ELM_WIN_BASIC)
+    win.resize(1024, 768)
+    win.title_set("P.O.S.S.U.M")
+    win.callback_destroy_add(destroy)
+
+    if args.fullscreen:
+        win.fullscreen = True
     create_ihm()
 
