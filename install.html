@@ -102,7 +102,7 @@ ln -sf ~/.xsession ~/.xinitrc
 
 dans ~/.bashrc
 export PATH="/home/pos/e17/bin:$PATH"
-export PYTHONPATH="/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH"
+export PYTHONPATH="/home/pos/e17/lib/python2.7/site-packages:$PYTHONPATH"
 export LD_LIBRARY_PATH="/home/pos/e17/lib:$LD_LIBRARY_PATH"</pre>
 </div>
 <p>Ensuite il faut initialiser Enlightenment en lançant une session. Le plus
@@ -200,6 +200,10 @@ exit</pre>
 la sauvegarde automatique de la base de données. Cette partie dépend du
 type de base que vous avez choisi. La plus simple étant la base sqlite,
 sa sauvegarde se limite à la copie d&#8217;un fichier.</p>
+<p>Pour lancer l&#8217;application:</p>
+<div class="highlight-python"><pre>cd /home/pos/possum
+./gui/efl.py</pre>
+</div>
 </div>
 <div class="section" id="configuration-initiale">
 <h2>2.5. Configuration initiale<a class="headerlink" href="#configuration-initiale" title="Lien permanent vers ce titre">¶</a></h2>

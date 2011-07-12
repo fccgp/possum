@@ -41,7 +41,7 @@ On utilise la réversion 59661 qui correspond à la version officielle 1.0.1 des
 
   dans ~/.bashrc
   export PATH="/home/pos/e17/bin:$PATH"
-  export PYTHONPATH="/home/pos/e17/lib/python2.6/site-packages:$PYTHONPATH"
+  export PYTHONPATH="/home/pos/e17/lib/python2.7/site-packages:$PYTHONPATH"
   export LD_LIBRARY_PATH="/home/pos/e17/lib:$LD_LIBRARY_PATH"
 
 
@@ -171,6 +171,14 @@ L'installation est presque terminée, vous devez maintenant configurer
 la sauvegarde automatique de la base de données. Cette partie dépend du
 type de base que vous avez choisi. La plus simple étant la base sqlite,
 sa sauvegarde se limite à la copie d'un fichier.
+
+Pour lancer l'application:
+
+::
+
+  cd /home/pos/possum
+  ./gui/efl.py
+
 
 Configuration initiale
 ----------------------
