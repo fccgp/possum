@@ -21,7 +21,8 @@
 
 """POSSUM GUI using EFL"""
 
-import os, sys
+import os
+import sys
 from elementary import cursors
 import elementary
 import ecore
@@ -38,56 +39,18 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'possum.settings'
 
 from django.conf import settings
 
-import logging, logging.handlers
-
-if settings.DEBUG:
-    logging.basicConfig(
-        level = logging.DEBUG,
-        format = '[%(asctime)s %(filename)s:%(lineno)d %(funcName)s] '\
-                '%(levelname)-8s %(message)s (%(relativeCreated)dms)',
-        datefmt = '%Y-%m-%d %H:%M:%S'
-    )
-else:
-    logging.basicConfig(
-        level = logging.WARNING,
-        format = '[%(asctime)s %(filename)s:%(lineno)d %(funcName)s] '\
-                '%(levelname)-8s %(message)s (%(relativeCreated)dms)',
-        datefmt = '%Y-%m-%d %H:%M:%S')
-    #handler = logging.handlers.SMTPHandler("localhost", \
-    #                "possum@localhost", ["root@localhost"], "[POSSUM] ")
-    LOG = logging.getLogger('')
-    LOG.addHandler(logging.handlers.SMTPHandler("localhost", \
-                   "possum@localhost", ["root@localhost"], "[POSSUM] "))
+import logging
+from logging.handlers import SysLogHandler
 
 from possum.base.models import Accompagnement, Sauce, Etat, \
     Categorie, Couleur, Cuisson, Facture, Log, LogType, Paiement, \
     PaiementType, Produit, ProduitVendu, Suivi, Table, Zone, \
     StatsJourGeneral
 
-# on temporise pour etre sur que la base postgres est demarree
 from time import sleep
 from psycopg2 import OperationalError
-DB_NOT_READY = True
-while DB_NOT_READY:
-    try:
-        Zone.objects.count()
-        DB_NOT_READY = False
-    except OperationalError:
-        logging.debug("database not ready, we wait ...")
-        sleep(2)
-
-Log(type=LogType.objects.get(id=1)).save()
-
-try:
-    from decimal import Decimal
-except ImportError:
-    logging.critical("Librairie decimal introuvable")
-    sys.exit()
-
-try:
-    import mpd
-except ImportError:
-    logging.warning("Librairie MPD introuvable")
+from decimal import Decimal
+import mpd
 
 # liste des frames de produits par id de categorie
 # pour pouvoir les afficher
@@ -137,6 +100,8 @@ F_SOLDEE = Facture().nb_soldee_jour(datetime.today())
 # les factures en cours
 F_LISTE = Facture().non_soldees()
 F_NON_SOLDEE = len(F_LISTE)
+# printer is connected ?
+PRINTER = True
 # valeur des tickets restos
 try:
     VALEUR_TR = Paiement.objects.filter(type__nom="Tic. Resto." \
@@ -206,12 +171,7 @@ ITC_STR = elementary.GenlistItemClass(item_style="default",
                                icon_get_func=gl_icon_get,
                                state_get_func=gl_state_get)
 
-try:
-    MPD_CLIENT = mpd.MPDClient()
-except:
-    logging.warning("MPDCLIENT a echoue !")
-    MPD_CLIENT = None
-    logging.warning("Librairie python-mpd installee ?")
+MPD_CLIENT = None
 
 def destroy(obj):
     Facture().maj_stats_avec_nouvelles_factures()
@@ -2325,18 +2285,25 @@ def imprimer_texte(bt, texte):
     """Imprime le texte
     - bt: lorsque l'impression est appelée à partir d'un bouton
     - texte sous la forme d'une liste de ligne: [ligne1, ligne2, ..]
+    
+    If non printer mode, then print to stdout.
     """
+    global PRINTER
     try:
         #fd = io.open("/dev/usb/lp0", "w")
-        fd = open("/dev/usb/lp0", "w")
+        if PRINTER:
+            fd = open("/dev/usb/lp0", "w")
+        else:
+            fd = sys.stdout
         for ligne in texte:
             # on affiche le nombre d'element
             fd.write("%s\n" % ligne)
-        fd.write("\n")
-        fd.write("\n")
-        fd.write("\n")
-        fd.write("\n")
-        fd.write("\x1D\x56\x01")
+        if PRINTER:
+            fd.write("\n")
+            fd.write("\n")
+            fd.write("\n")
+            fd.write("\n")
+            fd.write("\x1D\x56\x01")
         fd.close()
     except IOError:
         logging.warning("Erreur dans l'impression.")
@@ -2407,11 +2374,80 @@ def create_ihm():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument('-q', '--quiet', action='store_true', 
+        help='quiet mode (default: False)')
+    parser.add_argument('-s', '--syslog', action='store_true', 
+        help='log into syslog (default: console)')
+    parser.add_argument('-n', '--noprinter', action='store_true', 
+        help='no printer mode (default: False)')
     parser.add_argument('-f', '--fullscreen', action='store_true', 
         help='fullscreen mode (default: False)')
     parser.add_argument('-v', '--version', action='version', 
         version='POSSUM %s' % settings.VERSION)
     args = parser.parse_args()
+
+    if args.quiet:
+        level = logging.WARNING
+    else:
+        level = logging.DEBUG
+
+    if args.syslog:
+        logger = logging.getLogger()
+        logger.setLevel(level)
+        syslog = SysLogHandler(address='/dev/log')
+        
+        #LOG = logging.getLogger('')
+        formatter = logging.Formatter(fmt='[POSSUM] %(levelname)-8s '\
+                '%(message)s (%(relativeCreated)dms) [%(filename)s:%(lineno)d %(funcName)s]')
+        #LOG.addHandler(logging.handlers.SMTPHandler("localhost", \
+        #           "possum@localhost", ["root@localhost"], "[POSSUM] "))
+#        logging.handlers.SysLogHandler.log_format_string = '[POSSUM] [%(asctime)s %(filename)s:%(lineno)d %(funcName)s] '\
+#                '%(levelname)-8s %(message)s (%(relativeCreated)dms)'
+        syslog.setFormatter(formatter)
+        logger.addHandler(syslog)
+        #handler = logging.handlers.SysLogHandler(address='/dev/log')
+        #handler.setFormatter(formatter)
+        #print handler.level
+        #handler.level = level
+        #print handler.level
+        #print "--"
+        #handler.level = 0
+        #logging.getLogger('').addHandler(handler)
+#        logging.getLogger('').setFormatter(formatter)
+        #LOG.log_format_string = '[POSSUM] <%d>%s\x00'
+    else:
+        logging.basicConfig(
+            level = level,
+            format = '%(levelname)-8s '\
+                    '%(message)s (%(relativeCreated)dms) [%(asctime)s %(filename)s:%(lineno)d %(funcName)s]',
+            datefmt = '%Y-%m-%d %H:%M:%S'
+        )        
+
+    #handler = logging.getLogger('').handlers[0]
+    #print handler.level
+    #print handler.formatter
+    if args.noprinter:
+        logging.info("no printer mode")
+        PRINTER = False
+
+    # on temporise pour etre sur que la base postgres est demarree
+    DB_NOT_READY = True
+    while DB_NOT_READY:
+        try:
+            Zone.objects.count()
+            DB_NOT_READY = False
+        except OperationalError:
+            logging.debug("database not ready, we wait ...")
+            sleep(2)
+
+    Log(type=LogType.objects.get(id=1)).save()
+
+    try:
+        MPD_CLIENT = mpd.MPDClient()
+    except:
+        logging.warning("MPDCLIENT a echoue !")
+        MPD_CLIENT = None
+        logging.warning("Librairie python-mpd installee ?")
 
     win = elementary.Window("possum", elementary.ELM_WIN_BASIC)
     win.resize(1024, 768)
