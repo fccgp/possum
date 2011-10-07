@@ -1,8 +1,5 @@
 from django.conf.urls.defaults import *
-
-# Uncomment the next two lines to enable the admin:
-from django.contrib import admin
-admin.autodiscover()
+from django.conf import settings
 
 urlpatterns = patterns('',
     # Example:
@@ -16,6 +13,9 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^accounts/login/$', 'django.contrib.auth.views.login'),
 
-    # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+            (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/pos/possum/static/'}),
+    )

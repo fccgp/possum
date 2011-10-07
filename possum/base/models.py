@@ -872,8 +872,7 @@ class Facture(models.Model):
         categories entrees, plats, desserts ou formules
         """
         for vendu in self.produits.iterator():
-            if vendu.produit.categorie.nom in ["Entrees", "Plats", \
-                                               "Desserts","Formules"]:
+            if vendu.produit.categorie.nom in ["Entrees", "Plats", "Formules"]:
                 return True
         return False
 
