@@ -39,7 +39,7 @@ def accueil(request):
 
 def factures(request):
     data = {}
-    data['factures'] = Facture.objects.all()
+#    data['factures'] = Facture.objects.all()
     return render_to_response('base/factures.html', data)
 
 def facture(request, id_facture):

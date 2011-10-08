@@ -7,7 +7,6 @@ urlpatterns = patterns('',
 )
 
 urlpatterns += patterns('possum.base.views',
-    (r'^base/', include('possum.base.urls')),
     (r'^$', 'accueil'),
     (r'^accueil$', 'accueil'),
     (r'^factures$', 'factures'),

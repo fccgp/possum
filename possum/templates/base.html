@@ -1,38 +1,42 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html lang="fr">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
 <head>
-  <title>{% block titre %}{% endblock %}</title>
-  <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.png" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name=author content="S. Bonnegent">
+    <link rel="stylesheet" href="/static/base.css"/> 
+    <script type="text/javascript" src="/static/base.js"></script>
+	<!--[if IE]><script language="javascript" type="text/javascript" src="/static/flotr/excanvas.js"></script><![endif]-->
+	<script type="text/javascript" src="/static/flotr/prototype-1.6.0.2.js"></script>
+	<script type="text/javascript" src="/static/flotr/base64.js"></script>
+	<script type="text/javascript" src="/static/flotr/canvas2image.js"></script>
+	<script type="text/javascript" src="/static/flotr/canvastext.js"></script>
+	<script type="text/javascript" src="/static/flotr/flotr.js"></script>
+    <title>POSSUM</title>
 </head>
 <body>
-<center><img src="/media/bandeau.gif" alt="Bandeau"/></center>
-
-{% if user.is_authenticated %}
-        <table width=100% border=0>
-                <tr>
-                        <td><a href="/declare/accueil">Accueil</a></td>
-                        {% if user.is_staff %}
-                                <td><a href="/declare/greves">Grèves</a></td>
-                        {% endif %}
-                        {% if user.is_superuser %}
-                                <td><a href="/admin">Super-Admin</a></td>
-                        {% endif %}
-                        <td align="right">{{ user.get_full_name }} (<a href="/declare/logout">Déconnexion</a>)</td>
-                </tr>
-        </table>
-<hr>
-{% endif %}
-{% block content %}{% endblock %}
-{% if user.is_authenticated %}
-<hr>
-<center>
-<p>Dernière connexion le {{ user.last_login }}</p>
-<p>INSA de Rouen - DSI - 2009</p>
-{% if revision %}
-        <p>Revision: {{revision}}</p>
-{% endif %}
-</center>
-{% endif %}
+	<div id="header">
+		<div id="headerTab"><ul>
+	{% if user.is_authenticated %}
+			<li class="headerTabNoOver">Bonjour {{ user.get_full_name }} (dernière connexion le {{ user.last_login|date:"Y-m-d H:i:s" }})</li>
+			<li class="headerTabNoOver"><a href="/accounts/logout/">Déconnexion</a></li>
+	{% else %}
+			<li class="headerTabNoOver"><a href="/accounts/login/">Connexion</a></li>
+	{% endif %}
+		</ul></div>
+	</div>
+	<div id="main">
+		<div id="menu"><ul>
+			<li class="menuElement"><a href="/"><img src="/static/images/bandeau-128.png" alt="logo"/></a></li>
+			<li class="{% block menuCarte %}menuElement{% endblock %}" onclick="window.location='/carte'"><a href="/carte">Carte</a></li>
+			<li class="{% block menuFacture %}menuElement{% endblock %}" onclick="window.location='/factures'"><a href="/factures">Factures</a></li>
+			<li class="{% block menuStats %}menuElement{% endblock %}" onclick="window.location='/stats'"><a href="/stats">Stats</a></li>
+		</ul></div>
+		<div id="content">
+			{% block content %}<p>Contenu de la page (Vide!).</p>{% endblock %}
+		</div>
+	</div>
 </body>
+
 </html>
 
