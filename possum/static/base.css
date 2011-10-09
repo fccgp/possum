@@ -204,6 +204,19 @@ div.right
 	right: 10px;
 }
 
+#login
+{
+	position: relative;
+	float: left;
+	text-align: right;
+	clear: both;
+	display: block;
+	padding: 0;
+    margin: 0;
+    width: 40%;
+	border: 1px solid #DDDDDD;
+}
+
 /* 
 ** menu
 */

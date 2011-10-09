@@ -1,12 +1,7 @@
 from django.conf.urls.defaults import *
 from django.conf import settings
 
-urlpatterns = patterns('',
-    (r'^accounts/login/$', 'django.contrib.auth.views.login'),
-    (r'^accounts/logout/$', 'django.contrib.auth.views.logout'),
-)
-
-urlpatterns += patterns('possum.base.views',
+urlpatterns = patterns('possum.base.views',
     (r'^$', 'accueil'),
     (r'^accueil$', 'accueil'),
     (r'^carte$', 'carte'),

@@ -1,0 +1,13 @@
+{% extends "template.html" %}
+{% block page %}
+<div id="login">
+    <form method='post' action='/login' name='login'>
+	<ul>
+		<li class="menuElement"><center><img src="/static/images/bandeau-128.png" alt="logo"/></center></li>
+		<li class="menuElement">identifiant : <input type='text' name='username' size='20'></li>
+		<li class="menuElement">mot de passe : <input type='text' name='password' size='20'></li>
+        <li class="menuElement"><input type='submit' value='Connexion'></li>
+    </ul>
+    </form>
+</div>
+{% endblock %}

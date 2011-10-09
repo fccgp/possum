@@ -1,27 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
-<head>
-    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.png" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <meta name=author content="S. Bonnegent">
-    <link rel="stylesheet" href="/static/base.css"/> 
-    <script type="text/javascript" src="/static/base.js"></script>
-	<!--[if IE]><script language="javascript" type="text/javascript" src="/static/flotr/excanvas.js"></script><![endif]-->
-	<script type="text/javascript" src="/static/flotr/prototype-1.6.0.2.js"></script>
-	<script type="text/javascript" src="/static/flotr/base64.js"></script>
-	<script type="text/javascript" src="/static/flotr/canvas2image.js"></script>
-	<script type="text/javascript" src="/static/flotr/canvastext.js"></script>
-	<script type="text/javascript" src="/static/flotr/flotr.js"></script>
-    <title>POSSUM</title>
-</head>
-<body>
+{% extends "template.html" %}
+{% block page %}
 	<div id="header">
 		<div id="headerTab"><ul>
 	{% if user.is_authenticated %}
 			<li class="headerTabNoOver">Bonjour {{ user.get_full_name }} (dernière connexion le {{ user.last_login|date:"Y-m-d H:i:s" }})</li>
-			<li class="headerTabNoOver"><a href="/accounts/logout/">Déconnexion</a></li>
+			<li class="headerTabNoOver"><a href="/logout">Déconnexion</a></li>
 	{% else %}
-			<li class="headerTabNoOver"><a href="/accounts/login/">Connexion</a></li>
+			<li class="headerTabNoOver"><a href="/login">Connexion</a></li>
 	{% endif %}
 		</ul></div>
 	</div>
@@ -39,7 +24,4 @@
 			{% block content %}<p>Contenu de la page (Vide!).</p>{% endblock %}
 		</div>
 	</div>
-</body>
-
-</html>
-
+{% endblock %}

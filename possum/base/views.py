@@ -18,12 +18,20 @@
 #    along with POSSUM.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+import logging
 from possum.base.models import Accompagnement, Sauce, Etat, \
     Categorie, Couleur, Cuisson, Facture, Log, LogType, Paiement, \
     PaiementType, Produit, ProduitVendu, Suivi, Table, Zone
-
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render_to_response, get_object_or_404
-from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required, permission_required
+
+def get_user(request):
+    data = {}
+    data['perms'] = PermWrapper(request.user)
+    data['user'] = request.user
+    return data
+
 
 def accueil(request):
 #    today = datetime.date.today()
@@ -65,6 +73,26 @@ def facture(request, id_facture):
     data = {}
     data['facture'] = get_object_or_404(Facture, pk=id_facture)
     return render_to_response('base/facture.html', data)
+
+def my_login(request):
+	data = {}
+	# il request.user.is_authenticated, on passe le login
+	if request.method == 'POST':
+		username = request.POST.get('username', '')
+		password = request.POST.get('password', '')
+		user = authenticate(username=username, password=password)
+		if user is not None:
+			if user.is_active:
+				login(request, user)
+				# Redirect to a success page.
+				return HttpResponseRedirect('/')
+			else:
+				data['error'] = "Ce compte n'est pas actif."
+				logging.warning("[%s] compte inactif" % username)
+		else:
+			data['error'] = "Login et/ou mot de passe invalide"
+			logging.warning("[%s] connexion echouee" % username)
+	return render_to_response('login.html', data)
 
 def my_logout(request):
     logout(request)
