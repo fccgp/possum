@@ -26,7 +26,6 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth import logout
 
 def accueil(request):
-    """Liste des declarations pour un utilisateur"""
 #    today = datetime.date.today()
     data = {}
 #    data['user'] = request.user
@@ -36,6 +35,26 @@ def accueil(request):
 #   data['revision'] = get_svn_revision(".")
 
     return render_to_response('base/accueil.html', data)
+
+def carte(request):
+    data = {}
+    return render_to_response('base/carte.html', data)
+
+def pos(request):
+    data = {}
+    return render_to_response('base/pos.html', data)
+
+def jukebox(request):
+    data = {}
+    return render_to_response('base/jukebox.html', data)
+
+def stats(request):
+    data = {}
+    return render_to_response('base/stats.html', data)
+
+def users(request):
+    data = {}
+    return render_to_response('base/users.html', data)
 
 def factures(request):
     data = {}
@@ -49,4 +68,4 @@ def facture(request, id_facture):
 
 def my_logout(request):
     logout(request)
-    return HttpResponseRedirect('/declare/accueil')
+    return HttpResponseRedirect('/login')

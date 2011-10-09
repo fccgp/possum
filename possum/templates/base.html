@@ -29,8 +29,11 @@
 		<div id="menu"><ul>
 			<li class="menuElement"><a href="/"><img src="/static/images/bandeau-128.png" alt="logo"/></a></li>
 			<li class="{% block menuCarte %}menuElement{% endblock %}" onclick="window.location='/carte'"><a href="/carte">Carte</a></li>
-			<li class="{% block menuFacture %}menuElement{% endblock %}" onclick="window.location='/factures'"><a href="/factures">Factures</a></li>
+			<li class="{% block menuPOS %}menuElement{% endblock %}" onclick="window.location='/pos'"><a href="/pos">Caisse</a></li>
+			<li class="{% block menuBills %}menuElement{% endblock %}" onclick="window.location='/bills'"><a href="/bills">Factures</a></li>
+			<li class="{% block menuJukebox %}menuElement{% endblock %}" onclick="window.location='/jukebox'"><a href="/jukebox">Jukebox</a></li>
 			<li class="{% block menuStats %}menuElement{% endblock %}" onclick="window.location='/stats'"><a href="/stats">Stats</a></li>
+			<li class="{% block menuUsers %}menuElement{% endblock %}" onclick="window.location='/users'"><a href="/users">Utilisateurs</a></li>
 		</ul></div>
 		<div id="content">
 			{% block content %}<p>Contenu de la page (Vide!).</p>{% endblock %}
