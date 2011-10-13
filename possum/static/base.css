@@ -206,17 +206,30 @@ div.right
 
 #login
 {
-	position: relative;
-	float: left;
-	text-align: right;
+	position: absolute;
 	clear: both;
 	display: block;
 	padding: 0;
     margin: 0;
-    width: 40%;
+    width: 500px;
 	border: 1px solid #DDDDDD;
+	top: 30%;
+	left: 40%;
 }
-
+#login ul
+{
+    list-style: none;
+    padding: 0px;
+	margin: 0px;
+}
+#login p input
+{
+    width: 70%;
+}
+#login p
+{
+	text-align: right;
+}
 /* 
 ** menu
 */

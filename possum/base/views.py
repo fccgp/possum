@@ -32,7 +32,7 @@ def get_user(request):
     data['user'] = request.user
     return data
 
-
+@login_required
 def accueil(request):
 #    today = datetime.date.today()
     data = {}
@@ -44,31 +44,38 @@ def accueil(request):
 
     return render_to_response('base/accueil.html', data)
 
+@login_required
 def carte(request):
     data = {}
     return render_to_response('base/carte.html', data)
 
+@login_required
 def pos(request):
     data = {}
     return render_to_response('base/pos.html', data)
 
+@login_required
 def jukebox(request):
     data = {}
     return render_to_response('base/jukebox.html', data)
 
+@login_required
 def stats(request):
     data = {}
     return render_to_response('base/stats.html', data)
 
+@login_required
 def users(request):
     data = {}
     return render_to_response('base/users.html', data)
 
+@login_required
 def factures(request):
     data = {}
 #    data['factures'] = Facture.objects.all()
     return render_to_response('base/factures.html', data)
 
+@login_required
 def facture(request, id_facture):
     data = {}
     data['facture'] = get_object_or_404(Facture, pk=id_facture)
@@ -96,4 +103,4 @@ def my_login(request):
 
 def my_logout(request):
     logout(request)
-    return HttpResponseRedirect('/login')
+    return HttpResponseRedirect('/')

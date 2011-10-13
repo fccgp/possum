@@ -10,8 +10,8 @@ urlpatterns = patterns('possum.base.views',
     (r'^jukebox$', 'jukebox'),
     (r'^stats$', 'stats'),
     (r'^users$', 'users'),
-    (r'^login$', 'my_login'),
-    (r'^logout$', 'my_logout'),
+    (r'^accounts/login/$', 'my_login'),
+    (r'^accounts/logout/$', 'my_logout'),
     (r'^facture/(?P<id_facture>\d+)/$', 'facture'),
 )
 
