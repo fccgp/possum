@@ -3,10 +3,10 @@
 	<div id="header">
 		<div id="headerTab"><ul>
 	{% if user.is_authenticated %}
-			<li class="headerTabNoOver">Bonjour {{ user.get_full_name }} (dernière connexion le {{ user.last_login|date:"Y-m-d H:i:s" }})</li>
-			<li class="headerTabNoOver"><a href="/logout">Déconnexion</a></li>
+			<li class="headerTabNoOver">Bonjour {% if user.get_full_name %}{{ user.get_full_name }}{%else%}{{user.username}}{%endif%} (dernière connexion le {{ user.last_login|date:"Y-m-d H:i:s" }})</li>
+			<li class="headerTabNoOver"><a href="/accounts/logout/">Déconnexion</a></li>
 	{% else %}
-			<li class="headerTabNoOver"><a href="/login">Connexion</a></li>
+			<li class="headerTabNoOver"><a href="/accounts/login/">Connexion</a></li>
 	{% endif %}
 		</ul></div>
 	</div>
@@ -21,7 +21,9 @@
 			<li class="{% block menuUsers %}menuElement{% endblock %}" onclick="window.location='/users'"><a href="/users">Utilisateurs</a></li>
 		</ul></div>
 		
-		<div id="digiclock"></div>
+		<div id="clock">
+			<script type="text/javascript">window.onload = date_heure('clock');</script>
+		</div>
 
 		<div id="content">
 			{% block content %}<p>Contenu de la page (Vide!).</p>{% endblock %}

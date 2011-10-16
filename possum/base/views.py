@@ -25,6 +25,9 @@ from possum.base.models import Accompagnement, Sauce, Etat, \
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required, permission_required
+from django.template import RequestContext
+from django.http import HttpResponseForbidden, HttpResponseRedirect, HttpResponse
+from django.core.context_processors import PermWrapper
 
 def get_user(request):
     data = {}
@@ -35,7 +38,7 @@ def get_user(request):
 @login_required
 def accueil(request):
 #    today = datetime.date.today()
-    data = {}
+    data = get_user(request)
 #    data['user'] = request.user
 #    declaration = Declaration.objects.filter(user=request.user).filter(greve__validation__isnull=False)
 #    data['current'] = declaration.filter(greve__date_fin__gt=today).order_by('-greve__date_greve')
@@ -46,61 +49,41 @@ def accueil(request):
 
 @login_required
 def carte(request):
-    data = {}
+    data = get_user(request)
     return render_to_response('base/carte.html', data)
 
 @login_required
 def pos(request):
-    data = {}
+    data = get_user(request)
     return render_to_response('base/pos.html', data)
 
 @login_required
 def jukebox(request):
-    data = {}
+    data = get_user(request)
     return render_to_response('base/jukebox.html', data)
 
 @login_required
 def stats(request):
-    data = {}
+    data = get_user(request)
     return render_to_response('base/stats.html', data)
 
 @login_required
 def users(request):
-    data = {}
+    data = get_user(request)
     return render_to_response('base/users.html', data)
 
 @login_required
 def factures(request):
-    data = {}
+    data = get_user(request)
 #    data['factures'] = Facture.objects.all()
     return render_to_response('base/factures.html', data)
 
 @login_required
 def facture(request, id_facture):
-    data = {}
+    data = get_user(request)
     data['facture'] = get_object_or_404(Facture, pk=id_facture)
     return render_to_response('base/facture.html', data)
 
-def my_login(request):
-	data = {}
-	# il request.user.is_authenticated, on passe le login
-	if request.method == 'POST':
-		username = request.POST.get('username', '')
-		password = request.POST.get('password', '')
-		user = authenticate(username=username, password=password)
-		if user is not None:
-			if user.is_active:
-				login(request, user)
-				# Redirect to a success page.
-				return HttpResponseRedirect('/')
-			else:
-				data['error'] = "Ce compte n'est pas actif."
-				logging.warning("[%s] compte inactif" % username)
-		else:
-			data['error'] = "Login et/ou mot de passe invalide"
-			logging.warning("[%s] connexion echouee" % username)
-	return render_to_response('login.html', data)
+#	return render_to_response('login.html', data, 
+#			context_instance=RequestContext(request))
 
-def my_logout(request):
-    logout(request)
-    return HttpResponseRedirect('/')

@@ -234,6 +234,16 @@ div.right
 ** menu
 */
 
+#clock
+{
+	text-align: center;
+    top: 90%;
+    width: 11%;
+    position: absolute;
+	overflow: auto;
+	background-color: #FFFFFF;
+	border: 1px solid #DDDDDD;
+}
 #menu
 {
     float: left;
@@ -241,7 +251,7 @@ div.right
     padding: 0;
 	margin-right: 5px;
 	text-align: left;
-    width: 15%;
+    width: 11%;
 	overflow: auto;
 	background-color: #FFFFFF;
 	border: 1px solid #DDDDDD;
@@ -301,7 +311,7 @@ div.right
 	background-color: #FFFFFF;
 	border: 1px solid #DDDDDD;
     bottom: 0;
-    left: 16%;
+    left: 12%;
     right: 0;
     top: 0;
 }

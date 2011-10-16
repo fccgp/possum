@@ -10,9 +10,15 @@ urlpatterns = patterns('possum.base.views',
     (r'^jukebox$', 'jukebox'),
     (r'^stats$', 'stats'),
     (r'^users$', 'users'),
-    (r'^accounts/login/$', 'my_login'),
-    (r'^accounts/logout/$', 'my_logout'),
+#    (r'^accounts/login/next(?P<next_url>[a-z]+)/$', 'my_login'),
+#    (r'^accounts/login/next(?P<next_url>[a-z]+)/$', 'my_login'),
+#    (r'^accounts/logout/$', 'my_logout'),
     (r'^facture/(?P<id_facture>\d+)/$', 'facture'),
+)
+
+urlpatterns += patterns('',
+    (r'^accounts/login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
+    (r'^accounts/logout/$', 'django.contrib.auth.views.logout_then_login'),
 )
 
 if settings.DEBUG:

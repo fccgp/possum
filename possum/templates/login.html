@@ -1,7 +1,10 @@
 {% extends "template.html" %}
 {% block page %}
+{% if error %}<div id="error"><p>{{error}}</p></div>{%endif%}
+
 <div id="login">
-    <form method='post' action='/login' name='login'>
+	
+    <form method='post' action='/accounts/login/' name='login'>{% csrf_token %}
 	<ul>
 		<li class="menuElement"><center><img src="/static/images/bandeau-128.png" alt="logo"/></center></li>
 		<li class="menuElement"><p>identifiant : <input type='text' name='username' size='20'></p>
