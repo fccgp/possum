@@ -273,12 +273,15 @@ div.right
 .headerTabNoOver,
 .menuSelected
 {
-
 	padding: 5px 15px;
 	margin: 0;
 	background-color: #FFFFFF;
 	border-bottom: 1px solid #DDDDDD;
-	
+}
+.submenu
+{
+ 	padding: 2px 15%;
+	border-bottom: 1px solid #DDDDDD;
 }
 .menuElementNoPadding
 {

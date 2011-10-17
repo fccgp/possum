@@ -50,31 +50,37 @@ def accueil(request):
 @login_required
 def carte(request):
     data = get_user(request)
+    data['menu_carte'] = True
     return render_to_response('base/carte.html', data)
 
 @login_required
 def pos(request):
     data = get_user(request)
+    data['menu_pos'] = True
     return render_to_response('base/pos.html', data)
 
 @login_required
 def jukebox(request):
     data = get_user(request)
+    data['menu_jukebox'] = True
     return render_to_response('base/jukebox.html', data)
 
 @login_required
 def stats(request):
     data = get_user(request)
+    data['menu_stats'] = True
     return render_to_response('base/stats.html', data)
 
 @login_required
 def users(request):
     data = get_user(request)
+    data['menu_users'] = True
     return render_to_response('base/users.html', data)
 
 @login_required
 def factures(request):
     data = get_user(request)
+    data['menu_bills'] = True
 #    data['factures'] = Facture.objects.all()
     return render_to_response('base/factures.html', data)
 
