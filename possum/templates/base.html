@@ -13,18 +13,18 @@
 	<div id="main">
 		<div id="menu"><ul>
 			<li class="menuElement"><a href="/"><img src="/static/images/bandeau-128.png" alt="logo"/></a></li>
-			<li class="{% if menu_carte %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/carte'"><a href="/carte">Carte</a></li>
+			<li class="{% if menu_carte %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/carte/'"><a href="/carte/">Carte</a></li>
 			{% if menu_carte %}
-				<li class="submenu" onclick="window.location='/carte/categories'"><a href="/carte/categories">> catégories</a></li>
-				<li class="submenu" onclick="window.location='/carte/produits'"><a href="/carte/produits">> produits</a></li>
+				<li class="submenu" onclick="window.location='/carte/categories/'"><a href="/carte/categories/">> catégories</a></li>
+				<li class="submenu" onclick="window.location='/carte/produits/'"><a href="/carte/produits/">> produits</a></li>
 			{% endif %}
-			<li class="{% if menu_pos %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/pos'"><a href="/pos">Caisse</a></li>
-			<li class="{% if menu_bills %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/bills'"><a href="/bills">Factures</a></li>
-			<li class="{% block menuGame %}menuElement{% endblock %}" onclick="window.location='/games'"><a href="/games">Jeux</a></li>
-			<li class="{% if menu_jukebox %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/jukebox'"><a href="/jukebox">Jukebox</a></li>
-			<li class="{% block menuWeather %}menuElement{% endblock %}" onclick="window.location='/weather'"><a href="/weather">Météo</a></li>
-			<li class="{% if menu_stats %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/stats'"><a href="/stats">Stats</a></li>
-			<li class="{% if menu_users %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/users'"><a href="/users">Utilisateurs</a></li>
+			<li class="{% if menu_pos %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/pos/'"><a href="/pos/">Caisse</a></li>
+			<li class="{% if menu_bills %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/bills/'"><a href="/bills/">Factures</a></li>
+			<li class="{% block menuGame %}menuElement{% endblock %}" onclick="window.location='/games/'"><a href="/games/">Jeux</a></li>
+			<li class="{% if menu_jukebox %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/jukebox/'"><a href="/jukebox/">Jukebox</a></li>
+			<li class="{% block menuWeather %}menuElement{% endblock %}" onclick="window.location='/weather/'"><a href="/weather/">Météo</a></li>
+			<li class="{% if menu_stats %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/stats/'"><a href="/stats/">Stats</a></li>
+			<li class="{% if menu_users %}menuSelected{% else %}menuElement{% endif %}" onclick="window.location='/users/'"><a href="/users/">Utilisateurs</a></li>
 		</ul></div>
 		
 		<div id="clock">

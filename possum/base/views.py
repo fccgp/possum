@@ -54,6 +54,12 @@ def carte(request):
     return render_to_response('base/carte.html', data)
 
 @login_required
+def categories(request):
+    data = get_user(request)
+    data['menu_carte'] = True
+    return render_to_response('base/categories.html', data)
+
+@login_required
 def pos(request):
     data = get_user(request)
     data['menu_pos'] = True
