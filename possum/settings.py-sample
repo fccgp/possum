@@ -1,6 +1,4 @@
-# Django settings for benchmark project.
-
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -20,14 +18,14 @@ MANAGERS = ADMINS
 # restauration:
 # su postgres -c "/usr/bin/psql -f /tmp/pg_bkp.dump postgres"
 #
+# dev
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = '/home/pos/possum/data.db'             # Or path to database file if using sqlite3.
-#DATABASE_ENGINE = 'postgresql_psycopg2'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-#DATABASE_NAME = 'possumdb'             # Or path to database file if using sqlite3.
-DATABASE_USER = 'possum'             # Not used with sqlite3.
-DATABASE_PASSWORD = 'A_PASSWORD'         # Not used with sqlite3.
-DATABASE_HOST = 'localhost'             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = '5432'             # Set to empty string for default. Not used with sqlite3.
+DATABASE_NAME = '/home/pos/possum/possum.db'             # Or path to database file if using sqlite3.
+
+# pour ne pas utiliser les transactions avec une base postgres
+#DATABASE_OPTIONS = {
+#    "autocommit": True,
+#}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -48,33 +46,36 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = '/home/pos/possum/static/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/static/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '9gp(pl3m_bitzu!0k-e6$H7Sle&8&68-7qx4qx25*t380w&-@)c4Ehf'
+SECRET_KEY = '9gp(pl6m_bTtzu!0k-e6$H7rle&8&69-7qx4qx25*t930w&-@(c4Ehf'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
+
+#LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/'
 
 ROOT_URLCONF = 'possum.urls'
 
@@ -83,24 +84,36 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     '/home/pos/possum/templates',
-#    '/home/bonnegent/Projets/possum/trunk/templates',
 )
 
 INSTALLED_APPS = (
     'django.contrib.auth',
-    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-#    'django.contrib.sites',
     'possum.base',
     'django_extensions',
 )
 
 # Configuration de POSSUM
-VERSION = "0.4.1"
+VERSION = "X.X.X"
 #PATH_TICKET = "/home/pos/possum/data/tickets"
 # tmp est en memoire (tmpfs)
 PATH_TICKET = "/tmp/tickets"
 POSSUM_DEFAULT_ID_CATEGORIE = 7
 # endroit ou se trouve les vignettes pour les compteurs
 POSSUM_IMAGES_PATH = "images/numbers/orange/"
+
+
+import logging
+from logging.handlers import SysLogHandler
+
+logger = logging.getLogger()
+if not DEBUG:
+#    logger.setLevel(logging.DEBUG)
+#else:
+    logger.setLevel(logging.INFO)
+    syslog = SysLogHandler(address='/dev/log')
+    formatter = logging.Formatter(fmt='[%(filename)s:%(lineno)d %(funcName)s] %(levelname)-8s %(message)s')
+    syslog.setFormatter(formatter)
+    logger.addHandler(syslog)
+
