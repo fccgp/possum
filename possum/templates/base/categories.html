@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Catégories</h1>
+
+<table>
+<tr>
+	<td><b>Nom</b></td>
+	<td><b>Surtaxe terrasse</b></td>
+	<td><b>Couleur</b></td>
+	<td><b>Stats</b></td>
+</tr>
+{% for c in categories %}
+<tr>
+	<td>{{ c.nom }}</td>
+	<td>{{ c.surtaxe }}</td>
+	<td>{{ c.couleur }}</td>
+	<td><a href="/stats/categorie/{{ c.id }}§">stats</a></td>
+</tr>
+{% endfor %}
+</table>
+
+<p>Ajout d'une catégorie ...</p>
+
+{% endblock %}
+
