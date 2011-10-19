@@ -5,17 +5,27 @@
 
 <table>
 <tr>
+	<td><b>Priorite</b></td>
 	<td><b>Nom</b></td>
 	<td><b>Surtaxe terrasse</b></td>
+	<td><b>Peut désactiver la surtaxe</b></td>
 	<td><b>Couleur</b></td>
-	<td><b>Stats</b></td>
+	<td><b>Alcool</b></td>
+	<td><b>Stats des ventes</b></td>
+	<td><b>Liste des produits</b></td>
+	<td><b>Suppression</b></td>
 </tr>
 {% for c in categories %}
 <tr>
+	<td>- {{ c.priorite }} +</td>
 	<td>{{ c.nom }}</td>
-	<td>{{ c.surtaxe }}</td>
+	<td>{{ c.surtaxable }} boul</td>
+	<td>{{ c.disable_surtaxe }} boul</td>
 	<td>{{ c.couleur }}</td>
-	<td><a href="/stats/categorie/{{ c.id }}§">stats</a></td>
+	<td>{{ c.alcool }} bool</td>
+	<td><a href="/stats/categorie/{{ c.id }}/§">stats</a></td>
+	<td>produits</td>
+	<td>supprimer</td>
 </tr>
 {% endfor %}
 </table>
