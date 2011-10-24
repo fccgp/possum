@@ -27,9 +27,6 @@ urlpatterns = patterns('possum.base.views',
     (r'^users/$', 'users'),
     (r'^users/(?P<user_id>\d+)/active/$', 'users_active'),
 
-#    (r'^accounts/login/next(?P<next_url>[a-z]+)/$', 'my_login'),
-#    (r'^accounts/login/next(?P<next_url>[a-z]+)/$', 'my_login'),
-#    (r'^accounts/logout/$', 'my_logout'),
     (r'^facture/(?P<id_facture>\d+)/$', 'facture'),
 )
 

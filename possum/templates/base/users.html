@@ -3,8 +3,6 @@
 
 <h1>Utilisateurs</h1>
 
-<p>Gestion des utilisateurs et des droits.</p>
-
 <table>
 <tr>
 	<td><b>Nom</b></td>
@@ -40,8 +38,6 @@
 {% endfor %}
 </table>
 
-<p>Ajout d'un utilisateur ...</p>
-
 <p>Description des permissions:
 <ul>
     <li>[P1] peut modifier les utilisateurs et leurs droits. Il doit rester au moins une personne avec cette permission.</li>
@@ -53,11 +49,32 @@
     <li>[P7] peut accèder aux résultats</li>
     <li>[P8] peut changer de musique dans le Jukebox</li>
     <li>[P9] peut modifier la musique dans le jukebox (ajout/suppression des musiques, modification des listes de lecture)</li>
-    <li>[P]</li>
-    <li>[P]</li>
-    <li>[P]</li>
 </ul>
 </p>
 
+<h2>Ajout d'un nouvel utilisateur</h2>
+<center><p>(*) : doit être rempli.</p>
+<form method='post' action='/users/'>{% csrf_token %}
+<table>
+<tr>
+	<td><b>Login (*)</b></td>
+    <td><input name='login'></td>
+</tr>
+<tr>
+	<td><b>Nom</b></td>
+    <td><input name='last_name'></td>
+</tr>
+<tr>
+	<td><b>Prénom</b></td>
+    <td><input name='first_name'></td>
+</tr>
+<tr>
+	<td><b>Mail</b></td>
+    <td><input name='mail'></td>
+</tr>
+</table>
+<input type='submit' value='Créer'>
+</form>
+</center>
 {% endblock %}
 

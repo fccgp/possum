@@ -141,17 +141,52 @@ def profile(request):
     old = request.POST.get('old', '').strip()
     new1 = request.POST.get('new1', '').strip()
     new2 = request.POST.get('new2', '').strip()
+    if old:
+        error = False
+        if data['user'].check_password(old):
+            if new1 and new1 == new2:
+                if data['user'].set_password(new1):
+                    data['user'].save()
+                    data['success'] = "Le mot de passe a été changé."
+                    logging.info('[%s] password changed' % data['user'].username)
+                else:
+                    data['error'] = "Le nouveau mot de passe n'a pu être enregistré."
+                    logging.warning('[%s] set password failed' % data['user'].username)
+            else:
+                data['error'] = "Le nouveau mot de passe n'est pas valide."
+                logging.warning('[%s] new password is not correct' % data['user'].username)
+        else:
+            data['error'] = "Le mot de passe fourni n'est pas bon."
+            logging.warning('[%s] check password failed' % data['user'].username)
     return render_to_response('base/profile.html', data)
 
 @login_required
 def users(request):
     data = get_user(request)
+    # if data is here to create a new user
+    login = request.POST.get('login', '').strip()
+    first_name = request.POST.get('first_name', '').strip()
+    last_name = request.POST.get('last_name', '').strip()
+    mail = request.POST.get('mail', '').strip()
+    if login:
+        user = User()
+        user.username = login
+        user.first_name = first_name
+        user.last_name = last_name
+        user.email = email
+        try:
+            user.save()
+            data['success'] = "Le nouveau compte a été créé."
+            logging.info("[%s] new user [%s]" % (data['user'].username, login))
+        except:
+            data['error'] = "Le nouvel utilisateur n'a pu être créé."
+            logging.warning("[%s] new user failed: [%s] [%s] [%s] [%s]" % (data['user'].username, login, first_name, last_name, mail))
     data['menu_users'] = True
     data['users'] = User.objects.all()
     return render_to_response('base/users.html', data)
 
 @login_required
-def user_active(request, user_id):
+def users_active(request, user_id):
     data = get_user(request)
     user = get_object_or_404(User, pk=user_id)
     new = not user.is_active

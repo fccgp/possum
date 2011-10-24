@@ -3,15 +3,8 @@
 
 <h1>Mes informations</h1>
 
-<center>
-    {% if error %}
-    <div id="error"><p>{{error}}</p></div>
-    {% endif %}
-
-    {% if success %}
-    <div id="message"><p>{{success}}</p></div>
-    {% endif %}
-</center>
+<p>Vos identifiants de connexion sont personnels, vous ne devez pas les
+communiquer.</p>
 
 <table>
 <tr>
@@ -34,20 +27,25 @@
 
 <h2>Changement de mot de passe</h2>
 
+<center>
+<form method='post' action='/profile/'>{% csrf_token %}
 <table>
 <tr>
     <td><b>Mot de passe actuel</b></td>
-    <td></td>
+    <td><input type='password' name='old' size='30'></td>
 </tr>
 <tr>
-    <td><b>Nouveau mot de passe</b></td>
-    <td></td>
+    <td><b>Nouveau mot de passe (1)</b></td>
+    <td><input type='password' name='new1' size='30'></td>
 </tr>
 <tr>
-    <td><b>Nouveau mot de passe</b></td>
-    <td></td>
+    <td><b>Nouveau mot de passe (2)</b></td>
+    <td><input type='password' name='new2' size='30'></td>
 </tr>
 </table>
+<input type='submit' value='Modifier'>
+</form>
+</center>
 
 {% endblock %}
 
