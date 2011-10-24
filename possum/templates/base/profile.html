@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Mes informations</h1>
+
+<center>
+    {% if error %}
+    <div id="error"><p>{{error}}</p></div>
+    {% endif %}
+
+    {% if success %}
+    <div id="message"><p>{{success}}</p></div>
+    {% endif %}
+</center>
+
+<table>
+<tr>
+	<td><b>Nom</b></td>
+    <td>{{user.last_name}}</td>
+</tr>
+<tr>
+	<td><b>Prénom</b></td>
+    <td>{{user.first_name}}</td>
+</tr>
+<tr>
+	<td><b>Login</b></td>
+    <td>{{user.username}}</td>
+</tr>
+<tr>
+	<td><b>Mail</b></td>
+    <td>{{user.email}}</td>
+</tr>
+</table>
+
+<h2>Changement de mot de passe</h2>
+
+<table>
+<tr>
+    <td><b>Mot de passe actuel</b></td>
+    <td></td>
+</tr>
+<tr>
+    <td><b>Nouveau mot de passe</b></td>
+    <td></td>
+</tr>
+<tr>
+    <td><b>Nouveau mot de passe</b></td>
+    <td></td>
+</tr>
+</table>
+
+{% endblock %}
+

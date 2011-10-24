@@ -3,7 +3,61 @@
 
 <h1>Utilisateurs</h1>
 
-<p>Gestion des utilisateurs, des groupes et des droits !</p>
+<p>Gestion des utilisateurs et des droits.</p>
+
+<table>
+<tr>
+	<td><b>Nom</b></td>
+	<td><b>Prénom</b></td>
+	<td><b>Login</b></td>
+	<td><b>Mail</b></td>
+	<td><b>Actif ?</b></td>
+	<td><b>Mot de passe</b></td>
+	<td align="center"><b>P1</b></td>
+</tr>
+{% for u in users %}
+<tr>
+    <td>{{u.last_name}}</td>
+    <td>{{u.first_name}}</td>
+    <td>{{u.username}}</td>
+    <td>{{u.email}}</td>
+    <td align="center" onclick="window.location='/users/{{u.id}}/active/'"
+        {% if u.is_active %}bgcolor="#00FF00"> 
+        <input type="checkbox" checked="True"/>
+        {% else %}bgcolor="#FF0000"> 
+        <input type="checkbox"/>
+        {% endif %}
+    </td>
+    <td align="center">Changer</td>
+    <td align="center" onclick="window.location='/users/{{u.id}}/active/'"
+        {% if u.is_active %}bgcolor="#00FF00"> 
+        <input type="checkbox" checked="True"/>
+        {% else %}bgcolor="#FF0000"> 
+        <input type="checkbox"/>
+        {% endif %}
+    </td>    
+</tr>
+{% endfor %}
+</table>
+
+<p>Ajout d'un utilisateur ...</p>
+
+<p>Description des permissions:
+<ul>
+    <li>[P1] peut modifier les utilisateurs et leurs droits. Il doit rester au moins une personne avec cette permission.</li>
+    <li>[P2] peut accèder à la partie Jeux</li>
+    <li>[P3] peut accèder à la partie Registre (toutes les factures passées)</li>
+    <li>[P4] peut modifier les factures dans la partie Registre (toutes les factures passées)</li>
+    <li>[P5] peut utiliser la caisse (enregistrement des commandes et facturation)</li>
+    <li>[P6] peut modifier la carte</li>
+    <li>[P7] peut accèder aux résultats</li>
+    <li>[P8] peut changer de musique dans le Jukebox</li>
+    <li>[P9] peut modifier la musique dans le jukebox (ajout/suppression des musiques, modification des listes de lecture)</li>
+    <li>[P]</li>
+    <li>[P]</li>
+    <li>[P]</li>
+</ul>
+</p>
 
 {% endblock %}
 

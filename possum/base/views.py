@@ -28,6 +28,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.template import RequestContext
 from django.http import HttpResponseForbidden, HttpResponseRedirect, HttpResponse
 from django.core.context_processors import PermWrapper
+from django.contrib.auth.models import User
 
 def get_user(request):
     data = {}
@@ -134,10 +135,30 @@ def stats(request):
     return render_to_response('base/stats.html', data)
 
 @login_required
+def profile(request):
+    data = get_user(request)
+    data['menu_profile'] = True
+    old = request.POST.get('old', '').strip()
+    new1 = request.POST.get('new1', '').strip()
+    new2 = request.POST.get('new2', '').strip()
+    return render_to_response('base/profile.html', data)
+
+@login_required
 def users(request):
     data = get_user(request)
     data['menu_users'] = True
+    data['users'] = User.objects.all()
     return render_to_response('base/users.html', data)
+
+@login_required
+def user_active(request, user_id):
+    data = get_user(request)
+    user = get_object_or_404(User, pk=user_id)
+    new = not user.is_active
+    user.is_active = new
+    user.save()
+    logging.info("[%s] user [%s] active: %s" % (data['user'].username, user.username, user.is_active))
+    return HttpResponseRedirect('/users/')
 
 @login_required
 def factures(request):
