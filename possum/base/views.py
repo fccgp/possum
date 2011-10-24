@@ -54,9 +54,16 @@ def carte(request):
     return render_to_response('base/carte.html', data)
 
 @login_required
+def products(request):
+    data = get_user(request)
+    data['menu_products'] = True
+    data['categories'] = Categorie.objects.order_by('priorite', 'nom')
+    return render_to_response('base/categories.html', data)
+
+@login_required
 def categories(request):
     data = get_user(request)
-    data['menu_carte'] = True
+    data['menu_categories'] = True
     data['categories'] = Categorie.objects.order_by('priorite', 'nom')
     return render_to_response('base/categories.html', data)
 

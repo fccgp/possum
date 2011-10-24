@@ -11,7 +11,7 @@
 	<td><b>Peut désactiver la surtaxe</b></td>
 	<td><b>Alcool</b></td>
 	<td><b>Couleur</b></td>
-	<td><b>Stats des ventes</b></td>
+	<td><b>Ventes</b></td>
 	<td><b>Liste des produits</b></td>
 	<td><b>Suppression</b></td>
 </tr>
@@ -35,9 +35,9 @@
             <input type="checkbox" name="reponse" {% if c.alcool %}checked="True"{% endif %} />
     </td>
 	<td>{{ c.couleur }}</td>
-	<td><a href="/stats/categorie/{{ c.id }}/§">stats</a></td>
-	<td>produits</td>
-	<td>supprimer</td>
+	<td align='center'><a href="/stats/categorie/{{ c.id }}/§">stats</a></td>
+	<td align="center">les produits</td>
+	<td align="center">supprimer</td>
 </tr>
 {% endfor %}
 </table>
