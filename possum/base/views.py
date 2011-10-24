@@ -89,6 +89,16 @@ def categories_surtaxable(request, cat_id):
     return HttpResponseRedirect('/carte/categories/')
 
 @login_required
+def categories_alcool(request, cat_id):
+    data = get_user(request)
+    cat = get_object_or_404(Categorie, pk=cat_id)
+    new = not cat.alcool
+    cat.alcool = new
+    cat.save()
+    logging.info("[%s] cat [%s] alcool: %s" % (data['user'].username, cat.nom, cat.alcool))
+    return HttpResponseRedirect('/carte/categories/')
+
+@login_required
 def categories_disable_surtaxe(request, cat_id):
     data = get_user(request)
     cat = get_object_or_404(Categorie, pk=cat_id)
