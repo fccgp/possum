@@ -26,11 +26,11 @@
     </td>
 	<td>{{ c.nom }}</td>
 	<td align="center" onclick="window.location='/carte/categories/{{c.id}}/surtaxable/'">
-        <!--form action="/carte/categories/{{c.id}}/" method="post"-->
             <input type="checkbox" name="reponse" {% if c.surtaxable %}checked="True"{% endif %} />
-        <!--/form-->
     </td>
-	<td>{{ c.disable_surtaxe }} boul</td>
+	<td align="center" onclick="window.location='/carte/categories/{{c.id}}/disable_surtaxe/'">
+            <input type="checkbox" name="reponse" {% if c.disable_surtaxe %}checked="True"{% endif %} />
+    </td>
 	<td>{{ c.couleur }}</td>
 	<td>{{ c.alcool }} bool</td>
 	<td><a href="/stats/categorie/{{ c.id }}/§">stats</a></td>

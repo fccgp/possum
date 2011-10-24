@@ -89,6 +89,16 @@ def categories_surtaxable(request, cat_id):
     return HttpResponseRedirect('/carte/categories/')
 
 @login_required
+def categories_disable_surtaxe(request, cat_id):
+    data = get_user(request)
+    cat = get_object_or_404(Categorie, pk=cat_id)
+    new = not cat.disable_surtaxe
+    cat.disable_surtaxe = new
+    cat.save()
+    logging.info("[%s] cat [%s] disable_surtaxe: %s" % (data['user'].username, cat.nom, cat.disable_surtaxe))
+    return HttpResponseRedirect('/carte/categories/')
+
+@login_required
 def pos(request):
     data = get_user(request)
     data['menu_pos'] = True
