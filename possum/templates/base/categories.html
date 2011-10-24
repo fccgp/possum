@@ -17,9 +17,19 @@
 </tr>
 {% for c in categories %}
 <tr>
-	<td>- {{ c.priorite }} +</td>
+	<td>
+        <a href="/carte/categories/{{c.id}}/less-10/"><<</a> 
+        <a href="/carte/categories/{{c.id}}/less/"><</a> 
+        {{ c.priorite }} 
+        <a href="/carte/categories/{{c.id}}/more/">></a> 
+        <a href="/carte/categories/{{c.id}}/more-10/">>></a> 
+    </td>
 	<td>{{ c.nom }}</td>
-	<td>{{ c.surtaxable }} boul</td>
+	<td align="center" onclick="window.location='/carte/categories/{{c.id}}/surtaxable/'">
+        <!--form action="/carte/categories/{{c.id}}/" method="post"-->
+            <input type="checkbox" name="reponse" {% if c.surtaxable %}checked="True"{% endif %} />
+        <!--/form-->
+    </td>
 	<td>{{ c.disable_surtaxe }} boul</td>
 	<td>{{ c.couleur }}</td>
 	<td>{{ c.alcool }} bool</td>

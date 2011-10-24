@@ -61,6 +61,34 @@ def categories(request):
     return render_to_response('base/categories.html', data)
 
 @login_required
+def categories_less_priority(request, cat_id, nb=1):
+    data = get_user(request)
+    cat = get_object_or_404(Categorie, pk=cat_id)
+    cat.priorite -= nb
+    cat.save()
+    logging.info("[%s] cat [%s] priority - %d" % (data['user'].username, cat.nom, nb))
+    return HttpResponseRedirect('/carte/categories/')
+
+@login_required
+def categories_more_priority(request, cat_id, nb=1):
+    data = get_user(request)
+    cat = get_object_or_404(Categorie, pk=cat_id)
+    cat.priorite += nb
+    cat.save()
+    logging.info("[%s] cat [%s] priority + %d" % (data['user'].username, cat.nom, nb))
+    return HttpResponseRedirect('/carte/categories/')
+
+@login_required
+def categories_surtaxable(request, cat_id):
+    data = get_user(request)
+    cat = get_object_or_404(Categorie, pk=cat_id)
+    new = not cat.surtaxable
+    cat.surtaxable = new
+    cat.save()
+    logging.info("[%s] cat [%s] surtaxable: %s" % (data['user'].username, cat.nom, cat.surtaxable))
+    return HttpResponseRedirect('/carte/categories/')
+
+@login_required
 def pos(request):
     data = get_user(request)
     data['menu_pos'] = True

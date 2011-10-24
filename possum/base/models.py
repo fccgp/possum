@@ -63,7 +63,10 @@ class NomDouble(Nom):
         abstract = True
 
 class Priorite(models.Model):
+    """Getter / setter: si priorite inferieur à 0 on reste à 0
+    """
     priorite = models.PositiveIntegerField(default=0)
+
 
     class Meta:
         abstract = True
