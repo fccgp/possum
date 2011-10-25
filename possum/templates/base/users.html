@@ -17,8 +17,8 @@
 <tr>
     <td>{{u.last_name}}</td>
     <td>{{u.first_name}}</td>
-    <td>{{u.username}}</td>
-    <td>{{u.email}}</td>
+    <td><input name='login' value="{{u.username}}"><input type='submit' value='Modifier'></td>
+    <td><input name='mail' value="{{u.email}}"><input type='submit' value='Modifier'></td>
     <td align="center" onclick="window.location='/users/{{u.id}}/active/'"
         {% if u.is_active %}bgcolor="#00FF00"> 
         <input type="checkbox" checked="True"/>

@@ -25,7 +25,9 @@ from possum.base.models import Accompagnement, Sauce, Etat, \
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required, permission_required
-from django.template import RequestContext
+#from django.views.decorators.csrf import csrf_protect
+from django.core.context_processors import csrf
+#from django.template import RequestContext
 from django.http import HttpResponseForbidden, HttpResponseRedirect, HttpResponse
 from django.core.context_processors import PermWrapper
 from django.contrib.auth.models import User
@@ -34,6 +36,7 @@ def get_user(request):
     data = {}
     data['perms'] = PermWrapper(request.user)
     data['user'] = request.user
+    data.update(csrf(request))
     return data
 
 @login_required
@@ -145,13 +148,10 @@ def profile(request):
         error = False
         if data['user'].check_password(old):
             if new1 and new1 == new2:
-                if data['user'].set_password(new1):
-                    data['user'].save()
-                    data['success'] = "Le mot de passe a été changé."
-                    logging.info('[%s] password changed' % data['user'].username)
-                else:
-                    data['error'] = "Le nouveau mot de passe n'a pu être enregistré."
-                    logging.warning('[%s] set password failed' % data['user'].username)
+                data['user'].set_password(new1)
+                data['user'].save()
+                data['success'] = "Le mot de passe a été changé."
+                logging.info('[%s] password changed' % data['user'].username)
             else:
                 data['error'] = "Le nouveau mot de passe n'est pas valide."
                 logging.warning('[%s] new password is not correct' % data['user'].username)
