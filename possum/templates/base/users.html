@@ -5,39 +5,65 @@
 
 <table>
 <tr>
+	<td><b>Login (*)</b></td>
 	<td><b>Nom</b></td>
 	<td><b>Prénom</b></td>
-	<td><b>Login</b></td>
 	<td><b>Mail</b></td>
+    <td></td>
 	<td><b>Actif ?</b></td>
+    {% for p in perms_list %}
+	<td align="center"><b>{{p}}</b></td>
+    {% endfor %}
 	<td><b>Mot de passe</b></td>
-	<td align="center"><b>P1</b></td>
 </tr>
 {% for u in users %}
-<tr>
-    <td>{{u.last_name}}</td>
-    <td>{{u.first_name}}</td>
-    <td><input name='login' value="{{u.username}}"><input type='submit' value='Modifier'></td>
-    <td><input name='mail' value="{{u.email}}"><input type='submit' value='Modifier'></td>
+<!-- permissions get_all_permissions() -->
+<tr><form method='post' action='/users/{{u.id}}/change/'>{% csrf_token %}
+    <td>
+        <input name='login' value="{{u.username}}">
+    </td>
+    <td>
+        <input name='last_name' value="{{u.last_name}}">
+    </td>
+    <td>
+        <input name='first_name' value="{{u.first_name}}">
+    </td>
+    <td>
+        <input name='mail' value="{{u.email}}">
+    </td>
+    <td>
+        <input type='submit' value='Modifier'>
+    </td>
+    </form>
     <td align="center" onclick="window.location='/users/{{u.id}}/active/'"
         {% if u.is_active %}bgcolor="#00FF00"> 
         <input type="checkbox" checked="True"/>
         {% else %}bgcolor="#FF0000"> 
         <input type="checkbox"/>
         {% endif %}
-    </td>
-    <td align="center">Changer</td>
-    <td align="center" onclick="window.location='/users/{{u.id}}/active/'"
-        {% if u.is_active %}bgcolor="#00FF00"> 
+    </td>        
+    {% for p in perms_list %}
+    <td align="center" onclick="window.location='/users/{{u.id}}/perm/{{p}}/'"
+        {% if p in u.permissions %}bgcolor="#00FF00"> 
         <input type="checkbox" checked="True"/>
         {% else %}bgcolor="#FF0000"> 
         <input type="checkbox"/>
         {% endif %}
     </td>    
+    {% endfor %}
+    <td align="center">Changer</td>
 </tr>
 {% endfor %}
+<tr><form method='post' action='/users/new/'>{% csrf_token %}
+    <td><input name='login'></td>
+    <td><input name='last_name'></td>
+    <td><input name='first_name'></td>
+    <td><input name='mail'></td>
+    <td><input type='submit' value='Créer'></td>
+</form>
+</tr>
 </table>
-
+<center><p>(*) : information obligatoire</p></center>
 <p>Description des permissions:
 <ul>
     <li>[P1] peut modifier les utilisateurs et leurs droits. Il doit rester au moins une personne avec cette permission.</li>
@@ -52,29 +78,5 @@
 </ul>
 </p>
 
-<h2>Ajout d'un nouvel utilisateur</h2>
-<center><p>(*) : doit être rempli.</p>
-<form method='post' action='/users/'>{% csrf_token %}
-<table>
-<tr>
-	<td><b>Login (*)</b></td>
-    <td><input name='login'></td>
-</tr>
-<tr>
-	<td><b>Nom</b></td>
-    <td><input name='last_name'></td>
-</tr>
-<tr>
-	<td><b>Prénom</b></td>
-    <td><input name='first_name'></td>
-</tr>
-<tr>
-	<td><b>Mail</b></td>
-    <td><input name='mail'></td>
-</tr>
-</table>
-<input type='submit' value='Créer'>
-</form>
-</center>
 {% endblock %}
 

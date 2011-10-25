@@ -31,6 +31,8 @@ from django.core.context_processors import csrf
 from django.http import HttpResponseForbidden, HttpResponseRedirect, HttpResponse
 from django.core.context_processors import PermWrapper
 from django.contrib.auth.models import User
+from django.contrib.auth.models import Permission 
+from django.conf import settings
 
 def get_user(request):
     data = {}
@@ -163,7 +165,17 @@ def profile(request):
 @login_required
 def users(request):
     data = get_user(request)
-    # if data is here to create a new user
+    data['menu_users'] = True
+    data['perms_list'] = settings.PERMS
+    data['users'] = User.objects.all()
+    for user in data['users']:
+         user.permissions = [p.codename for p in user.user_permissions.all()]
+    return render_to_response('base/users.html', data)
+
+@login_required
+def users_new(request):
+    data = get_user(request)
+    # data is here to create a new user ?
     login = request.POST.get('login', '').strip()
     first_name = request.POST.get('first_name', '').strip()
     last_name = request.POST.get('last_name', '').strip()
@@ -173,17 +185,43 @@ def users(request):
         user.username = login
         user.first_name = first_name
         user.last_name = last_name
-        user.email = email
+        user.email = mail
         try:
             user.save()
-            data['success'] = "Le nouveau compte a été créé."
             logging.info("[%s] new user [%s]" % (data['user'].username, login))
+            #users(request)
         except:
-            data['error'] = "Le nouvel utilisateur n'a pu être créé."
+            #data['error'] = "Le nouvel utilisateur n'a pu être créé."
             logging.warning("[%s] new user failed: [%s] [%s] [%s] [%s]" % (data['user'].username, login, first_name, last_name, mail))
-    data['menu_users'] = True
-    data['users'] = User.objects.all()
-    return render_to_response('base/users.html', data)
+            #users(request, "Le nouvel utilisateur n'a pu être créé.")
+    return HttpResponseRedirect('/users/')
+
+@login_required
+def users_change(request, user_id):
+    data = get_user(request)
+    login = request.POST.get('login', '').strip()
+    first_name = request.POST.get('first_name', '').strip()
+    last_name = request.POST.get('last_name', '').strip()
+    mail = request.POST.get('mail', '').strip()
+    user = get_object_or_404(User, pk=user_id)
+    if login != user.username:
+        logging.info("[%s] new login: [%s] > [%s]" % (data['user'].username, user.username, login))
+        user.username = login
+    if first_name != user.first_name:
+        logging.info("[%s] new first name for [%s]: [%s] > [%s]" % (data['user'].username, user.username, user.first_name, first_name))
+        user.first_name = first_name
+    if last_name != user.last_name:
+        logging.info("[%s] new last name for [%s]: [%s] > [%s]" % (data['user'].username, user.username, user.last_name, last_name))
+        user.last_name = last_name
+    if mail != user.email:
+        logging.info("[%s] new mail for [%s]: [%s] > [%s]" % (data['user'].username, user.username, user.email, mail))
+        user.email = mail
+
+    try:
+        user.save()
+    except:
+        logging.warning("[%s] save failed for [%s]" % (data['user'].username, user.username))
+    return HttpResponseRedirect('/users/')
 
 @login_required
 def users_active(request, user_id):
@@ -193,6 +231,27 @@ def users_active(request, user_id):
     user.is_active = new
     user.save()
     logging.info("[%s] user [%s] active: %s" % (data['user'].username, user.username, user.is_active))
+    return HttpResponseRedirect('/users/')
+
+@login_required
+def users_change_perm(request, user_id, codename):
+    print ""
+    data = get_user(request)
+    user = get_object_or_404(User, pk=user_id)
+    # little test because because user can do ugly things :)
+    # now we are sure that it is a good permission    
+    print "codename: %s" % codename
+    if codename in settings.PERMS:
+        perm = Permission.objects.get(codename=codename)
+        if user.has_perm(perm):
+            user.user_permissions.remove(perm)
+            logging.info("[%s] user [%s] remove perm: %s" % (data['user'].username, user.username, codename))
+        else:
+            user.user_permissions.add(perm)
+            logging.info("[%s] user [%s] add perm: %s" % (data['user'].username, user.username, codename))
+        user.save()
+    else:
+        logging.warning("[%s] wrong perm info : [%s]" % (data['user'].username, codename))
     return HttpResponseRedirect('/users/')
 
 @login_required
