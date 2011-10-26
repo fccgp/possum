@@ -7,13 +7,14 @@
 <tr>
 	<td><b>Priorite</b></td>
 	<td><b>Nom</b></td>
+    <td></td>
 	<td><b>Surtaxe terrasse</b></td>
 	<td><b>Désactiver la surtaxe</b></td>
 	<td><b>Alcool</b></td>
 	<td><b>Couleur</b></td>
-	<td><b>Ventes</b></td>
-	<td><b>Liste des produits</b></td>
-	<td><b>Suppression</b></td>
+	<td></td>
+	<td></td>
+	<td></td>
 </tr>
 {% for c in categories %}
 <tr bgcolor="{{c.couleur.web}}">
@@ -24,7 +25,8 @@
         <a href="/carte/categories/{{c.id}}/more/">></a> 
         <a href="/carte/categories/{{c.id}}/more-10/">>></a> 
     </td>
-	<td>{{ c.nom }}</td>
+	<td><input name='name' value="{{c.nom}}"></td>
+    <td><input type='submit' value='Modifier'></td>
 	<td align="center" onclick="window.location='/carte/categories/{{c.id}}/surtaxable/'">
             <input type="checkbox" name="reponse" {% if c.surtaxable %}checked="True"{% endif %} />
     </td>
@@ -35,14 +37,18 @@
             <input type="checkbox" name="reponse" {% if c.alcool %}checked="True"{% endif %} />
     </td>
 	<td>{{ c.couleur }}</td>
-	<td align='center'><a href="/stats/categorie/{{ c.id }}/§">stats</a></td>
-	<td align="center">les produits</td>
+	<td align='center'><a href="/stats/categorie/{{c.id}}/">ventes</a></td>
+	<td align="center"><a href="/carte/products/cat/{{c.id}}/">produits</a></td>
 	<td align="center">supprimer</td>
 </tr>
 {% endfor %}
+<tr><form method='post' action='/carte/categories/new/'>{% csrf_token %}
+    <td><input name='priority'></td>
+    <td><input name='name'></td>
+    <td><input type='submit' value='Créer'></td>
+    </form>
+</tr>
 </table>
-
-<p>Ajout d'une catégorie ...</p>
 
 {% endblock %}
 
