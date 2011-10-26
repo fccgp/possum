@@ -53,27 +53,27 @@ def accueil(request):
 
     return render_to_response('base/accueil.html', data)
 
-@login_required
+@permission_required('base.p6')
 def carte(request):
     data = get_user(request)
     data['menu_carte'] = True
     return render_to_response('base/carte.html', data)
 
-@login_required
+@permission_required('base.p6')
 def products(request):
     data = get_user(request)
     data['menu_products'] = True
     data['categories'] = Categorie.objects.order_by('priorite', 'nom')
     return render_to_response('base/categories.html', data)
 
-@login_required
+@permission_required('base.p6')
 def categories(request):
     data = get_user(request)
     data['menu_categories'] = True
     data['categories'] = Categorie.objects.order_by('priorite', 'nom')
     return render_to_response('base/categories.html', data)
 
-@login_required
+@permission_required('base.p6')
 def categories_less_priority(request, cat_id, nb=1):
     data = get_user(request)
     cat = get_object_or_404(Categorie, pk=cat_id)
@@ -82,7 +82,7 @@ def categories_less_priority(request, cat_id, nb=1):
     logging.info("[%s] cat [%s] priority - %d" % (data['user'].username, cat.nom, nb))
     return HttpResponseRedirect('/carte/categories/')
 
-@login_required
+@permission_required('base.p6')
 def categories_more_priority(request, cat_id, nb=1):
     data = get_user(request)
     cat = get_object_or_404(Categorie, pk=cat_id)
@@ -91,7 +91,7 @@ def categories_more_priority(request, cat_id, nb=1):
     logging.info("[%s] cat [%s] priority + %d" % (data['user'].username, cat.nom, nb))
     return HttpResponseRedirect('/carte/categories/')
 
-@login_required
+@permission_required('base.p6')
 def categories_surtaxable(request, cat_id):
     data = get_user(request)
     cat = get_object_or_404(Categorie, pk=cat_id)
@@ -101,7 +101,7 @@ def categories_surtaxable(request, cat_id):
     logging.info("[%s] cat [%s] surtaxable: %s" % (data['user'].username, cat.nom, cat.surtaxable))
     return HttpResponseRedirect('/carte/categories/')
 
-@login_required
+@permission_required('base.p6')
 def categories_alcool(request, cat_id):
     data = get_user(request)
     cat = get_object_or_404(Categorie, pk=cat_id)
@@ -111,7 +111,7 @@ def categories_alcool(request, cat_id):
     logging.info("[%s] cat [%s] alcool: %s" % (data['user'].username, cat.nom, cat.alcool))
     return HttpResponseRedirect('/carte/categories/')
 
-@login_required
+@permission_required('base.p6')
 def categories_disable_surtaxe(request, cat_id):
     data = get_user(request)
     cat = get_object_or_404(Categorie, pk=cat_id)
@@ -121,7 +121,7 @@ def categories_disable_surtaxe(request, cat_id):
     logging.info("[%s] cat [%s] disable_surtaxe: %s" % (data['user'].username, cat.nom, cat.disable_surtaxe))
     return HttpResponseRedirect('/carte/categories/')
 
-@login_required
+@permission_required('base.p5')
 def pos(request):
     data = get_user(request)
     data['menu_pos'] = True
@@ -133,7 +133,7 @@ def jukebox(request):
     data['menu_jukebox'] = True
     return render_to_response('base/jukebox.html', data)
 
-@login_required
+@permission_required('base.p7')
 def stats(request):
     data = get_user(request)
     data['menu_stats'] = True
@@ -162,7 +162,7 @@ def profile(request):
             logging.warning('[%s] check password failed' % data['user'].username)
     return render_to_response('base/profile.html', data)
 
-@login_required
+@permission_required('base.p1')
 def users(request):
     data = get_user(request)
     data['menu_users'] = True
@@ -172,7 +172,7 @@ def users(request):
          user.permissions = [p.codename for p in user.user_permissions.all()]
     return render_to_response('base/users.html', data)
 
-@login_required
+@permission_required('base.p1')
 def users_new(request):
     data = get_user(request)
     # data is here to create a new user ?
@@ -196,7 +196,7 @@ def users_new(request):
             #users(request, "Le nouvel utilisateur n'a pu être créé.")
     return HttpResponseRedirect('/users/')
 
-@login_required
+@permission_required('base.p1')
 def users_change(request, user_id):
     data = get_user(request)
     login = request.POST.get('login', '').strip()
@@ -223,7 +223,7 @@ def users_change(request, user_id):
         logging.warning("[%s] save failed for [%s]" % (data['user'].username, user.username))
     return HttpResponseRedirect('/users/')
 
-@login_required
+@permission_required('base.p1')
 def users_active(request, user_id):
     data = get_user(request)
     user = get_object_or_404(User, pk=user_id)
@@ -233,35 +233,37 @@ def users_active(request, user_id):
     logging.info("[%s] user [%s] active: %s" % (data['user'].username, user.username, user.is_active))
     return HttpResponseRedirect('/users/')
 
-@login_required
+@permission_required('base.p1')
 def users_change_perm(request, user_id, codename):
     print ""
     data = get_user(request)
     user = get_object_or_404(User, pk=user_id)
     # little test because because user can do ugly things :)
     # now we are sure that it is a good permission    
-    print "codename: %s" % codename
     if codename in settings.PERMS:
         perm = Permission.objects.get(codename=codename)
-        if user.has_perm(perm):
-            user.user_permissions.remove(perm)
-            logging.info("[%s] user [%s] remove perm: %s" % (data['user'].username, user.username, codename))
+        if perm in user.user_permissions.all():
+            if codename == 'p1' and perm.user_set.count() == 1:
+                # we must have at least one person with this permission
+                logging.info("[%s] user [%s] perm [%s]: at least should have one person" % (data['user'].username, user.username, codename))
+            else:
+                user.user_permissions.remove(perm)
+                logging.info("[%s] user [%s] remove perm: %s" % (data['user'].username, user.username, codename))
         else:
             user.user_permissions.add(perm)
             logging.info("[%s] user [%s] add perm: %s" % (data['user'].username, user.username, codename))
-        user.save()
     else:
         logging.warning("[%s] wrong perm info : [%s]" % (data['user'].username, codename))
     return HttpResponseRedirect('/users/')
 
-@login_required
+@permission_required('base.p3')
 def factures(request):
     data = get_user(request)
     data['menu_bills'] = True
 #    data['factures'] = Facture.objects.all()
     return render_to_response('base/factures.html', data)
 
-@login_required
+@permission_required('base.p3')
 def facture(request, id_facture):
     data = get_user(request)
     data['facture'] = get_object_or_404(Facture, pk=id_facture)
