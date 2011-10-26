@@ -547,7 +547,18 @@ class Facture(models.Model):
 
     class Meta:
         get_latest_by = 'id'
-
+        permissions = (
+            ("p1", "can modify users and permissions"),
+            ("p2", "can play games"),
+            ("p3", "can view all bills"),
+            ("p4", "can modify all bills"),
+            ("p5", "can use POS"),
+            ("p6", "can modify la carte"),
+            ("p7", "can view results"),
+            ("p8", "can change music"),
+            ("p9", "can modify music"),
+        )
+        
     def __unicode__(self):
         if self.id:
             id = self.id

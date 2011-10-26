@@ -51,7 +51,7 @@
         {% endif %}
     </td>    
     {% endfor %}
-    <td align="center">Changer</td>
+    <td align="center"><a href="/users/{{u.id}}/passwd/">Changer</a></td>
 </tr>
 {% endfor %}
 <tr><form method='post' action='/users/new/'>{% csrf_token %}

@@ -27,18 +27,18 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required, permission_required
 #from django.views.decorators.csrf import csrf_protect
 from django.core.context_processors import csrf
-#from django.template import RequestContext
+from django.template import RequestContext
 from django.http import HttpResponseForbidden, HttpResponseRedirect, HttpResponse
 from django.core.context_processors import PermWrapper
-from django.contrib.auth.models import User
-from django.contrib.auth.models import Permission 
+from django.contrib.auth.models import User, UserManager, Permission
 from django.conf import settings
+from django.contrib import messages
 
 def get_user(request):
     data = {}
     data['perms'] = PermWrapper(request.user)
     data['user'] = request.user
-    data.update(csrf(request))
+#    data.update(csrf(request))
     return data
 
 @login_required
@@ -51,27 +51,35 @@ def accueil(request):
 #    data['others'] = declaration.filter(greve__date_fin__lte=today).order_by('-greve__date_greve')
 #   data['revision'] = get_svn_revision(".")
 
-    return render_to_response('base/accueil.html', data)
+    return render_to_response('base/accueil.html',
+                                data,
+                                context_instance=RequestContext(request))
 
 @permission_required('base.p6')
 def carte(request):
     data = get_user(request)
     data['menu_carte'] = True
-    return render_to_response('base/carte.html', data)
+    return render_to_response('base/carte.html',
+                                data,
+                                context_instance=RequestContext(request))
 
 @permission_required('base.p6')
 def products(request):
     data = get_user(request)
     data['menu_products'] = True
     data['categories'] = Categorie.objects.order_by('priorite', 'nom')
-    return render_to_response('base/categories.html', data)
+    return render_to_response('base/categories.html',
+                                data,
+                                context_instance=RequestContext(request))
 
 @permission_required('base.p6')
 def categories(request):
     data = get_user(request)
     data['menu_categories'] = True
     data['categories'] = Categorie.objects.order_by('priorite', 'nom')
-    return render_to_response('base/categories.html', data)
+    return render_to_response('base/categories.html',
+                                data,
+                                context_instance=RequestContext(request))
 
 @permission_required('base.p6')
 def categories_less_priority(request, cat_id, nb=1):
@@ -125,19 +133,25 @@ def categories_disable_surtaxe(request, cat_id):
 def pos(request):
     data = get_user(request)
     data['menu_pos'] = True
-    return render_to_response('base/pos.html', data)
+    return render_to_response('base/pos.html',
+                                data,
+                                context_instance=RequestContext(request))
 
 @login_required
 def jukebox(request):
     data = get_user(request)
     data['menu_jukebox'] = True
-    return render_to_response('base/jukebox.html', data)
+    return render_to_response('base/jukebox.html',
+                                data,
+                                context_instance=RequestContext(request))
 
 @permission_required('base.p7')
 def stats(request):
     data = get_user(request)
     data['menu_stats'] = True
-    return render_to_response('base/stats.html', data)
+    return render_to_response('base/stats.html',
+                                data,
+                                context_instance=RequestContext(request))
 
 @login_required
 def profile(request):
@@ -160,7 +174,9 @@ def profile(request):
         else:
             data['error'] = "Le mot de passe fourni n'est pas bon."
             logging.warning('[%s] check password failed' % data['user'].username)
-    return render_to_response('base/profile.html', data)
+    return render_to_response('base/profile.html',
+                                data,
+                                context_instance=RequestContext(request))
 
 @permission_required('base.p1')
 def users(request):
@@ -170,7 +186,9 @@ def users(request):
     data['users'] = User.objects.all()
     for user in data['users']:
          user.permissions = [p.codename for p in user.user_permissions.all()]
-    return render_to_response('base/users.html', data)
+    return render_to_response('base/users.html', 
+                                data,
+                                context_instance=RequestContext(request))
 
 @permission_required('base.p1')
 def users_new(request):
@@ -193,7 +211,7 @@ def users_new(request):
         except:
             #data['error'] = "Le nouvel utilisateur n'a pu être créé."
             logging.warning("[%s] new user failed: [%s] [%s] [%s] [%s]" % (data['user'].username, login, first_name, last_name, mail))
-            #users(request, "Le nouvel utilisateur n'a pu être créé.")
+            messages.add_message(request, messages.ERROR, "Le nouveau compte n'a pu être créé.")
     return HttpResponseRedirect('/users/')
 
 @permission_required('base.p1')
@@ -220,6 +238,7 @@ def users_change(request, user_id):
     try:
         user.save()
     except:
+        messages.add_message(request, messages.ERROR, "Les modifications n'ont pu être enregistrées.")
         logging.warning("[%s] save failed for [%s]" % (data['user'].username, user.username))
     return HttpResponseRedirect('/users/')
 
@@ -234,8 +253,20 @@ def users_active(request, user_id):
     return HttpResponseRedirect('/users/')
 
 @permission_required('base.p1')
+def users_passwd(request, user_id):
+    """Set a new random password for a user.
+    """
+    data = get_user(request)
+    user = get_object_or_404(User, pk=user_id)
+    passwd = UserManager().make_random_password(length=10)
+    user.set_password(passwd)
+    user.save()
+    messages.add_message(request, messages.SUCCESS, "Le nouveau mot de passe l'utilisateur %s est : %s" % (user.username, passwd))
+    logging.info("[%s] user [%s] new password" % (data['user'].username, user.username))
+    return HttpResponseRedirect('/users/')
+
+@permission_required('base.p1')
 def users_change_perm(request, user_id, codename):
-    print ""
     data = get_user(request)
     user = get_object_or_404(User, pk=user_id)
     # little test because because user can do ugly things :)
@@ -246,6 +277,7 @@ def users_change_perm(request, user_id, codename):
             if codename == 'p1' and perm.user_set.count() == 1:
                 # we must have at least one person with this permission
                 logging.info("[%s] user [%s] perm [%s]: at least should have one person" % (data['user'].username, user.username, codename))
+                messages.add_message(request, messages.ERROR, "Il doit rester au moins 1 compte avec la permission P1.")
             else:
                 user.user_permissions.remove(perm)
                 logging.info("[%s] user [%s] remove perm: %s" % (data['user'].username, user.username, codename))
@@ -261,13 +293,17 @@ def factures(request):
     data = get_user(request)
     data['menu_bills'] = True
 #    data['factures'] = Facture.objects.all()
-    return render_to_response('base/factures.html', data)
+    return render_to_response('base/factures.html',
+                                data,
+                                context_instance=RequestContext(request))
 
 @permission_required('base.p3')
 def facture(request, id_facture):
     data = get_user(request)
     data['facture'] = get_object_or_404(Facture, pk=id_facture)
-    return render_to_response('base/facture.html', data)
+    return render_to_response('base/facture.html',
+                                data,
+                                context_instance=RequestContext(request))
 
 #	return render_to_response('login.html', data, 
 #			context_instance=RequestContext(request))
