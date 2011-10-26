@@ -247,9 +247,14 @@ def users_active(request, user_id):
     data = get_user(request)
     user = get_object_or_404(User, pk=user_id)
     new = not user.is_active
-    user.is_active = new
-    user.save()
-    logging.info("[%s] user [%s] active: %s" % (data['user'].username, user.username, user.is_active))
+    p1 = Permission.objects.get(codename="p1")
+    if not new and p1.user_set.count() == 1 and p1 in user.user_permissions.all():
+        messages.add_message(request, messages.ERROR, "Il doit rester au moins un compte actif avec la permission P1.")
+        logging.warning("[%s] we must have at least one active user with P1 permission.")
+    else:
+        user.is_active = new
+        user.save()
+        logging.info("[%s] user [%s] active: %s" % (data['user'].username, user.username, user.is_active))
     return HttpResponseRedirect('/users/')
 
 @permission_required('base.p1')
