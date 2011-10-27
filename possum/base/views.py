@@ -78,6 +78,35 @@ def products(request, cat_id):
                                 context_instance=RequestContext(request))
 
 @permission_required('base.p6')
+def products_new(request, cat_id):
+    data = get_user(request)
+    cat = get_object_or_404(Categorie, pk=cat_id)
+    name = request.POST.get('name', '').strip()
+    billname = request.POST.get('billname', '').strip()
+    prize = request.POST.get('prize', '').strip()
+    if name:
+        if billname:
+            if prize:
+                product = Produit()
+                product.categorie = cat
+                product.nom = name
+                product.nom_facture = billname
+                product.prix = prize
+                try:
+                    product.save()
+                    logging.info("[%s] new product [%s]" % (data['user'].username, name))
+                except:
+                    logging.warning("[%s] new product failed: [%s]" % (data['user'].username, name))
+                    messages.add_message(request, messages.ERROR, "Le nouveau produit n'a pu être créé.")            
+            else:
+                messages.add_message(request, messages.ERROR, "Vous devez définir un prix pour le nouveau produit.")
+        else:
+            messages.add_message(request, messages.ERROR, "Vous devez choisir un nom qui s'affichera sur la facture pour le nouveau produit.")
+    else:
+        messages.add_message(request, messages.ERROR, "Vous devez choisir un nom pour le nouveau produit.")
+    return HttpResponseRedirect('/carte/products/cat/%s/' % cat_id)
+
+@permission_required('base.p6')
 def products_change(request, product_id):
     data = get_user(request)
     name = request.POST.get('name', '').strip()

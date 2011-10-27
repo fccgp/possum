@@ -49,7 +49,7 @@
     </td>
 </tr>
 {% endfor %}
-<tr><form method='post' action='/carte/products/new/'>{% csrf_token %}
+<tr><form method='post' action='/carte/products/cat/{{cat_current.id}}/new/'>{% csrf_token %}
     <td><input name='name'></td>
     <td><input name='billname'></td>
     <td><input name='prize' class="prize"></td>
