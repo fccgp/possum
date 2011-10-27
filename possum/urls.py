@@ -12,6 +12,7 @@ urlpatterns = patterns('possum.base.views',
     (r'^carte/categories/(?P<cat_id>\d+)/less-10/$', 'categories_less_priority', {'nb': 10}),
     (r'^carte/categories/(?P<cat_id>\d+)/more-10/$', 'categories_more_priority', {'nb': 10}),
     (r'^carte/categories/(?P<cat_id>\d+)/surtaxable/$', 'categories_surtaxable'),
+    (r'^carte/categories/(?P<cat_id>\d+)/change/$', 'categories_change'),
     (r'^carte/categories/(?P<cat_id>\d+)/alcool/$', 'categories_alcool'),
     (r'^carte/categories/(?P<cat_id>\d+)/disable_surtaxe/$', 'categories_disable_surtaxe'),
     

@@ -123,6 +123,22 @@ def categories_alcool(request, cat_id):
     return HttpResponseRedirect('/carte/categories/')
 
 @permission_required('base.p6')
+def categories_change(request, cat_id):
+    data = get_user(request)
+    name = request.POST.get('name', '').strip()
+    cat = get_object_or_404(Categorie, pk=cat_id)
+    if name != cat.nom:
+        logging.info("[%s] new categorie name: [%s] > [%s]" % (data['user'].username, cat.nom, name))
+        cat.nom = name
+
+    try:
+        cat.save()
+    except:
+        messages.add_message(request, messages.ERROR, "Les modifications n'ont pu être enregistrées.")
+        logging.warning("[%s] save failed for [%s]" % (data['user'].username, cat.nom))
+    return HttpResponseRedirect('/carte/categories/')
+
+@permission_required('base.p6')
 def categories_disable_surtaxe(request, cat_id):
     data = get_user(request)
     cat = get_object_or_404(Categorie, pk=cat_id)

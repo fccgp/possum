@@ -28,8 +28,10 @@ Les 2 avec des templates !</p>
         <a href="/carte/categories/{{c.id}}/more/">></a> 
         <a href="/carte/categories/{{c.id}}/more-10/">>></a> 
     </td>
+    <form method='post' action='/carte/categories/{{c.id}}/change/'>{% csrf_token %}
 	<td><input name='name' value="{{c.nom}}"></td>
     <td><input type='submit' value='Modifier'></td>
+    </form>
 	<td align="center" onclick="window.location='/carte/categories/{{c.id}}/surtaxable/'">
             <input type="checkbox" name="reponse" {% if c.surtaxable %}checked="True"{% endif %} />
     </td>
