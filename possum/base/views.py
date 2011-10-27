@@ -57,6 +57,8 @@ def accueil(request):
 
 @permission_required('base.p6')
 def carte(request):
+    """This is not used.
+    """
     data = get_user(request)
     data['menu_carte'] = True
     return render_to_response('base/carte.html',
@@ -67,7 +69,7 @@ def carte(request):
 def products(request, cat_id):
     data = get_user(request)
     cat = get_object_or_404(Categorie, pk=cat_id)
-    data['menu_products'] = True
+    data['menu_carte'] = True
     data['products'] = Produit.objects.filter(categorie=cat)
     return render_to_response('base/products.html',
                                 data,
@@ -76,7 +78,7 @@ def products(request, cat_id):
 @permission_required('base.p6')
 def categories(request):
     data = get_user(request)
-    data['menu_categories'] = True
+    data['menu_carte'] = True
     data['categories'] = Categorie.objects.order_by('priorite', 'nom')
     return render_to_response('base/categories.html',
                                 data,
