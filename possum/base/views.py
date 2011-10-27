@@ -85,6 +85,26 @@ def categories(request):
                                 context_instance=RequestContext(request))
 
 @permission_required('base.p6')
+def categories_new(request):
+    data = get_user(request)
+    priority = request.POST.get('priority', '').strip()
+    name = request.POST.get('name', '').strip()
+    if name:
+        cat = Categorie()
+        cat.nom = name
+        if priority:
+            cat.priorite = priority
+        try:
+            cat.save()
+            logging.info("[%s] new categorie [%s]" % (data['user'].username, name))
+        except:
+            logging.warning("[%s] new categorie failed: [%s] [%s]" % (data['user'].username, cat.priorite, cat.nom))
+            messages.add_message(request, messages.ERROR, "La nouvelle catégorie n'a pu être créée.")
+    else:
+        messages.add_message(request, messages.ERROR, "Vous devez choisir un nom pour la nouvelle catégorie.")
+    return HttpResponseRedirect('/carte/categories/')
+
+@permission_required('base.p6')
 def categories_less_priority(request, cat_id, nb=1):
     data = get_user(request)
     cat = get_object_or_404(Categorie, pk=cat_id)

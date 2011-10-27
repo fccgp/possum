@@ -126,7 +126,7 @@ class Suivi(models.Model):
         return "Facture %s : etat %s" % (self.facture, self.etat.nom)
 
 class Categorie(Nom, Priorite):
-    surtaxable = models.BooleanField("majoration terrasse")
+    surtaxable = models.BooleanField("majoration terrasse", default=False)
     couleur = models.ForeignKey('Couleur', null=True, blank=True, related_name="categorie-couleur")
 #    majoration_terrasse = models.BooleanField()
 #    couleur = models.ForeignKey(Couleur)
