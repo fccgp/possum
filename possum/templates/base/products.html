@@ -1,11 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Produits</h1>
-
-<p>catégorie affichée: ... / afficher seulement les produits actifs</p>
+<h1>Liste des produits</h1>
 
 <table>
+<tr>
+    <td>Catégorie affichée: </td>
+    <td align="center">
+    <SELECT name="categorie">
+    {% for cat in categories %}
+        <OPTION {% if cat == cat_current %}selected{% endif %} VALUE="{{ cat.nom }}">{{ cat.nom }}</OPTION>
+    {% endfor %}
+    </SELECT>
+    </td>
+    <td colspan="2">Afficher seulement les produits actifs</td>
+    <td align="center" onclick="window.location='/carte/products/cat/{{cat_current.id}}/enable/'">
+        {% if enable %}
+        <input type="checkbox" checked="True"/>
+        {% else %}
+        <input type="checkbox"/>
+        {% endif %}
+    </td>
+</tr>
 <tr>
 	<td><b>Nom</b></td>
 	<td><b>Nom facture</b></td>
@@ -18,7 +34,7 @@
 <tr><form method='post' action='/carte/products/{{p.id}}/change/'>{% csrf_token %}
     <td><input name='name' value="{{p.nom}}"></td>
     <td><input name='billname' value="{{p.nom_facture}}"></td>
-    <td><input name='prize' value="{{p.prix}}"></td>
+    <td><input name='prize' value="{{p.prix}}" class="prize"></td>
     <td><input type='submit' value='Modifier'></td>
     </form>
     <td align="center" onclick="window.location='/carte/products/{{p.id}}/active/'"
@@ -36,7 +52,7 @@
 <tr><form method='post' action='/carte/products/new/'>{% csrf_token %}
     <td><input name='name'></td>
     <td><input name='billname'></td>
-    <td><input name='prize'></td>
+    <td><input name='prize' class="prize"></td>
     <td><input type='submit' value='Créer'></td>
     </form>
 </tr>

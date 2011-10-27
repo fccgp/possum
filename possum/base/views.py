@@ -70,10 +70,61 @@ def products(request, cat_id):
     data = get_user(request)
     cat = get_object_or_404(Categorie, pk=cat_id)
     data['menu_carte'] = True
+    data['categories'] = Categorie.objects.order_by('priorite', 'nom')
+    data['cat_current'] = cat
     data['products'] = Produit.objects.filter(categorie=cat)
     return render_to_response('base/products.html',
                                 data,
                                 context_instance=RequestContext(request))
+
+@permission_required('base.p6')
+def products_change(request, product_id):
+    data = get_user(request)
+    name = request.POST.get('name', '').strip()
+    billname = request.POST.get('billname', '').strip()
+    prize = request.POST.get('prize', '').strip()
+    product = get_object_or_404(Produit, pk=product_id)
+    if prize != str(product.prix):
+        # new prize, so we have to create a new product to keep statistics
+        # and historics
+        logging.info("[%s] new prize for [%s]: [%s] > [%s]" % (data['user'].username, product.nom, product.prix, prize))
+        old = product
+        product = Produit()
+        product.actif = old.actif
+        old.actif = False
+        old.save()
+        product.prix = prize
+        product.nom = old.nom
+        product.nom_facture = old.nom_facture
+        product.choix_cuisson = old.choix_cuisson
+        product.choix_accompagnement = old.choix_accompagnement
+        product.choix_sauce = old.choix_sauce
+        product.categorie = old.categorie
+        try:
+            product.save()
+            for c in old.categories_ok.distinct():
+                product.categories_ok.add(c)
+            for p in old.produits_ok.distinct():
+                product.produits_ok.add(p)
+            messages.add_message(request, messages.INFO, 
+                    "Le prix d'un produit ne peut être modifié, en conséquence un nouveau produit a été créé et l'ancien a été désactivé.")
+        except:
+            messages.add_message(request, messages.ERROR, "Les modifications n'ont pu être enregistrées.")
+            logging.warning("[%s] save failed for product [%s]" % (data['user'].username, product.nom))
+            return HttpResponseRedirect('/carte/products/cat/%s/' % product.categorie.id)
+    if name != product.nom:
+        logging.info("[%s] new product name: [%s] > [%s]" % (data['user'].username, product.nom, name))
+        product.nom = name
+    if billname != product.nom_facture:
+        logging.info("[%s] new product bill name [%s]: [%s] > [%s]" % (data['user'].username, product.nom, product.nom_facture, billname))
+        product.nom_facture = billname
+
+    try:
+        product.save()
+    except:
+        messages.add_message(request, messages.ERROR, "Les modifications n'ont pu être enregistrées.")
+        logging.warning("[%s] save failed for product [%s]" % (data['user'].username, product.nom))
+    return HttpResponseRedirect('/carte/products/cat/%s/' % product.categorie.id)
 
 @permission_required('base.p6')
 def categories(request):
