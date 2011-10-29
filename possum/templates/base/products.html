@@ -11,7 +11,7 @@
     {% for cat in categories %}
         <OPTION {% if cat == cat_current %}selected{% endif %}
                 onclick="window.location='/carte/products/cat/{{cat.id}}/'"
-                VALUE="{{ cat.nom }}">{{ cat.nom }}</OPTION>
+                VALUE="{{ cat.id }}">{{ cat.nom }}</OPTION>
     {% endfor %}
     </SELECT>
     </td>
