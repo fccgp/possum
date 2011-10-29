@@ -9,7 +9,9 @@
     <td align="center">
     <SELECT name="categorie">
     {% for cat in categories %}
-        <OPTION {% if cat == cat_current %}selected{% endif %} VALUE="{{ cat.nom }}">{{ cat.nom }}</OPTION>
+        <OPTION {% if cat == cat_current %}selected{% endif %}
+                onclick="window.location='/carte/products/cat/{{cat.id}}/'"
+                VALUE="{{ cat.nom }}">{{ cat.nom }}</OPTION>
     {% endfor %}
     </SELECT>
     </td>
@@ -23,12 +25,12 @@
     </td>
 </tr>
 <tr>
-	<td><b>Nom</b></td>
-	<td><b>Nom facture</b></td>
-	<td><b>Pric TTC</b></td>
+    <td><b>Nom</b></td>
+    <td><b>Nom facture</b></td>
+    <td><b>Pric TTC</b></td>
     <td></td>
-	<td><b>Actif</b></td>
-	<td></td>
+    <td><b>Actif</b></td>
+    <td></td>
 </tr>
 {% for p in products %}
 <tr><form method='post' action='/carte/products/{{p.id}}/change/'>{% csrf_token %}
@@ -38,9 +40,9 @@
     <td><input type='submit' value='Modifier'></td>
     </form>
     <td align="center" onclick="window.location='/carte/products/{{p.id}}/active/'"
-        {% if p.actif %}bgcolor="#00FF00"> 
+        {% if p.actif %}bgcolor="#00FF00">
         <input type="checkbox" checked="True"/>
-        {% else %}bgcolor="#FF0000"> 
+        {% else %}bgcolor="#FF0000">
         <input type="checkbox"/>
         {% endif %}
     </td>

@@ -44,7 +44,7 @@ Les 2 avec des templates !</p>
 	<td>{{ c.couleur }}</td>
 	<td align='center'><a href="/stats/categorie/{{c.id}}/">ventes</a></td>
 	<td align="center"><a href="/carte/products/cat/{{c.id}}/">produits</a></td>
-	<td align="center">supprimer</td>
+	<td align="center"><a href="/carte/categorie/{{c.id}}/delete/">supprimer</a></td>
 </tr>
 {% endfor %}
 <tr><form method='post' action='/carte/categories/new/'>{% csrf_token %}

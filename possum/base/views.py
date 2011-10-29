@@ -97,7 +97,7 @@ def products_new(request, cat_id):
                     logging.info("[%s] new product [%s]" % (data['user'].username, name))
                 except:
                     logging.warning("[%s] new product failed: [%s]" % (data['user'].username, name))
-                    messages.add_message(request, messages.ERROR, "Le nouveau produit n'a pu être créé.")            
+                    messages.add_message(request, messages.ERROR, "Le nouveau produit n'a pu être créé.")
             else:
                 messages.add_message(request, messages.ERROR, "Vous devez définir un prix pour le nouveau produit.")
         else:
@@ -135,7 +135,7 @@ def products_change(request, product_id):
                 product.categories_ok.add(c)
             for p in old.produits_ok.distinct():
                 product.produits_ok.add(p)
-            messages.add_message(request, messages.INFO, 
+            messages.add_message(request, messages.INFO,
                     "Le prix d'un produit ne peut être modifié, en conséquence un nouveau produit a été créé et l'ancien a été désactivé.")
         except:
             messages.add_message(request, messages.ERROR, "Les modifications n'ont pu être enregistrées.")
@@ -161,6 +161,14 @@ def categories(request):
     data['menu_carte'] = True
     data['categories'] = Categorie.objects.order_by('priorite', 'nom')
     return render_to_response('base/categories.html',
+                                data,
+                                context_instance=RequestContext(request))
+
+@permission_required('base.p6')
+def categories_delete(request, cat_id):
+    data = get_user(request)
+    cat = get_object_or_404(Categorie, pk=cat_id)
+    return render_to_response('base/categories_delete.html',
                                 data,
                                 context_instance=RequestContext(request))
 
@@ -305,7 +313,7 @@ def users(request):
     data['users'] = User.objects.all()
     for user in data['users']:
          user.permissions = [p.codename for p in user.user_permissions.all()]
-    return render_to_response('base/users.html', 
+    return render_to_response('base/users.html',
                                 data,
                                 context_instance=RequestContext(request))
 
@@ -394,7 +402,7 @@ def users_change_perm(request, user_id, codename):
     data = get_user(request)
     user = get_object_or_404(User, pk=user_id)
     # little test because because user can do ugly things :)
-    # now we are sure that it is a good permission    
+    # now we are sure that it is a good permission
     if codename in settings.PERMS:
         perm = Permission.objects.get(codename=codename)
         if perm in user.user_permissions.all():
@@ -429,6 +437,6 @@ def facture(request, id_facture):
                                 data,
                                 context_instance=RequestContext(request))
 
-#	return render_to_response('login.html', data, 
-#			context_instance=RequestContext(request))
+#   return render_to_response('login.html', data,
+#           context_instance=RequestContext(request))
 
